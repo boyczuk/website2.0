@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Adlai.ca</h1>
-        <p>About</p>
       </header>
     </div>
   );
