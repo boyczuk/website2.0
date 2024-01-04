@@ -1,8 +1,31 @@
-.full__page {
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
     color: white;
     position: relative;
+    display: flex;
     width: 100%;
     height: 100vh;
+}
+
+.Navbar {
+    position: fixed;
+    width: 200px;
+    height: 100%; /* Ensure Navbar stretches full height */
+    /* Additional styles as needed */
+}
+
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-left: 200px; /* Ensure this matches the Navbar width */
+    height: 100vh; /* Optional: You can adjust or remove this */
+    /* Additional styling as needed */
 }
 
 .header {
@@ -14,10 +37,7 @@
     color: #FFF;
     font-family: Inter;
     font-size: 32px;
-    
-
-    position: absolute;
-    left: 40%;
     text-align: left;
     margin-right: 15%;
+    /* Adjust or remove the position and left properties based on layout */
 }
