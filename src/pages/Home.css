@@ -1,0 +1,23 @@
+.full__page {
+    color: white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.header {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.sections {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 32px;
+    
+
+    position: absolute;
+    left: 40%;
+    text-align: left;
+    margin-right: 15%;
+}
