@@ -1,15 +1,13 @@
 .navbar-box {
     width: 200px;
-    height: 236px;
     flex-shrink: 0;
     padding: 10px;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     border-radius: 28px;
     background: rgba(0, 0, 0, 0.22);
-    height: 23%;
-    margin-left: 20%;
+
+    margin-left: 10%;
     margin-top: 10%;
 }
 
@@ -19,8 +17,19 @@
     margin: 5px 0;
     border-radius: 28px;
     transition: background-color 0.3s;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .navbar-button:hover {
-    background-color: grey;
+    color: #54C3D8;
+    transition: color 0.1s;
+}
+
+.active {
+    color: #54C3D8;
 }
