@@ -43,3 +43,25 @@ body {
 .clickable-link {
     color: white;
 }
+
+@media screen and (max-width: 1179px) {
+    .navbar {
+        display: none;
+    }
+
+    .sections {
+        font-size: 24px; /* Smaller font size for smaller screens */
+        margin-left: 20px; /* Adjusted margin */
+        margin-right: 20px;
+    }
+
+    .header {
+        margin-left: 20px; /* Adjust margin to align with sections */
+    }
+
+    .content {
+        padding: 0 20px; /* Add padding to content for better readability */
+    }
+
+    /* Add other adjustments as necessary */
+}
