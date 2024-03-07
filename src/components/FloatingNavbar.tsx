@@ -22,8 +22,7 @@ function Navbar(props: NavbarProps) {
     return (
         <div className={`navbar-box ${props.className}`}>
             <p className={`navbar-button ${activeSection === 'about' ? 'active' : ''}`} onClick={() => scrollToSection('about')}>About</p>
-            <p className={`navbar-button ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => scrollToSection('skills')}>Skills</p>
-            <p className={`navbar-button ${activeSection === 'courses' ? 'active' : ''}`} onClick={() => scrollToSection('courses')}>Courses</p>
+            <p className={`navbar-button ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => scrollToSection('skills')}>Skills & Courses</p>
             <p className={`navbar-button ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => scrollToSection('projects')}>Projects</p>
         </div>
     );
