@@ -3,6 +3,18 @@ body {
     overflow: hidden;
     height: 100vh;
     width: 100%;
+    font-family: Inter;
+}
+
+.rlink {
+    text-decoration: none;
+    color: #406cee; /* Light grey for visibility against dark background */
+    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+}
+
+.rlink:hover, .rlink:focus {
+    color: #FFFFFF; /* White color on hover for high visibility */
+    text-decoration: underline; /* Underline on hover for interactivity */
 }
 
 .container {
@@ -30,17 +42,179 @@ body {
     margin-left: 5%;
 }
 
+.title {
+    text-decoration: underline;
+    margin: 1%;
+    text-align: left;
+    font-size: 40px;
+}
+
 .sections {
     color: #FFF;
     font-family: Inter;
-    font-size: 32px;
+    font-size: 22px;
     text-align: left;
     margin-right: 15%;
-    margin-left: 450px;
+    margin-left: 450px;   
+}
+
+.smaller-sec {
+    padding-bottom: 10%;
+}
+
+.h3 {
+    text-decoration: underline;
+    font-size: 32px;
 }
 
 .clickable-link {
     color: white;
+}
+
+
+.project-boxes li {
+    color: #BBBBBB; /* Ensures that list items specifically have the light grey color */
+}
+
+.project li {
+    list-style-type: none; /* Removes the bullet points */
+}
+
+.skills {
+    margin-bottom: 80px;
+}
+
+.skills h3 {
+    /* Styles for the 'Technical Skills' heading */
+    font-size: 26px;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+.skills b {
+    /* Styles for 'Languages', 'Frameworks', and 'Technologies' as subheadings */
+    display: block;
+    font-size: 20px;
+    color: #E0E0E0;
+    margin-top: 15px; /* Space above each subheading */
+    margin-bottom: 5px; /* Space below each subheading, before the list */
+}
+
+.skills li {
+    /* Styles for list items containing skills */
+    list-style-type: none; /* Removing bullet points */
+    color: #BBBBBB;
+    line-height: 1.6;
+    margin-bottom: 15px; /* Adding space after each list item */
+}
+
+/* Container for skills and courses */
+.skills-courses-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px; /* Set a max-width for large screens */
+}
+
+.skills, .courses {
+    flex: 1; /* Each takes equal space */
+    margin: 20px; /* Add some space around */
+    margin-bottom: 80px;
+}
+
+/* Remove bullet points from lists */
+.skills li, .courses li {
+    list-style-type: none; /* Removing bullet points */
+}
+    
+.courses {
+    margin-bottom: 80px !important;
+}
+
+.courses li {
+    list-style-type: none; /* Removes bullet points */
+    padding: 5px 0; /* Adds some padding above and below the links */
+}
+
+.courses .clickable-link {
+    color: #FFF; /* Initial color of the links; set to white or any other color as needed */
+    font-size: 1.1em; /* Slightly larger font size */
+    transition: color 0.3s ease; /* Smooth transition for the color change */
+}
+
+.courses .clickable-link:hover, .courses .clickable-link:focus {
+    color: #406cee; /* Blue color on hover, matching the resume link */
+    text-decoration: none; /* Optional: removes underline on hover if desired */
+}
+
+/* If you have other elements following the skills, you might want to add more space after the last li */
+.skills li:last-child {
+    margin-bottom: 25px; /* Adding more space after the last list item */
+}
+
+
+@media screen and (max-width: 850px) {
+    .skills-courses-container {
+        flex-direction: column;
+        align-items: center; /* To center the content if you want */
+    }
+
+    .skills, .courses {
+        /* Reset margins for a stacked layout */
+        margin: 20px 0; /* Adjust the value as needed */
+        width: 100%; /* Optional: Reset width to full width for smaller screens */
+    }
+}
+
+/* Responsive design adjustments, if necessary */
+@media (max-width: 768px) {
+    .skills h3 {
+        font-size: 22px;
+    }
+    .skills b {
+        font-size: 18px;
+    }
+    .skills li {
+        margin-bottom: 10px; /* Slightly less space for smaller screens */
+    }
+}
+
+.about {
+    margin-bottom: 80px;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center the image */
+    display: block;
+}
+
+/* Adjusted CSS for the image row */
+.image-row {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Align images vertically */
+    margin-top: 20px; /* Margin between the text and the image row */
+    overflow: auto; /* Enable horizontal scrolling if images overflow */
+}
+
+.image-row img {
+    max-width: 23%; /* Set a maximum width for each image as a percentage of the .image-row container */
+    height: auto; /* Keep the aspect ratio */
+    margin: 0 5px; /* Margin between images */
+    flex: 0 0 auto; /* Do not allow the images to grow or shrink */
+}
+
+/* Ensure images are not too small on smaller screens */
+@media (max-width: 768px) {
+    .image-row {
+        justify-content: space-around; /* Distribute the space around items for smaller screens */
+    }
+
+    .image-row img {
+        max-width: 45%; /* Slightly less than half the container width to fit two images per row */
+    }
 }
 
 @media screen and (max-width: 1179px) {
@@ -51,7 +225,7 @@ body {
     .sections {
         font-size: 24px; /* Smaller font size for smaller screens */
         margin-left: 20px; /* Adjusted margin */
-        margin-right: 20px;
+        margin-right: 20px; /* Adjusted margin */
     }
 
     .header {
@@ -61,6 +235,4 @@ body {
     .content {
         padding: 0 20px; /* Add padding to content for better readability */
     }
-
-    /* Add other adjustments as necessary */
 }
