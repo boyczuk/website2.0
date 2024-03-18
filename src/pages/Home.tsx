@@ -16,7 +16,7 @@ function HomePage() {
                             <h3>About</h3>
                             <div className="intro-container" >
                                 <p>Hi, my name is Adlai. I am a software developer currently in my 3rd year of studying Computer Science at Queen's University.
-                                    At the moment I am working at <a className="clickable-link" href="https://theworldofyasu.com">Yasu Energy</a> as a Junior Web Developer.</p>
+                                    Previously I worked at <a className="clickable-link" href="https://theworldofyasu.com">Yasu Energy</a> as a Junior Web Developer.</p>
 
                             </div>
 
