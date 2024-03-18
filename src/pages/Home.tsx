@@ -15,7 +15,7 @@ function HomePage() {
                         <div id="about" className='about'>
                             <h3>About</h3>
                             <div className="intro-container" >
-                                <p>Hi, my name is Adlai I am a software developer currently in my 3rd year of studying Computer Science at Queen's University.
+                                <p>Hi, my name is Adlai. I am a software developer currently in my 3rd year of studying Computer Science at Queen's University.
                                     At the moment I am working at Yasu Energy as a Junior Web Developer.</p>
 
                             </div>
