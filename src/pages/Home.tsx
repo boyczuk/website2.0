@@ -16,7 +16,7 @@ function HomePage() {
                             <h3>About</h3>
                             <div className="intro-container" >
                                 <p>Hi, my name is Adlai. I am a software developer currently in my 3rd year of studying Computer Science at Queen's University.
-                                    At the moment I am working at Yasu Energy as a Junior Web Developer.</p>
+                                    At the moment I am working at <a className="clickable-link" href="https://theworldofyasu.com">Yasu Energy</a> as a Junior Web Developer.</p>
 
                             </div>
 
@@ -29,9 +29,9 @@ function HomePage() {
                                 <img src={me3} alt="Photo of Adlai" />
                                 <img src={me4} alt="Photo of Adlai" />
                             </div>
-                            <p>Beyond school and programming I spend most of my time reading, training Brazilian Jiu-Jitsu, or watching MMA.</p>
+                            <p>Beyond school and programming, I spend most of my time reading, training Brazilian Jiu-Jitsu, or watching MMA.</p>
 
-                            <p>Please contact me at adlaibridsonboyczuk@gmail.com</p>
+                            <p>Please contact me at <a className="clickable-link" href="mailto:adlaibridsonboyczuk@gmail.com">adlaibridsonboyczuk@gmail.com</a></p>
                             <p>Thanks!</p>
                             <a href={resume} target="_blank" className="rlink">
                                 Resume

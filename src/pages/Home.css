@@ -6,6 +6,17 @@ body {
     font-family: Inter;
 }
 
+.about .clickable-link {
+    text-decoration: none;
+    color: #406cee; /* Light grey for visibility against dark background */
+    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+}
+
+.about .clickable-link:hover, .about .clickable-link:focus {
+    color: #FFFFFF; /* White color on hover for high visibility */
+    text-decoration: underline; /* Underline on hover for interactivity */
+}
+
 .rlink {
     text-decoration: none;
     color: #406cee; /* Light grey for visibility against dark background */
