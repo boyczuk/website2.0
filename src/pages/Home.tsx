@@ -31,9 +31,8 @@ function HomePage() {
                             </div>
                             <p>Beyond school and programming I spend most of my time reading, training Brazilian Jiu-Jitsu, or watching MMA.</p>
 
-                            <p>Contact me at 'adlaibridsonboyczuk@gmail.com' or any of the social media above!</p>
-
-                            <p>My resume:</p>
+                            <p>Please contact me at adlaibridsonboyczuk@gmail.com</p>
+                            <p>Thanks!</p>
                             <a href={resume} target="_blank" className="rlink">
                                 Resume
                             </a>

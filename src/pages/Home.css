@@ -10,6 +10,7 @@ body {
     text-decoration: none;
     color: #406cee; /* Light grey for visibility against dark background */
     transition: color 0.3s ease; /* Smooth color transition for hover effect */
+    font-size: 40px;
 }
 
 .rlink:hover, .rlink:focus {
@@ -152,6 +153,16 @@ body {
     margin-bottom: 25px; /* Adding more space after the last list item */
 }
 
+.project .clickable-link {
+    text-decoration: none;
+    color: #406cee; /* Light grey for visibility against dark background */
+    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+}
+
+.project .clickable-link:hover, .project .clickable-link:focus {
+    color: #FFFFFF; /* White color on hover for high visibility */
+    text-decoration: underline; /* Underline on hover for interactivity */
+}
 
 @media screen and (max-width: 850px) {
     .skills-courses-container {
