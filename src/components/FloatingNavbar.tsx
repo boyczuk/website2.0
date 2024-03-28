@@ -29,7 +29,7 @@ function Navbar(props: NavbarProps) {
                 <p className={`navbar-button ${activeSection === 'about' ? 'active' : ''}`} onClick={() => scrollToSection('about')}>About</p>
                 <p className={`navbar-button ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => scrollToSection('skills')}>Skills & Courses</p>
                 <p className={`navbar-button ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => scrollToSection('projects')}>Projects</p>
-                <p className={`navbar-button ${activeSection === 'map' ? 'active' : ''}`} onClick={() => setIsMapOpen(true)}>Show Map</p>
+                <p className={`navbar-button ${activeSection === 'map' ? 'active' : ''}`} onClick={() => setIsMapOpen(!isMapOpen)}>Show Map</p>
             </div>
 
             <Modal isOpen={isMapOpen} onClose={() => setIsMapOpen(false)}>

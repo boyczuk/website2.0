@@ -1,39 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import React, { useState, useEffect, useRef } from 'react';
+import * as d3 from 'd3';
 import { FeatureCollection } from 'geojson';
-import 'leaflet/dist/leaflet.css';
 
 const CountryGuessMap: React.FC = () => {
-  const [geoJsonData, setGeoJsonData] = useState<FeatureCollection | null>(null);
-  const [randomCountry, setRandomCountry] = useState<any>(null);
+    const [randomCountry, setRandomCountry] = useState<any>(null);
+    const svgRef = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
-    // Fetch the GeoJSON data for countries
-    const fetchGeoJsonData = async () => {
-      const response = await fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson');
-      const data: FeatureCollection = await response.json();
-      return data;
-    };
+    useEffect(() => {
+        const fetchGeoJsonData = async () => {
+            const response = await fetch('https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson');
+            const data: FeatureCollection = await response.json();
+            const randomIndex = Math.floor(Math.random() * data.features.length);
+            setRandomCountry(data.features[randomIndex]);
+        };
 
-    fetchGeoJsonData().then((data) => {
-      setGeoJsonData(data);
-      // Select a random country's outline to display
-      const randomIndex = Math.floor(Math.random() * data.features.length);
-      setRandomCountry(data.features[randomIndex]);
-    }).catch((error) => {
-      console.error('Error fetching the GeoJSON data: ', error);
-    });
-  }, []);
+        fetchGeoJsonData().catch((error) => {
+            console.error('Error fetching the GeoJSON data: ', error);
+        });
+    }, []);
 
-  return (
-    <MapContainer center={[20, 0]} zoom={2} style={{ height: '500px', width: '100%' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {randomCountry && <GeoJSON key={(randomCountry.properties as any).ISO_A3} data={randomCountry} />}
-    </MapContainer>
-  );
+    useEffect(() => {
+        if (randomCountry && svgRef.current) {
+            const svg = d3.select(svgRef.current);
+            svg.selectAll("*").remove(); // Clear SVG
+
+            const width = 400;
+            const height = 400;
+            const projection = d3.geoNaturalEarth1()
+                .fitSize([width, height], randomCountry);
+            const pathGenerator = d3.geoPath().projection(projection);
+
+            console.log(randomCountry.properties.ADMIN);
+
+            svg.append('path')
+                .attr('d', pathGenerator(randomCountry))
+                .attr('fill', 'white')
+                .attr('stroke', 'white');
+        }
+    }, [randomCountry]);
+
+    return (
+        <svg ref={svgRef} width={600} height={400} />
+    );
 };
 
 export default CountryGuessMap;
