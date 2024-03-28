@@ -34,6 +34,9 @@ const rows = [
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   const [allCountries, setAllCountries] = useState<{ label: string }[]>([]);
   const { randomCountry } = useCountry();
+  const [rows, setRows] = useState<Array<{ name: string, distance: number, direction: string }>>([]);
+  const [isCorrectGuess, setIsCorrectGuess] = useState(false);
+  const [correctCountryName, setCorrectCountryName] = useState('');
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -52,24 +55,34 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     }
   }, [isOpen]);
 
+  const handleCountrySelect = (event: any, value: { label: string } | null) => {
+    if (value && randomCountry && value.label === randomCountry.properties.ADMIN) {
+      setIsCorrectGuess(true);
+      setCorrectCountryName(value.label);
+      console.log("Correct guess:", value.label);
+    } else if (value) {
+      setIsCorrectGuess(false);
+      const newRows = rows.concat(createData(value.label, 0, "N/A"));
+      setRows(newRows);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         {children}
+        {isCorrectGuess && (
+          <h2 style={{ color: 'green', fontWeight: 'bold' }}>{correctCountryName}</h2>
+        )}
         <Autocomplete
           id="country-select-demo"
           sx={{ width: 300, backgroundColor: 'white' }}
           options={allCountries}
           autoHighlight
           getOptionLabel={(option) => option.label}
-          onChange={(event, value) => {
-            if (value && randomCountry && value.label === randomCountry.properties.ADMIN) {
-              console.log("Correct guess:", value.label);
-              // Here you can set state to show a message in the modal or handle the correct guess as needed
-            }
-          }}
+          onChange={handleCountrySelect}
           renderInput={(params) => (
             <TextField
               {...params}
