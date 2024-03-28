@@ -10,13 +10,20 @@
   z-index: 10;
 }
 
+.country-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+}
+
 .modal-content {
   padding: 20px;
   background: rgb(61, 59, 59);
   border-radius: 5px;
   position: relative;
   z-index: 11;
-  width: 29%;
+  width: 500px;
   height: 80%;
 }
 

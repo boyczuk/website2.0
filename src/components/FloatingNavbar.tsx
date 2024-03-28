@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './FloatingNavbar.css';
 import Modal from './Modal';
-import CountryGuessMap from '../pages/CountryGuessMap';
+import CountryGuessMap from './CountryGuessMap';
 
 interface NavbarProps {
     className?: string;

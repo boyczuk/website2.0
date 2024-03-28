@@ -8,6 +8,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useCountry } from './CountryContext';
 import './Modal.css';
 
 interface ModalProps {
@@ -28,8 +29,11 @@ const rows = [
   createData('Canada', 1000, 'South'),
 ];
 
+// Decide if random on each open or one per day is better
+
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   const [allCountries, setAllCountries] = useState<{ label: string }[]>([]);
+  const { randomCountry } = useCountry();
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -60,6 +64,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           options={allCountries}
           autoHighlight
           getOptionLabel={(option) => option.label}
+          onChange={(event, value) => {
+            if (value && randomCountry && value.label === randomCountry.properties.ADMIN) {
+              console.log("Correct guess:", value.label);
+              // Here you can set state to show a message in the modal or handle the correct guess as needed
+            }
+          }}
           renderInput={(params) => (
             <TextField
               {...params}

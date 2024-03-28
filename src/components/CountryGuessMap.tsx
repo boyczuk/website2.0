@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { FeatureCollection } from 'geojson';
+import { useCountry } from './CountryContext';
+import '../components/Modal.css';
 
 const CountryGuessMap: React.FC = () => {
-    const [randomCountry, setRandomCountry] = useState<any>(null);
+    const { randomCountry, setRandomCountry } = useCountry();
     const svgRef = useRef<SVGSVGElement>(null);
+    
 
     useEffect(() => {
         const fetchGeoJsonData = async () => {
@@ -40,7 +43,7 @@ const CountryGuessMap: React.FC = () => {
     }, [randomCountry]);
 
     return (
-        <svg ref={svgRef} width={600} height={400} />
+        <svg className="country-image-container" ref={svgRef} width={600} height={400} />
     );
 };
 
