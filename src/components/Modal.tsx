@@ -25,9 +25,7 @@ function createData(
   return { name, distance, direction };
 }
 
-const rows = [
-  createData('Canada', 1000, 'South'),
-];
+
 
 // Decide if random on each open or one per day is better
 
@@ -41,9 +39,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/mledoze/countries/master/dist/countries.json');
+        const response = await fetch('https://restcountries.com/v3.1/all');
         const countryData = await response.json();
-        const countryOptions = countryData.map((country: any) => ({ label: country.name.common }));
+        const countryOptions = countryData.map((country: any) => ({
+          label: country.name.common, // Adjust based on the actual structure
+          lat: country.latlng[0],
+          lon: country.latlng[1],
+        }));
         setAllCountries(countryOptions);
       } catch (error) {
         console.error('Error fetching the countries: ', error);
@@ -60,10 +62,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       setIsCorrectGuess(true);
       setCorrectCountryName(value.label);
       console.log("Correct guess:", value.label);
+
     } else if (value) {
       setIsCorrectGuess(false);
+
+      // Get distance and direction to correct country
+
+
       const newRows = rows.concat(createData(value.label, 0, "N/A"));
       setRows(newRows);
+
     }
   };
 
