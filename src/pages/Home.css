@@ -3,7 +3,7 @@ body {
     overflow: hidden;
     height: 100vh;
     width: 100%;
-    font-family: Inter;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .about .clickable-link {
@@ -47,6 +47,7 @@ body {
     flex-grow: 1;
     overflow-y: auto;
     height: 100vh;
+    line-height: 1.5;
 }
 
 .header {
@@ -55,15 +56,14 @@ body {
 }
 
 .title {
-    text-decoration: underline;
-
     text-align: left;
     font-size: 40px;
+    font-weight: bold;
+    margin-top: 5%;
 }
 
 .sections {
     color: #FFF;
-    font-family: Inter;
     font-size: 22px;
     text-align: left;
     margin-right: 15%;
