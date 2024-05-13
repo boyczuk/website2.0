@@ -21,8 +21,8 @@ function HomePage() {
                             </div>
 
 
-                            <p>During my time at Queen's University I have spent time developing projects in several organizations like QUANTT
-                                (Queen's University Algorithmic Network & Trading Team) and QWEB (Queen's University Web Development Club) and on my own outside of school.</p>
+                            <p>During my time at Queen's University I have spent time developing projects on my own and as a part of several organizations like QUANTT
+                                (Queen's University Algorithmic Network & Trading Team) and QWEB (Queen's University Web Development Club).</p>
                             <div className="image-row">
                                 <img src={me} alt="Photo of Adlai" />
                                 <img src={me2} alt="Photo of Adlai" />
