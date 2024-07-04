@@ -81,7 +81,7 @@ function HomePage() {
                             </p>
 
                             <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk/" className="clickable-link" target="_blank">
+                                <b><a href="https://github.com/boyczuk/FlappyBird-ReinforcementLearning" className="clickable-link" target="_blank">
                                     A Q-Learning RL approach to solving flappy bird</a></b> | <i>Python, OpenAI Gym, Reinforcement Learning, NumPy, Pandas</i>
                                 <li>
                                     Used a model-free reinforcement learning algorithm to maximize the total score an agent playing Flappy Bird achieved.
