@@ -3,7 +3,7 @@ import resume from '../assets/Adlai_Resume.pdf';
 import me from '../assets/me.jpg';
 import me2 from '../assets/me2.jpg';
 import me3 from '../assets/me3.jpg';
-import me4 from '../assets/me4.jpg';
+import me5 from '../assets/me5.jpg';
 
 function HomePage() {
     return (
@@ -26,12 +26,12 @@ function HomePage() {
                             <div className="image-row">
                                 <img src={me} alt="Photo of Adlai" />
                                 <img src={me2} alt="Photo of Adlai" />
+                                <img src={me5} alt="Photo of Adlai" />
                                 <img src={me3} alt="Photo of Adlai" />
-                                <img src={me4} alt="Photo of Adlai" />
                             </div>
                             <p>Beyond school and programming, I spend most of my time reading, training Brazilian Jiu-Jitsu, or watching MMA.</p>
 
-                            <p>Please contact me at <a className="clickable-link" href="mailto:adlaibridsonboyczuk@gmail.com">adlaibridsonboyczuk@gmail.com</a></p>
+                            <p>Please contact me at <a className="clickable-link" href="mailto:adlaibridsonboyczuk@gmail.com">adlaibb@gmail.com</a></p>
                             <p>Thanks!</p>
                             <a href={resume} target="_blank" className="rlink">
                                 Resume
