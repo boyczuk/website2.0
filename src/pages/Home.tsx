@@ -69,8 +69,27 @@ function HomePage() {
                         </div>
 
                         <div id="projects" className='project'>
+
                             <p className="project-boxes">
                                 <h3>Projects</h3>
+                                <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank">
+                                    AI for Video-Based Counter Uncrewed Aerial Systems</a></b> | <i>Python, TensorFlow, NumPy, Pandas</i>
+                                <li>
+                                    Collected data from open-source repositories, utilizing machine learning algorithms (Convolutional Neural Networks),
+                                    and developed a concept for identifying UAS/UAVs through video footage.
+                                </li>
+                            </p>
+
+                            <p className="project-boxes">
+                                <b><a href="https://github.com/boyczuk/" className="clickable-link" target="_blank">
+                                    A Q-Learning RL approach to solving flappy bird</a></b> | <i>Python, OpenAI Gym, Reinforcement Learning, NumPy, Pandas</i>
+                                <li>
+                                    Used a model-free reinforcement learning algorithm to maximize the total score an agent playing Flappy Bird achieved.
+                                </li>
+                            </p>
+
+                            <p className="project-boxes">
+
                                 <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank">Equities Trading Algorithm</a></b> |{" "}
                                 <i>Python, Jupyter Notebooks, NumPy, pandas, QuantConnect, Scikit-learn</i>
                                 <li>
@@ -86,7 +105,7 @@ function HomePage() {
                             <p className="project-boxes">
                                 <b><a href="https://github.com/boyczuk/web-arcade-rate" className="clickable-link" target="_blank">Arcade-rate</a></b> | <i>TypeScript, Node.js, Express.js, Firebase, React</i>
                                 <li>
-                                    MERN web application to track and rate your favourite video games. 
+                                    MERN web application to track and rate your favourite video games.
                                 </li>
                             </p>
                             <p className="project-boxes">
@@ -119,15 +138,9 @@ function HomePage() {
                                     integration testing to ensure product quality
                                 </li>
                             </p>
-                            
 
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk/myLibrary" className="clickable-link" target="_blank">myLibrary book tracker</a></b> | <i>C++, MySQL, Qt</i>
-                                <li>
-                                    Designed and programmed a personal book manager to track and manage
-                                    my reading habits
-                                </li>
-                            </p>
+
+
 
                             <p className="project-boxes">
                                 <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank">Forest Rumble</a></b> | <i>C#, Unity, HTML, Photoshop</i>
