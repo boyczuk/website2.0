@@ -22,6 +22,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    text-decoration: none;
 }
 
 .navbar-button:hover {
