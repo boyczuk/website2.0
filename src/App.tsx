@@ -10,9 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <CountryProvider>
-          <Navbar className='navbar' setIsMapOpen={function (isOpen: boolean): void {
-            throw new Error('Function not implemented.');
-          } } />
+          <Navbar className='navbar'/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/recipes' element={<Recipes />} />
