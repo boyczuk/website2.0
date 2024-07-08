@@ -258,3 +258,9 @@ body {
         padding: 0 20px; /* Add padding to content for better readability */
     }
 }
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

@@ -3,6 +3,7 @@ import Navbar from './components/FloatingNavbar';
 import { CountryProvider } from './components/CountryContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Recipes from './pages/Recipes';
+import PorkKatsudon from './pages/recipes/PorkKatsudon';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/recipes' element={<Recipes />} />
+            <Route path='/porkkatsudon' element={<PorkKatsudon />} />
           </Routes>
 
         </CountryProvider>
