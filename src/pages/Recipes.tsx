@@ -22,6 +22,12 @@ function Recipes() {
                                 <li>
                                     Crispy fried pork cutlets topped on a bed of rice, eggs, onions, and sauce.
                                 </li>
+                                <b><a href="/BananaRoti" className="clickable-link" target="_blank">
+                                    Thai Banana Roti</a></b>
+                                <li>
+                                    Crispy fried Thai styled Banana pancakes.
+                                </li>
+
                             </p>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Recipes from './pages/Recipes';
 import PorkKatsudon from './pages/recipes/PorkKatsudon';
 import './App.css';
+import BananaRoti from './pages/recipes/BananaRoti';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/recipes' element={<Recipes />} />
             <Route path='/porkkatsudon' element={<PorkKatsudon />} />
+            <Route path='/bananaroti' element={<BananaRoti />} />
           </Routes>
 
         </CountryProvider>
