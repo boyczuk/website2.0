@@ -17,12 +17,12 @@ function Recipes() {
                             <h3>Meat</h3>
                             <p className="project-boxes">
 
-                                <b><a href="/PorkKatsudon" className="clickable-link" target="_blank">
+                                <b><a href="/PorkKatsudon" className="clickable-link">
                                     Pork Katsudon</a></b>
                                 <li>
                                     Crispy fried pork cutlets topped on a bed of rice, eggs, onions, and sauce.
                                 </li>
-                                <b><a href="/BananaRoti" className="clickable-link" target="_blank">
+                                <b><a href="/BananaRoti" className="clickable-link">
                                     Thai Banana Roti</a></b>
                                 <li>
                                     Crispy fried Thai styled Banana pancakes.
