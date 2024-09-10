@@ -8,25 +8,25 @@ body {
 
 .about .clickable-link {
     text-decoration: none;
-    color: #406cee; /* Light grey for visibility against dark background */
-    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+    color: #406cee;
+    transition: color 0.3s ease;
 }
 
 .about .clickable-link:hover, .about .clickable-link:focus {
-    color: #FFFFFF; /* White color on hover for high visibility */
-    text-decoration: underline; /* Underline on hover for interactivity */
+    color: #FFFFFF;
+    text-decoration: underline;
 }
 
 .rlink {
     text-decoration: none;
-    color: #406cee; /* Light grey for visibility against dark background */
-    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+    color: #406cee;
+    transition: color 0.3s ease;
     font-size: 40px;
 }
 
 .rlink:hover, .rlink:focus {
-    color: #FFFFFF; /* White color on hover for high visibility */
-    text-decoration: underline; /* Underline on hover for interactivity */
+    color: #FFFFFF;
+    text-decoration: underline;
 }
 
 .container {
@@ -67,7 +67,7 @@ body {
     font-size: 22px;
     text-align: left;
     margin-right: 15%;
-    margin-left: 450px;   
+    margin-left: 450px;
 }
 
 .smaller-sec {
@@ -83,13 +83,12 @@ body {
     color: white;
 }
 
-
 .project-boxes li {
-    color: #BBBBBB; /* Ensures that list items specifically have the light grey color */
+    color: #BBBBBB;
 }
 
 .project li {
-    list-style-type: none; /* Removes the bullet points */
+    list-style-type: none;
 }
 
 .skills {
@@ -97,98 +96,90 @@ body {
 }
 
 .skills h3 {
-    /* Styles for the 'Technical Skills' heading */
     font-size: 26px;
     color: #FFF;
     margin-bottom: 20px;
 }
 
 .skills b {
-    /* Styles for 'Languages', 'Frameworks', and 'Technologies' as subheadings */
     display: block;
     font-size: 20px;
     color: #E0E0E0;
-    margin-top: 15px; /* Space above each subheading */
-    margin-bottom: 5px; /* Space below each subheading, before the list */
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .skills li {
-    /* Styles for list items containing skills */
-    list-style-type: none; /* Removing bullet points */
+    list-style-type: none;
     color: #BBBBBB;
     line-height: 1.6;
-    margin-bottom: 15px; /* Adding space after each list item */
+    margin-bottom: 15px;
 }
 
-/* Container for skills and courses */
 .skills-courses-container {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1200px; /* Set a max-width for large screens */
+    max-width: 1200px;
 }
 
 .skills, .courses {
-    flex: 1; /* Each takes equal space */
-    margin: 20px; /* Add some space around */
+    flex: 1;
+    margin: 20px;
     margin-bottom: 80px;
 }
 
-/* Remove bullet points from lists */
 .skills li, .courses li {
-    list-style-type: none; /* Removing bullet points */
+    list-style-type: none;
 }
-    
+
 .courses {
     margin-bottom: 80px !important;
 }
 
 .courses li {
-    list-style-type: none; /* Removes bullet points */
-    padding: 5px 0; /* Adds some padding above and below the links */
+    list-style-type: none;
+    padding: 5px 0;
 }
 
 .courses .clickable-link {
-    color: #FFF; /* Initial color of the links; set to white or any other color as needed */
-    font-size: 1.1em; /* Slightly larger font size */
-    transition: color 0.3s ease; /* Smooth transition for the color change */
+    color: #FFF;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
 }
 
 .courses .clickable-link:hover, .courses .clickable-link:focus {
-    color: #406cee; /* Blue color on hover, matching the resume link */
-    text-decoration: none; /* Optional: removes underline on hover if desired */
+    color: #406cee;
+    text-decoration: none;
 }
 
-/* If you have other elements following the skills, you might want to add more space after the last li */
 .skills li:last-child {
-    margin-bottom: 25px; /* Adding more space after the last list item */
+    margin-bottom: 25px;
 }
 
 .project .clickable-link {
     text-decoration: none;
-    color: #406cee; /* Light grey for visibility against dark background */
-    transition: color 0.3s ease; /* Smooth color transition for hover effect */
+    color: #406cee;
+    transition: color 0.3s ease;
 }
 
 .project .clickable-link:hover, .project .clickable-link:focus {
-    color: #FFFFFF; /* White color on hover for high visibility */
-    text-decoration: underline; /* Underline on hover for interactivity */
+    color: #FFFFFF;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 850px) {
     .skills-courses-container {
         flex-direction: column;
-        align-items: center; /* To center the content if you want */
+        align-items: center;
     }
 
     .skills, .courses {
-        /* Reset margins for a stacked layout */
-        margin: 20px 0; /* Adjust the value as needed */
-        width: 100%; /* Optional: Reset width to full width for smaller screens */
+        margin: 20px 0;
+        width: 100%;
     }
 }
 
-/* Responsive design adjustments, if necessary */
 @media (max-width: 768px) {
     .skills h3 {
         font-size: 22px;
@@ -197,7 +188,7 @@ body {
         font-size: 18px;
     }
     .skills li {
-        margin-bottom: 10px; /* Slightly less space for smaller screens */
+        margin-bottom: 10px;
     }
 }
 
@@ -208,34 +199,32 @@ body {
 .about img {
     width: 100%;
     height: auto;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
     display: block;
 }
 
-/* Adjusted CSS for the image row */
 .image-row {
     display: flex;
-    justify-content: center; /* Center the images horizontally */
-    align-items: center; /* Align images vertically */
-    margin-top: 20px; /* Margin between the text and the image row */
-    overflow: auto; /* Enable horizontal scrolling if images overflow */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    overflow: auto;
 }
 
 .image-row img {
-    max-width: 23%; /* Set a maximum width for each image as a percentage of the .image-row container */
-    height: auto; /* Keep the aspect ratio */
-    margin: 0 5px; /* Margin between images */
-    flex: 0 0 auto; /* Do not allow the images to grow or shrink */
+    max-width: 23%;
+    height: auto;
+    margin: 0 5px;
+    flex: 0 0 auto;
 }
 
-/* Ensure images are not too small on smaller screens */
 @media (max-width: 768px) {
     .image-row {
-        justify-content: space-around; /* Distribute the space around items for smaller screens */
+        justify-content: space-around;
     }
 
     .image-row img {
-        max-width: 45%; /* Slightly less than half the container width to fit two images per row */
+        max-width: 45%;
     }
 }
 
@@ -245,17 +234,17 @@ body {
     }
 
     .sections {
-        font-size: 24px; /* Smaller font size for smaller screens */
-        margin-left: 20px; /* Adjusted margin */
-        margin-right: 20px; /* Adjusted margin */
+        font-size: 24px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .header {
-        margin-left: 20px; /* Adjust margin to align with sections */
+        margin-left: 20px;
     }
 
     .content {
-        padding: 0 20px; /* Add padding to content for better readability */
+        padding: 0 20px;
     }
 }
 
@@ -263,4 +252,43 @@ body {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 3.5rem; /* Increased font size to make the icons bigger */
+    color: #666; /* Slightly brighter grey for better visibility */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: #0077b5;
+}
+
+.linkedin-icon:hover {
+    color: #0e76a8; /* LinkedIn blue */
+}
+
+.github-icon:hover {
+    color: #ff4500; /* GitHub color */
+}
+
+.smoothcomp-icon:hover {
+    color: #00f39e; /* SmoothComp hover color */
 }

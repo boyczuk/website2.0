@@ -4,6 +4,8 @@ import me from '../assets/me.jpg';
 import me2 from '../assets/me2.jpg';
 import me3 from '../assets/me3.jpg';
 import me5 from '../assets/me5.jpg';
+import { FaLinkedin, FaGithub, FaFistRaised } from 'react-icons/fa'; // Importing a fist icon
+
 
 function HomePage() {
     return (
@@ -11,6 +13,17 @@ function HomePage() {
             <div className='content'>
                 <div className='sections'>
                     <div className='title'>Adlai Bridson-Boyczuk</div>
+                    <div className='social-icons'>
+                        <a href="https://www.linkedin.com/in/adlai-bridson-boyczuk/" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin className="icon linkedin-icon" />
+                        </a>
+                        <a href="https://github.com/boyczuk" target="_blank" rel="noopener noreferrer">
+                            <FaGithub className="icon github-icon" />
+                        </a>
+                        <a href="https://smoothcomp.com/en/profile/1073699" target="_blank" rel="noopener noreferrer">
+                            <FaFistRaised className="icon smoothcomp-icon" />
+                        </a>
+                    </div>
                     <div className='smaller-sec'>
                         <div id="about" className='about'>
                             <h3>About</h3>
