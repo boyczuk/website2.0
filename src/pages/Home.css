@@ -271,8 +271,8 @@ body {
 }
 
 .icon {
-    font-size: 3.5rem; /* Increased font size to make the icons bigger */
-    color: #666; /* Slightly brighter grey for better visibility */
+    font-size: 3.5rem;
+    color: #666; 
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -282,13 +282,13 @@ body {
 }
 
 .linkedin-icon:hover {
-    color: #0e76a8; /* LinkedIn blue */
+    color: #0e76a8;
 }
 
 .github-icon:hover {
-    color: #ff4500; /* GitHub color */
+    color: #ff4500;
 }
 
 .smoothcomp-icon:hover {
-    color: #00f39e; /* SmoothComp hover color */
+    color: #00f39e;
 }
