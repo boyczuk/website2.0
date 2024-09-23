@@ -9,9 +9,13 @@ body {
 
 }
 
-@media screen and (max-width: 1179px) {
+@media screen and (min-width: 2062px) {
   .navbar {
-    
+      left: 0;
+      margin-right: 220px; 
+  }
 
+  .sections {
+      margin-left: 600px; 
   }
 }
