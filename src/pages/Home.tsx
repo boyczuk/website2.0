@@ -1,5 +1,5 @@
 import './Home.css';
-import resume from '../assets/Adlai_Resume.pdf';
+import resume from '../assets/websiteresume.pdf';
 import me from '../assets/me.jpg';
 import me2 from '../assets/me2.jpg';
 import me3 from '../assets/me3.jpg';
