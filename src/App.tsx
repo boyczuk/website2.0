@@ -6,6 +6,8 @@ import Recipes from './pages/Recipes';
 import PorkKatsudon from './pages/recipes/PorkKatsudon';
 import './App.css';
 import BananaRoti from './pages/recipes/BananaRoti';
+import JerkChickenRice from './pages/recipes/JerkChicken';
+import Japchae from './pages/recipes/Japchae';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path='/recipes' element={<Recipes />} />
             <Route path='/porkkatsudon' element={<PorkKatsudon />} />
             <Route path='/bananaroti' element={<BananaRoti />} />
+            <Route path='/japchae' element={<Japchae />} />
+            <Route path='/jerkchicken' element={<JerkChickenRice />} /> 
           </Routes>
         </CountryProvider>
       </Router>

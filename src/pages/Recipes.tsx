@@ -27,6 +27,16 @@ function Recipes() {
                                 <li>
                                     Crispy fried Thai styled Banana pancakes.
                                 </li>
+                                <b><a href="/JerkChicken" className="clickable-link">
+                                    One-Pot Caribbean Jerk Chicken and Rice</a></b>
+                                <li>
+                                    A flavorful one-pot dish featuring tender jerk-seasoned chicken cooked with aromatic rice, vegetables, and a hint of coconut.
+                                </li>
+                                <b><a href="/Japchae" className="clickable-link">
+                                    Japchae (잡채)</a></b>
+                                <li>
+                                    A savory and slightly sweet Korean stir-fried glass noodle dish with vegetables, meat, and a sesame soy sauce seasoning.
+                                </li>
 
                             </p>
                         </div>
