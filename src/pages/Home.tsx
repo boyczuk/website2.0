@@ -28,15 +28,14 @@ function HomePage() {
                         <div id="about" className='about'>
                             <h3>About</h3>
                             <div className="intro-container" >
-                                <p>Hey there, I am a software developer who recently graduated from Computer Science at Queen's University.
-                                    Previously I worked at <a className="clickable-link" href="https://theworldofyasu.com">The World of Yasu</a> as a Junior Web Developer and as a Programmer
-                                    for <a className="clickable-link" href="https://proximacommand.com/">Proxima Command</a> developing the system to their new starship simulator game.</p>
+                                <p>Hey there, I am a recent Computer Science graduate from Queen's University looking to find entry level work as a Software Engineer or Developer.
 
+                                </p>
                             </div>
 
 
-                            <p>During my time at Queen's University I have spent time developing projects on my own and as a part of several organizations like QUANTT
-                                (Queen's University Algorithmic Network & Trading Team) and QWEB (Queen's University Web Development Club).</p>
+                            <p>Previously I worked at <a className="clickable-link" href="https://theworldofyasu.com">The World of Yasu</a> as a Junior Web Developer and as a Programmer
+                                for <a className="clickable-link" href="https://proximacommand.com/">Proxima Command</a> developing the system to their new starship simulator game.</p>
                             <div className="image-row">
                                 <img src={me} alt="Photo of Adlai" />
                                 <img src={me2} alt="Photo of Adlai" />
