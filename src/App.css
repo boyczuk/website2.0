@@ -8,14 +8,3 @@ body {
   text-align: center;
 
 }
-
-@media screen and (min-width: 2062px) {
-  .navbar {
-      left: 0;
-      margin-right: 220px; 
-  }
-
-  .sections {
-      margin-left: 600px; 
-  }
-}
