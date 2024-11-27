@@ -117,6 +117,14 @@ function HomePage() {
                             </p>
 
                             <p className="project-boxes">
+                                <b><a href="https://theworldofyasu.com" className="clickable-link" target="_blank">The World of Yasu</a></b> |{" "}
+                                <i>Typescript, React.js, Firebase, HTML, CSS, MaterialUI</i>
+                                <li>
+                                    Created a dynamic marketing and sales webapp for an energy drink company with a custom animated intro.
+                                </li>
+                            </p>
+
+                            <p className="project-boxes">
                                 <b><a href="https://github.com/boyczuk/FlappyBird-ReinforcementLearning" className="clickable-link" target="_blank">
                                     Flappy Bird Q-Learning Reinforcement Learning Approach</a></b> | <i>Python, OpenAI Gym, Reinforcement Learning, NumPy, Pandas</i>
                                 <li>
@@ -129,16 +137,6 @@ function HomePage() {
                                 <i>Python, Jupyter Notebooks, NumPy, pandas, QuantConnect, Scikit-learn</i>
                                 <li>
                                     Created a Python-based trading algorithm that achieved an 18% profit over a 3-year backtest against the S&P 500. Combined SMA and RSI indicators to identify optimal short-selling opportunities in Tech and Real Estate sectors.
-                                </li>
-                            </p>
-
-
-
-                            <p className="project-boxes">
-                                <b><a href="https://theworldofyasu.com" className="clickable-link" target="_blank">The World of Yasu</a></b> |{" "}
-                                <i>Typescript, React.js, Firebase, HTML, CSS, MaterialUI</i>
-                                <li>
-                                    Created a dynamic marketing and sales webapp for an energy drink company with a custom animated intro.
                                 </li>
                             </p>
 
