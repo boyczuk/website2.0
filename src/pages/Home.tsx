@@ -125,6 +125,15 @@ function HomePage() {
                             </p>
 
                             <p className="project-boxes">
+                                <b><a href="https://proximacommand.com/" className="clickable-link" target="_blank">
+                                    Proxima Command Starship Simulator</a></b> | <i>Python, Pygame, CircuitPython</i>
+                                <li>
+                                    Programmed a Python-based starship emulator using Pygame, creating a proof-of-concept for a physical game
+                                    room where two teams could compete against each other.
+                                </li>
+                            </p>
+
+                            <p className="project-boxes">
                                 <b><a href="https://github.com/boyczuk/FlappyBird-ReinforcementLearning" className="clickable-link" target="_blank">
                                     Flappy Bird Q-Learning Reinforcement Learning Approach</a></b> | <i>Python, OpenAI Gym, Reinforcement Learning, NumPy, Pandas</i>
                                 <li>
