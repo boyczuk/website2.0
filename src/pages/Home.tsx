@@ -4,12 +4,14 @@ import me from '../assets/me.jpg';
 import me2 from '../assets/me2.jpg';
 import me3 from '../assets/me3.jpg';
 import me5 from '../assets/me5.jpg';
-import { FaLinkedin, FaGithub, FaFistRaised } from 'react-icons/fa'; // Importing a fist icon
+import { FaLinkedin, FaGithub, FaFistRaised } from 'react-icons/fa';
+import FallingLeaves from '../components/FallingLeaves';
 
 
 function HomePage() {
     return (
         <div className='container'>
+            <FallingLeaves />
             <div className='content'>
                 <div className='sections'>
                     <div className='title'>Adlai Bridson-Boyczuk</div>

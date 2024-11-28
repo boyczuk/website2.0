@@ -3,34 +3,50 @@ body {
     overflow: hidden;
     height: 100vh;
     width: 100%;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: "Georgia", serif; 
+    background: linear-gradient(to bottom, #fbe8d3, #ffb385);
+    color: #4b2715;
+}
+
+a {
+    color: #d35400;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+a:hover,
+a:focus {
+    color: #c0392b;
+    text-decoration: underline; 
 }
 
 .about .clickable-link {
+    color: #d35400;
     text-decoration: none;
-    color: #406cee;
     transition: color 0.3s ease;
 }
 
-.about .clickable-link:hover, .about .clickable-link:focus {
-    color: #FFFFFF;
-    text-decoration: underline;
+.about .clickable-link:hover,
+.about .clickable-link:focus {
+    color: #c0392b; 
+    text-decoration: underline; 
 }
 
 .rlink {
     text-decoration: none;
-    color: #406cee;
+    color: #e67e22; 
     transition: color 0.3s ease;
     font-size: 40px;
 }
 
-.rlink:hover, .rlink:focus {
-    color: #FFFFFF;
+.rlink:hover,
+.rlink:focus {
+    color: #c0392b; 
     text-decoration: underline;
 }
 
 .container {
-    color: white;
+    color: #4b2715; 
     position: relative;
     display: flex;
     width: 100%;
@@ -41,6 +57,8 @@ body {
     position: fixed;
     width: 200px;
     z-index: 1000;
+    background: rgba(255, 215, 180, 0.9); 
+    border-right: 2px solid #e67e22; 
 }
 
 .content {
@@ -60,10 +78,11 @@ body {
     font-size: 40px;
     font-weight: bold;
     margin-top: 5%;
+    color: #d35400; 
 }
 
 .sections {
-    color: #FFF;
+    color: #4b2715;
     font-size: 22px;
     text-align: left;
     margin-right: 20%;
@@ -77,44 +96,35 @@ body {
 .h3 {
     text-decoration: underline;
     font-size: 32px;
-}
-
-.clickable-link {
-    color: white;
+    color: #d35400;
 }
 
 .project-boxes li {
-    color: #BBBBBB;
+    color: #8e44ad; 
 }
 
-.project li {
+.project li,
+.skills li {
     list-style-type: none;
-}
-
-.skills {
-    margin-bottom: 80px;
+    color: #4b2715;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .skills h3 {
     font-size: 26px;
-    color: #FFF;
+    color: #d35400;
     margin-bottom: 20px;
 }
 
 .skills b {
     display: block;
     font-size: 20px;
-    color: #E0E0E0;
+    color: #e67e22;
     margin-top: 15px;
     margin-bottom: 5px;
 }
 
-.skills li {
-    list-style-type: none;
-    color: #BBBBBB;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
 
 .skills-courses-container {
     display: flex;
@@ -123,49 +133,60 @@ body {
     max-width: 1200px;
 }
 
-.skills, .courses {
+.skills,
+.courses {
     flex: 1;
     margin: 20px;
     margin-bottom: 80px;
-}
-
-.skills li, .courses li {
-    list-style-type: none;
-}
-
-.courses {
-    margin-bottom: 80px !important;
-}
-
-.courses li {
-    list-style-type: none;
-    padding: 5px 0;
+    background: rgba(255, 215, 180, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .courses .clickable-link {
-    color: #FFF;
+    color: #e67e22;
+    text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
-.courses .clickable-link:hover, .courses .clickable-link:focus {
-    color: #406cee;
-    text-decoration: none;
+.courses .clickable-link:hover,
+.courses .clickable-link:focus {
+    color: #c0392b;
+    text-decoration: underline; 
 }
 
-.skills li:last-child {
-    margin-bottom: 25px;
+.image-row img {
+    max-width: 23%;
+    height: auto;
+    margin: 0 5px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.project .clickable-link {
-    text-decoration: none;
-    color: #406cee;
-    transition: color 0.3s ease;
+.icon {
+    font-size: 3.5rem;
+    color: #4b2715; 
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.project .clickable-link:hover, .project .clickable-link:focus {
-    color: #FFFFFF;
-    text-decoration: underline;
+.icon:hover {
+    transform: scale(1.2);
+    color: #e67e22; 
+}
+
+.linkedin-icon:hover {
+    color: #0e76a8; 
+}
+
+.github-icon:hover {
+    color: #2c3e50; 
+}
+
+.smoothcomp-icon:hover {
+    color: #00f39e; 
 }
 
 @media screen and (max-width: 850px) {
@@ -174,57 +195,10 @@ body {
         align-items: center;
     }
 
-    .skills, .courses {
+    .skills,
+    .courses {
         margin: 20px 0;
         width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .skills h3 {
-        font-size: 22px;
-    }
-    .skills b {
-        font-size: 18px;
-    }
-    .skills li {
-        margin-bottom: 10px;
-    }
-}
-
-.about {
-    margin-bottom: 80px;
-}
-
-.about img {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-
-.image-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    overflow: auto;
-}
-
-.image-row img {
-    max-width: 23%;
-    height: auto;
-    margin: 0 5px;
-    flex: 0 0 auto;
-}
-
-@media (max-width: 768px) {
-    .image-row {
-        justify-content: space-around;
-    }
-
-    .image-row img {
-        max-width: 45%;
     }
 }
 
@@ -247,49 +221,3 @@ body {
         padding: 0 20px;
     }
 }
-
-.checkbox {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.title {
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.icon {
-    font-size: 3.5rem;
-    color: #666; 
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.icon:hover {
-    transform: scale(1.2);
-    color: #0077b5;
-}
-
-.linkedin-icon:hover {
-    color: #0e76a8;
-}
-
-.github-icon:hover {
-    color: #ff4500;
-}
-
-.smoothcomp-icon:hover {
-    color: #00f39e;
-}
-
