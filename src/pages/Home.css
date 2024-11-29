@@ -163,13 +163,34 @@ a:focus {
     text-decoration: underline; 
 }
 
+.image-row {
+    display: flex;
+    justify-content: center;
+}
+
 .image-row img {
-    max-width: 23%;
+    max-width: 33%;
     height: auto;
     margin: 0 5px;
     flex: 0 0 auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* Ensure the images maintain their aspect ratio */
+    aspect-ratio: 2 / 2; /* Force consistent aspect ratio (adjust as needed) */
+}
+
+@media screen and (max-width: 850px) {
+    .image-row {
+        display: none;
+    }
+
+    .courses {
+        background: rgba(255, 235, 200, 0.599);;
+    }
+
+    .skills {
+        background: rgba(255, 235, 200, 0.599);;
+    }
 }
 
 .icon {
