@@ -5,49 +5,37 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: -1;
-  }
-  
-  .leaf {
+}
+
+.leaf {
     position: absolute;
     top: -10%;
     width: 20px;
     height: 20px;
-    background-image: url('../assets/leaf.png');
+    background-image: url('../assets/leaf.png'); /* Ensure the path is correct */
     background-size: cover;
-    animation: float 4s ease-in-out infinite, fall linear infinite; 
-    animation-duration: calc(10s + 5s * var(--random-duration)); 
-    animation-delay: var(--random-delay);
-    transform-origin: center; 
-    perspective: 1000px;
-  }
-  
-  @keyframes float {
+    animation: sway-fall var(--random-duration, 10s) ease-in-out infinite;
+    animation-delay: var(--random-delay, 0s);
+    transform-origin: center;
+}
+
+/* Unified animation for falling, swaying, and rotating */
+@keyframes sway-fall {
     0% {
-      transform: translateX(0) rotate(0deg) rotateX(0deg) rotateY(0deg);
+        transform: translateX(0) translateY(0) rotate(0deg);
     }
     25% {
-      transform: translateX(-20px) rotate(-15deg) rotateX(10deg) rotateY(5deg);
+        transform: translateX(-30px) translateY(25vh) rotate(-15deg);
     }
     50% {
-      transform: translateX(20px) rotate(15deg) rotateX(-10deg) rotateY(-5deg);
+        transform: translateX(30px) translateY(50vh) rotate(15deg);
     }
     75% {
-      transform: translateX(-15px) rotate(-10deg) rotateX(5deg) rotateY(15deg);
+        transform: translateX(-20px) translateY(75vh) rotate(-10deg);
     }
     100% {
-      transform: translateX(0) rotate(0deg) rotateX(0deg) rotateY(0deg);
+        transform: translateX(0) translateY(110vh) rotate(0deg);
     }
-  }
-  
-
-  @keyframes fall {
-    0% {
-      transform: translateY(0) translateX(0);
-    }
-    100% {
-      transform: translateY(100vh) translateX(-50px);
-    }
-  }
-  
+}

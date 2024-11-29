@@ -39,10 +39,9 @@ function HomePage() {
                             <p>Previously I worked at <a className="clickable-link" href="https://theworldofyasu.com">The World of Yasu</a> as a Junior Web Developer and as a Programmer
                                 for <a className="clickable-link" href="https://proximacommand.com/">Proxima Command</a> developing the system to their new starship simulator game.</p>
                             <div className="image-row">
-                                <img src={me} alt="Photo of Adlai" />
-                                <img src={me2} alt="Photo of Adlai" />
-                                <img src={me5} alt="Photo of Adlai" />
-                                <img src={me3} alt="Photo of Adlai" />
+                                <img src={me} alt="Adlai in Brazilian Jiu Jitsu tournament" />
+                                <img src={me2} alt="Promoted to blue belt in Jiu Jitsu" />
+                                <img src={me5} alt="Petting elephant" />
                             </div>
                             <p>Beyond school and programming, I spend most of my time reading, training Brazilian Jiu-Jitsu, or watching MMA.</p>
 

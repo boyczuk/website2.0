@@ -2,41 +2,39 @@ import React, { useEffect, useRef } from 'react';
 import './FallingLeaves.css';
 
 const FallingLeaves: React.FC = () => {
-  const leavesContainerRef = useRef<HTMLDivElement>(null); 
+  const leavesContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const spawnLeaf = () => {
       if (!leavesContainerRef.current) return;
 
-      const leaf = document.createElement('div'); 
+      const leaf = document.createElement('div');
       leaf.className = 'leaf';
-      const randomLeft = Math.random() * 100; 
-      const randomDuration = 10 + Math.random() * 5; 
-      const randomDelay = Math.random() * 5;
-      const randomRotation = Math.random() * 360 - 180;
 
+      const randomLeft = Math.random() * 100; // Random horizontal start position (0% to 100%)
+      const randomDuration = 10 + Math.random() * 5; // Fall duration between 10s and 15s
+      const randomDelay = Math.random() * 5; // Random delay before animation starts
 
       leaf.style.left = `${randomLeft}%`;
-      leaf.style.animationDuration = `${randomDuration}s`;
-      leaf.style.animationDelay = `${randomDelay}s`;
-      leaf.style.transform = `rotate(${randomRotation}deg)`;
+      leaf.style.setProperty('--random-duration', `${randomDuration}s`);
+      leaf.style.setProperty('--random-delay', `${randomDelay}s`);
 
-      leavesContainerRef.current.appendChild(leaf); 
+      leavesContainerRef.current.appendChild(leaf);
 
       setTimeout(() => {
         leavesContainerRef.current?.removeChild(leaf);
-        if (Math.random() > 0.7) spawnLeaf();
       }, (randomDuration + randomDelay) * 1000);
     };
 
+    // Spawn leaves at regular intervals
     const interval = setInterval(() => {
-      if (Math.random() > 0.5) spawnLeaf(); 
-    }, 1000); 
+      spawnLeaf();
+    }, 300); // Spawn a leaf every 300ms
 
     return () => {
       clearInterval(interval);
       if (leavesContainerRef.current) {
-        leavesContainerRef.current.innerHTML = ''; 
+        leavesContainerRef.current.innerHTML = ''; // Clear leaves on cleanup
       }
     };
   }, []);
