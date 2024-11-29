@@ -175,9 +175,40 @@ a:focus {
     flex: 0 0 auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    object-fit: cover; /* Ensure the images maintain their aspect ratio */
-    aspect-ratio: 2 / 2; /* Force consistent aspect ratio (adjust as needed) */
+    object-fit: cover; 
+    aspect-ratio: 2 / 2; 
 }
+
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 14px; 
+    }
+
+    .title {
+        font-size: 30px; 
+    }
+
+    .sections {
+        font-size: 18px; 
+    }
+
+    .h3 {
+        font-size: 24px; 
+    }
+
+    .skills h3 {
+        font-size: 22px; 
+    }
+
+    .skills b {
+        font-size: 16px; 
+    }
+
+    .rlink {
+        font-size: 32px;
+    }
+}
+
 
 @media screen and (max-width: 850px) {
     .image-row {
