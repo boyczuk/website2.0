@@ -12,8 +12,8 @@
 .leaf {
     position: absolute;
     top: -10%;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     background-image: url('../assets/leaf.png'); /* Ensure the path is correct */
     background-size: cover;
     animation: sway-fall var(--random-duration, 10s) ease-in-out infinite;

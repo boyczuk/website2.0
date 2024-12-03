@@ -5,48 +5,52 @@ body {
     width: 100%;
     font-family: "Georgia", serif; 
     background: linear-gradient(to bottom, #fbe8d3, #ffb385);
-    color: #4b2715;
+    background-image: url('../assets/autumn-background2.jpg');
+    background-size: cover; 
+    background-position: center 10%; 
+    background-repeat: no-repeat; 
+    color: #4b2a1a;
 }
 
 a {
-    color: #d35400;
+    color: #e07a3f;
     text-decoration: none;
     transition: color 0.3s ease; 
 }
 
 a:hover,
 a:focus {
-    color: #000000; 
+    color: #af4e2c; /* Darker orange for hover and focus */
     text-decoration: underline; 
 }
 
 .about .clickable-link {
-    color: #d35400;
+    color: #e07a3f;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .about .clickable-link:hover,
 .about .clickable-link:focus {
-    color: #4b2715;
+    color: #4b2a1a; /* Dark brown for focus */
     text-decoration: underline; 
 }
 
 .rlink {
     text-decoration: none;
-    color: #e67e22; 
+    color: #e07a3f; /* Warm orange for emphasized links */
     transition: color 0.3s ease;
     font-size: 40px;
 }
 
 .rlink:hover,
 .rlink:focus {
-    color: #4b2715;
+    color: #4b2a1a; /* Dark brown on hover */
     text-decoration: underline;
 }
 
 .container {
-    color: #4b2715; 
+    color: #4b2a1a; /* Adjusted text color for readability */
     position: relative;
     display: flex;
     width: 100%;
@@ -57,8 +61,8 @@ a:focus {
     position: fixed;
     width: 200px;
     z-index: 1000;
-    background: rgba(255, 215, 180, 0.9); 
-    border-right: 2px solid #e67e22; 
+    background: rgba(255, 223, 191, 0.9); /* Light cream background */
+    border-right: 2px solid #e07a3f; /* Warm orange border */
 }
 
 .content {
@@ -78,22 +82,21 @@ a:focus {
     font-size: 40px;
     font-weight: bold;
     margin-top: 5%;
-    color: #d35400; 
+    color: #e07a3f; /* Warm orange for the title */
 }
 
 .sections {
-    color: #4b2715;
+    color: #4b2a1a;
     font-size: 22px;
     text-align: left;
     margin-right: 20%;
     margin-left: 20%;
-    background: rgba(255, 235, 200, 0.599);
+    background: rgba(255, 235, 210, 0.808); /* Soft cream for sections */
     backdrop-filter: blur(5px);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
 
 .smaller-sec {
     padding-bottom: 10%;
@@ -102,35 +105,34 @@ a:focus {
 .h3 {
     text-decoration: underline;
     font-size: 32px;
-    color: #d35400;
+    color: #e07a3f; /* Warm orange for smaller headings */
 }
 
 .project-boxes li {
-    color: #8e44ad; 
+    color: #8e44ad; /* Purple for project list items */
 }
 
 .project li,
 .skills li {
     list-style-type: none;
-    color: #4b2715;
+    color: #4b2a1a;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
 .skills h3 {
     font-size: 26px;
-    color: #d35400;
+    color: #e07a3f; /* Warm orange for skills heading */
     margin-bottom: 20px;
 }
 
 .skills b {
     display: block;
     font-size: 20px;
-    color: #e67e22;
+    color: #af4e2c; /* Dark orange for emphasis */
     margin-top: 15px;
     margin-bottom: 5px;
 }
-
 
 .skills-courses-container {
     display: flex;
@@ -144,14 +146,14 @@ a:focus {
     flex: 1;
     margin: 20px;
     margin-bottom: 80px;
-    background: rgba(255, 215, 180, 0.8);
+    background: rgba(255, 223, 191, 0.8); /* Light cream background */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .courses .clickable-link {
-    color: #e67e22;
+    color: #e07a3f;
     text-decoration: none;
     font-size: 1.1em;
     transition: color 0.3s ease;
@@ -159,7 +161,7 @@ a:focus {
 
 .courses .clickable-link:hover,
 .courses .clickable-link:focus {
-    color: #4b2715;
+    color: #4b2a1a; /* Dark brown for focus */
     text-decoration: underline; 
 }
 
@@ -209,42 +211,41 @@ a:focus {
     }
 }
 
-
 @media screen and (max-width: 850px) {
     .image-row {
         display: none;
     }
 
     .courses {
-        background: rgba(255, 235, 200, 0.599);;
+        background: rgba(255, 235, 200, 0.6); /* Light cream background for courses */
     }
 
     .skills {
-        background: rgba(255, 235, 200, 0.599);;
+        background: rgba(255, 235, 200, 0.6); /* Light cream background for skills */
     }
 }
 
 .icon {
     font-size: 3.5rem;
-    color: #4b2715; 
+    color: #4b2a1a; /* Dark brown for icons */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icon:hover {
     transform: scale(1.2);
-    color: #e67e22; 
+    color: #e07a3f; /* Warm orange on hover */
 }
 
 .linkedin-icon:hover {
-    color: #0e76a8; 
+    color: #0e76a8; /* LinkedIn blue */
 }
 
 .github-icon:hover {
-    color: #2c3e50; 
+    color: #2c3e50; /* GitHub dark gray */
 }
 
 .smoothcomp-icon:hover {
-    color: #00f39e; 
+    color: #00f39e; /* Smoothcomp green */
 }
 
 @media screen and (max-width: 850px) {
