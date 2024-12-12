@@ -183,11 +183,36 @@ a:focus {
     flex: 1;
     margin: 20px;
     margin-bottom: 80px;
+    margin-top: 10%;
     background: rgba(255, 223, 191, 0.8);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
+
+.courses ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+}
+
+.courses li {
+    margin: 10px 0; 
+    display: inline-block; 
+}
+
+.courses a {
+    text-decoration: none;
+    color: #333; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.courses a:hover {
+    color: #007bff;
+}
+
 
 .courses .clickable-link {
     color: #e07a3f;
