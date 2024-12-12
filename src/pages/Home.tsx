@@ -16,7 +16,7 @@ function HomePage() {
         {
             title: "UAV Detection Capstone Thesis",
             tech: "Python, PyTorch, YOLOv5, OpenCV, MATLAB, NumPy, pandas",
-            description: "Developed a YOLOv5-based detection system that achieved 77% accuracy in distinguishing UAVs from other aerial objects. Utilized OpenCV for visualization and label data normalization, resulting in 94.4% precision and 93.2% recall.",
+            description: "Developed a YOLOv5-based detection system as a Capstone thesis in my final year of undergraduate that achieved 77% accuracy in distinguishing UAVs from other aerial objects. Utilized OpenCV for visualization and label data normalization, resulting in 94.4% precision and 93.2% recall.",
             link: "https://github.com/boyczuk",
         },
         {
@@ -28,31 +28,31 @@ function HomePage() {
         {
             title: "BlackMarket2D",
             tech: "C#, Unity, 2D Game Development",
-            description: "Developed a crime-oriented 2D isometric game where players manage autonomous NPCs and control a criminal organization, featuring base-building mechanics and dynamic interactions.",
+            description: "Currently developing a crime-oriented 2D isometric game where players manage autonomous NPCs and control a criminal organization, featuring base-building mechanics and dynamic interactions between gangs and their respective hierarchies.",
             link: "https://github.com/boyczuk/BlackMarket2D",
         },
         {
             title: "CNN for Tomato Disease Classification",
             tech: "Python, Jupyter Notebooks, TensorFlow, Keras",
-            description: "Built a Convolutional Neural Network that classified tomato leaf diseases into 10 classes using over 11,000 images, achieving a 75% validation accuracy by implementing dropout layers to combat overfitting.",
+            description: "Group assignment for my Neural and Genetic Computing course at Queen's University where we trained a Convolutional Neural Network to classified tomato leaf diseases into 10 classes using over 11,000 images, achieving a 75% validation accuracy by implementing dropout layers to combat overfitting.",
             link: "https://github.com/boyczuk",
         },
         {
             title: "The World of Yasu",
             tech: "TypeScript, React.js, Firebase, HTML, CSS, MaterialUI",
-            description: "Created a dynamic marketing and sales webapp for an energy drink company with a custom animated intro.",
+            description: "Created a dynamic marketing and sales webapp for an energy drink company with a custom animated intro. I worked directly with a Senior Developer, graphic designers and the client to turn their ideas and designs into a functional React site.",
             link: "https://theworldofyasu.com",
         },
         {
             title: "Proxima Command Starship Simulator",
             tech: "Python, Pygame, CircuitPython",
-            description: "Programmed a Python-based starship emulator using Pygame, creating a proof-of-concept for a physical game room where two teams could compete against each other.",
+            description: "I was hired as a contract programmer to code a Python-based starship emulator using Pygame, creating a proof-of-concept for a physical game room where two teams could compete against each other. While developing this I had to take into consideration hardware constraints as a mechanical engineer was also creating physical systems to work alongside my software.",
             link: "https://proximacommand.com/",
         },
         {
             title: "Flappy Bird Q-Learning Reinforcement Learning Approach",
             tech: "Python, OpenAI Gym, Reinforcement Learning, NumPy, Pandas",
-            description: "Implemented a model-free reinforcement learning algorithm to maximize the agent's score in the Flappy Bird game.",
+            description: "Implemented a model-free reinforcement learning algorithm to maximize the agent's score in the Flappy Bird game for my Reinforcement Learning course.",
             link: "https://github.com/boyczuk/FlappyBird-ReinforcementLearning",
         },
         {
@@ -128,12 +128,40 @@ function HomePage() {
                             </div>
                             <p>Beyond school and programming, I spend most of my time reading, training Brazilian Jiu-Jitsu, or watching MMA.</p>
 
-                            <p>Please contact me at <a className="clickable-link" href="mailto:adlaibridsonboyczuk@gmail.com">adlaibb@gmail.com</a></p>
-                            <p>Thanks!</p>
-                            <a href={resume} target="_blank" rel="noreferrer" className="rlink">
+                            <p>Please contact me at <a className="clickable-link" href="mailto:adlaibb@gmail.com">adlaibb@gmail.com</a></p>
+                            {/*<a href={resume} target="_blank" rel="noreferrer" className="rlink">
                                 Resume
-                            </a>
+                            </a>*/}
                         </div>
+                        
+
+                        <div id="projects" className='project'>
+                            <h3>Projects</h3>
+                            {projects.map((project, index) => (
+                                <div
+                                    key={index}
+                                    className='project-box'
+                                    onClick={() => toggleProject(index)}
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    <b>
+                                        <a
+                                            href={project.link}
+                                            className='clickable-link'
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {project.title}
+                                        </a>
+                                    </b>
+                                    <i> {project.tech}</i>
+                                    {expandedProjects.includes(index) && (
+                                        <li>{project.description}</li>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
                         <div className="skills-courses-container">
                             <div id="skills" className='skills'>
                                 <h3>Technical Skills</h3>
@@ -163,35 +191,6 @@ function HomePage() {
                                 <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-324" className="clickable-link" target="_blank" rel="noreferrer">Operating Systems</a></li>
                                 <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-327" className="clickable-link" target="_blank" rel="noreferrer">Software Quality Assurance</a></li>
                             </div>
-                        </div>
-
-                        <div id="projects" className='project'>
-                            <h3>Projects</h3>
-                            {projects.map((project, index) => (
-                                <div
-                                    key={index}
-                                    className='project-box'
-                                    onClick={() => toggleProject(index)}
-                                    style={{ cursor: "pointer" }}
-                                >
-                                    <b>
-                                        <a
-                                            href={project.link}
-                                            className='clickable-link'
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            {project.title}
-                                        </a>
-                                    </b>
-                                    <i>{project.tech}</i>
-                                    {expandedProjects.includes(index) && (
-                                        <li>{project.description}</li>
-                                    )}
-                                </div>
-                            ))}
-
-
                         </div>
                     </div>
                 </div>
