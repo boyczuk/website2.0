@@ -1,4 +1,5 @@
 import './Home.css';
+import { SetStateAction, useState } from 'react';
 import resume from '../assets/websiteresume.pdf';
 import me from '../assets/me.jpg';
 import me2 from '../assets/me2.jpg';
@@ -8,6 +9,89 @@ import FallingLeaves from '../components/FallingLeaves';
 
 
 function HomePage() {
+    const [expandedProjects, setExpandedProjects] = useState<number[]>([]);
+
+
+    const projects = [
+        {
+            title: "UAV Detection Capstone Thesis",
+            tech: "Python, PyTorch, YOLOv5, OpenCV, MATLAB, NumPy, pandas",
+            description: "Developed a YOLOv5-based detection system that achieved 77% accuracy in distinguishing UAVs from other aerial objects. Utilized OpenCV for visualization and label data normalization, resulting in 94.4% precision and 93.2% recall.",
+            link: "https://github.com/boyczuk",
+        },
+        {
+            title: "Arcade-Rate",
+            tech: "TypeScript, Node.js, Express.js, Firebase, React",
+            description: "Developed a full-stack web application that ranks, compares, and tracks video games. Integrated data from IGDB via an Express.js backend and hosted it with Firebase cloud functions.",
+            link: "https://github.com/boyczuk/web-arcade-rate",
+        },
+        {
+            title: "BlackMarket2D",
+            tech: "C#, Unity, 2D Game Development",
+            description: "Developed a crime-oriented 2D isometric game where players manage autonomous NPCs and control a criminal organization, featuring base-building mechanics and dynamic interactions.",
+            link: "https://github.com/boyczuk/BlackMarket2D",
+        },
+        {
+            title: "CNN for Tomato Disease Classification",
+            tech: "Python, Jupyter Notebooks, TensorFlow, Keras",
+            description: "Built a Convolutional Neural Network that classified tomato leaf diseases into 10 classes using over 11,000 images, achieving a 75% validation accuracy by implementing dropout layers to combat overfitting.",
+            link: "https://github.com/boyczuk",
+        },
+        {
+            title: "The World of Yasu",
+            tech: "TypeScript, React.js, Firebase, HTML, CSS, MaterialUI",
+            description: "Created a dynamic marketing and sales webapp for an energy drink company with a custom animated intro.",
+            link: "https://theworldofyasu.com",
+        },
+        {
+            title: "Proxima Command Starship Simulator",
+            tech: "Python, Pygame, CircuitPython",
+            description: "Programmed a Python-based starship emulator using Pygame, creating a proof-of-concept for a physical game room where two teams could compete against each other.",
+            link: "https://proximacommand.com/",
+        },
+        {
+            title: "Flappy Bird Q-Learning Reinforcement Learning Approach",
+            tech: "Python, OpenAI Gym, Reinforcement Learning, NumPy, Pandas",
+            description: "Implemented a model-free reinforcement learning algorithm to maximize the agent's score in the Flappy Bird game.",
+            link: "https://github.com/boyczuk/FlappyBird-ReinforcementLearning",
+        },
+        {
+            title: "Equities Trading Algorithm",
+            tech: "Python, Jupyter Notebooks, NumPy, pandas, QuantConnect, Scikit-learn",
+            description: "Created a Python-based trading algorithm that achieved an 18% profit over a 3-year backtest against the S&P 500. Combined SMA and RSI indicators to identify optimal short-selling opportunities in Tech and Real Estate sectors.",
+            link: "https://github.com/boyczuk",
+        },
+        {
+            title: "Spending Tracker",
+            tech: "JavaScript, React, Flask, Electron, Sqlite3, HTML, CSS, MaterialUI",
+            description: "Built a desktop application to track, view, and manage personal finances. Implemented a React frontend using Electron and a Flask backend for expense organization.",
+            link: "https://github.com/boyczuk",
+        },
+        {
+            title: "QBNB",
+            tech: "Python, Flask, MongoDB, Pytest, Linux, Docker",
+            description: "Collaborated on a Python-based property rental and booking CLI app, using Flask to manage user data in MongoDB. Developed automated unit and integration tests with Pytest, ensuring CI/CD pipeline quality through GitHub Actions.",
+            link: "https://github.com/mad-cat-lon/qbnb",
+        },
+        {
+            title: "Forest Rumble",
+            tech: "C#, Unity, HTML, Photoshop",
+            description: "Led the development of a 2D level-based platformer, introducing novel physics mechanics to enhance player movement.",
+            link: "https://github.com/boyczuk",
+        },
+    ];
+
+    const toggleProject = (index: number) => {
+        setExpandedProjects((prevExpandedProjects) => {
+            // If index is already in the array , remove it (collpase project description)
+            if (prevExpandedProjects.includes(index)) {
+                return prevExpandedProjects.filter((i) => i !== index);
+            }
+
+            return [...prevExpandedProjects, index]
+        });
+    }
+
     return (
         <div className='container'>
             <FallingLeaves />
@@ -82,97 +166,30 @@ function HomePage() {
                         </div>
 
                         <div id="projects" className='project'>
-
-                            <p className="project-boxes">
-                                <h3>Projects</h3>
-                                <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank" rel="noreferrer">
-                                    UAV Detection Capstone Thesis</a></b> | <i>Python, PyTorch, YOLOv5, OpenCV, MATLAB, NumPy, pandas</i>
-                                <li>
-                                    Developed a YOLOv5-based detection system that achieved 77% accuracy in distinguishing UAVs from other aerial objects. Utilized OpenCV for visualization and label data normalization, resulting in 94.4% precision and 93.2% recall.
-                                </li>
-                            </p>
-
-
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk/web-arcade-rate" className="clickable-link" target="_blank" rel="noreferrer">Arcade-Rate</a></b> | <i>TypeScript, Node.js, Express.js, Firebase, React</i>
-                                <li>
-                                    Developed a full-stack web application that ranks, compares, and tracks video games. Integrated data from IGDB via an Express.js backend and hosted it with Firebase cloud functions.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk/BlackMarket2D" className="clickable-link" target="_blank" rel="noreferrer">BlackMarket2D</a></b> | <i>C#, Unity, 2D Game Development</i>
-                                <li>
-                                    Developed a crime-oriented 2D isometric game where players manage autonomous NPCs and control a criminal organization, featuring base-building mechanics and dynamic interactions.
-                                </li>
-                            </p>
-
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank" rel="noreferrer">CNN for Tomato Disease Classification</a></b> | <i>Python, Jupyter Notebooks, TensorFlow, Keras</i>
-                                <li>
-                                    Built a Convolutional Neural Network that classified tomato leaf diseases into 10 classes using over 11,000 images, achieving a 75% validation accuracy by implementing dropout layers to combat overfitting.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://theworldofyasu.com" className="clickable-link" target="_blank" rel="noreferrer">The World of Yasu</a></b> |{" "}
-                                <i>Typescript, React.js, Firebase, HTML, CSS, MaterialUI</i>
-                                <li>
-                                    Created a dynamic marketing and sales webapp for an energy drink company with a custom animated intro.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://proximacommand.com/" className="clickable-link" target="_blank" rel="noreferrer">
-                                    Proxima Command Starship Simulator</a></b> | <i>Python, Pygame, CircuitPython</i>
-                                <li>
-                                    Programmed a Python-based starship emulator using Pygame, creating a proof-of-concept for a physical game
-                                    room where two teams could compete against each other.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk/FlappyBird-ReinforcementLearning" className="clickable-link" target="_blank" rel="noreferrer">
-                                    Flappy Bird Q-Learning Reinforcement Learning Approach</a></b> | <i>Python, OpenAI Gym, Reinforcement Learning, NumPy, Pandas</i>
-                                <li>
-                                    Implemented a model-free reinforcement learning algorithm to maximize the agent's score in the Flappy Bird game.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank" rel="noreferrer">Equities Trading Algorithm</a></b> |{" "}
-                                <i>Python, Jupyter Notebooks, NumPy, pandas, QuantConnect, Scikit-learn</i>
-                                <li>
-                                    Created a Python-based trading algorithm that achieved an 18% profit over a 3-year backtest against the S&P 500. Combined SMA and RSI indicators to identify optimal short-selling opportunities in Tech and Real Estate sectors.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank" rel="noreferrer">Spending Tracker</a></b> |{" "}
-                                <i>Javascript, React, Flask, Electron, Sqlite3, HTML, CSS, MaterialUI</i>
-                                <li>
-                                    Built a desktop application to track, view, and manage personal finances. Implemented a React frontend using Electron and a Flask backend for expense organization.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/mad-cat-lon/qbnb" className="clickable-link" target="_blank" rel="noreferrer">QBNB</a></b> | <i>Python, Flask, MongoDB, Pytest, Linux, Docker</i>
-                                <li>
-                                    Collaborated on a Python-based property rental and booking CLI app, using Flask to manage user data in MongoDB.
-                                </li>
-                                <li>
-                                    Developed automated unit and integration tests with Pytest, ensuring CI/CD pipeline quality through GitHub Actions.
-                                </li>
-                            </p>
-
-                            <p className="project-boxes">
-                                <b><a href="https://github.com/boyczuk" className="clickable-link" target="_blank" rel="noreferrer">Forest Rumble</a></b> | <i>C#, Unity, HTML, Photoshop</i>
-                                <li>
-                                    Led the development of a 2D level-based platformer, introducing novel physics mechanics to enhance player movement.
-                                </li>
-                            </p>
+                            <h3>Projects</h3>
+                            {projects.map((project, index) => (
+                                <div
+                                    key={index}
+                                    className='project-box'
+                                    onClick={() => toggleProject(index)}
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    <b>
+                                        <a
+                                            href={project.link}
+                                            className='clickable-link'
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {project.title}
+                                        </a>
+                                    </b>
+                                    <i>{project.tech}</i>
+                                    {expandedProjects.includes(index) && (
+                                        <li>{project.description}</li>
+                                    )}
+                                </div>
+                            ))}
 
 
                         </div>
