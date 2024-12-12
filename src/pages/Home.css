@@ -20,7 +20,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #af4e2c; /* Darker orange for hover and focus */
+    color: #af4e2c;
     text-decoration: underline; 
 }
 
@@ -32,25 +32,25 @@ a:focus {
 
 .about .clickable-link:hover,
 .about .clickable-link:focus {
-    color: #4b2a1a; /* Dark brown for focus */
+    color: #4b2a1a;
     text-decoration: underline; 
 }
 
 .rlink {
     text-decoration: none;
-    color: #e07a3f; /* Warm orange for emphasized links */
+    color: #e07a3f; 
     transition: color 0.3s ease;
     font-size: 40px;
 }
 
 .rlink:hover,
 .rlink:focus {
-    color: #4b2a1a; /* Dark brown on hover */
+    color: #4b2a1a;
     text-decoration: underline;
 }
 
 .container {
-    color: #4b2a1a; /* Adjusted text color for readability */
+    color: #4b2a1a; 
     position: relative;
     display: flex;
     width: 100%;
@@ -61,8 +61,8 @@ a:focus {
     position: fixed;
     width: 200px;
     z-index: 1000;
-    background: rgba(255, 223, 191, 0.9); /* Light cream background */
-    border-right: 2px solid #e07a3f; /* Warm orange border */
+    background: rgba(255, 223, 191, 0.9); 
+    border-right: 2px solid #e07a3f; 
 }
 
 .content {
@@ -82,7 +82,7 @@ a:focus {
     font-size: 40px;
     font-weight: bold;
     margin-top: 5%;
-    color: #e07a3f; /* Warm orange for the title */
+    color: #e07a3f;
 }
 
 .sections {
@@ -91,7 +91,7 @@ a:focus {
     text-align: left;
     margin-right: 20%;
     margin-left: 20%;
-    background: rgba(255, 235, 210, 0.808); /* Soft cream for sections */
+    background: rgba(255, 235, 210, 0.808);
     backdrop-filter: blur(5px);
     border-radius: 10px;
     padding: 20px;
@@ -105,11 +105,48 @@ a:focus {
 .h3 {
     text-decoration: underline;
     font-size: 32px;
-    color: #e07a3f; /* Warm orange for smaller headings */
+    color: #e07a3f;
 }
 
-.project-boxes li {
-    color: #8e44ad; /* Purple for project list items */
+.project-box {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(235, 205, 169, 0.808);;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-box:hover {
+    background-color: rgba(255, 235, 210, 0.808);
+}
+
+.project-box li {
+    margin-top: 10px;
+    list-style-type: disc;
+}
+
+.show-more-container {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.show-more-btn {
+    background-color: #555555dc;
+    color: white;
+    border: 1px solid #555555dc;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.show-more-btn:hover {
+    background-color: #555;
+    transform: scale(1.05); 
 }
 
 .project li,
@@ -122,14 +159,14 @@ a:focus {
 
 .skills h3 {
     font-size: 26px;
-    color: #e07a3f; /* Warm orange for skills heading */
+    color: #e07a3f;
     margin-bottom: 20px;
 }
 
 .skills b {
     display: block;
     font-size: 20px;
-    color: #af4e2c; /* Dark orange for emphasis */
+    color: #af4e2c; 
     margin-top: 15px;
     margin-bottom: 5px;
 }
@@ -146,11 +183,36 @@ a:focus {
     flex: 1;
     margin: 20px;
     margin-bottom: 80px;
-    background: rgba(255, 223, 191, 0.8); /* Light cream background */
+    margin-top: 10%;
+    background: rgba(255, 223, 191, 0.8);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
+
+.courses ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+}
+
+.courses li {
+    margin: 10px 0; 
+    display: inline-block; 
+}
+
+.courses a {
+    text-decoration: none;
+    color: #333; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.courses a:hover {
+    color: #007bff;
+}
+
 
 .courses .clickable-link {
     color: #e07a3f;
@@ -217,35 +279,35 @@ a:focus {
     }
 
     .courses {
-        background: rgba(255, 235, 200, 0.6); /* Light cream background for courses */
+        background: rgba(255, 235, 200, 0.6);
     }
 
     .skills {
-        background: rgba(255, 235, 200, 0.6); /* Light cream background for skills */
+        background: rgba(255, 235, 200, 0.6);
     }
 }
 
 .icon {
     font-size: 3.5rem;
-    color: #4b2a1a; /* Dark brown for icons */
+    color: #4b2a1a; 
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icon:hover {
     transform: scale(1.2);
-    color: #e07a3f; /* Warm orange on hover */
+    color: #e07a3f;
 }
 
 .linkedin-icon:hover {
-    color: #0e76a8; /* LinkedIn blue */
+    color: #0e76a8;
 }
 
 .github-icon:hover {
-    color: #2c3e50; /* GitHub dark gray */
+    color: #2c3e50;
 }
 
 .smoothcomp-icon:hover {
-    color: #00f39e; /* Smoothcomp green */
+    color: #00f39e;
 }
 
 @media screen and (max-width: 850px) {
