@@ -125,6 +125,30 @@ a:focus {
     list-style-type: disc;
 }
 
+.show-more-container {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.show-more-btn {
+    background-color: #555555dc;
+    color: white;
+    border: 1px solid #555555dc;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.show-more-btn:hover {
+    background-color: #555;
+    transform: scale(1.05); 
+}
+
 .project li,
 .skills li {
     list-style-type: none;

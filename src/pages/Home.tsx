@@ -4,13 +4,13 @@ import resume from '../assets/websiteresume.pdf';
 import me from '../assets/me.jpg';
 import me2 from '../assets/me2.jpg';
 import me5 from '../assets/me5.jpg';
-import { FaLinkedin, FaGithub, FaFistRaised } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaFistRaised, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import FallingLeaves from '../components/FallingLeaves';
 
 
 function HomePage() {
     const [expandedProjects, setExpandedProjects] = useState<number[]>([]);
-
+    const [showAll, setShowAll] = useState(false);
 
     const projects = [
         {
@@ -82,14 +82,15 @@ function HomePage() {
     ];
 
     const toggleProject = (index: number) => {
-        setExpandedProjects((prevExpandedProjects) => {
-            // If index is already in the array , remove it (collpase project description)
-            if (prevExpandedProjects.includes(index)) {
-                return prevExpandedProjects.filter((i) => i !== index);
-            }
+        setExpandedProjects((prevExpandedProjects) =>
+            prevExpandedProjects.includes(index)
+                ? prevExpandedProjects.filter((i) => i !== index) // Remove index
+                : [...prevExpandedProjects, index] // Add index
+        );
+    }
 
-            return [...prevExpandedProjects, index]
-        });
+    const toggleShowAll = () => {
+        setShowAll(!showAll);
     }
 
     return (
@@ -133,11 +134,11 @@ function HomePage() {
                                 Resume
                             </a>*/}
                         </div>
-                        
+
 
                         <div id="projects" className='project'>
                             <h3>Projects</h3>
-                            {projects.map((project, index) => (
+                            {projects.slice(0, showAll ? projects.length : 5).map((project, index) => (
                                 <div
                                     key={index}
                                     className='project-box'
@@ -155,11 +156,22 @@ function HomePage() {
                                         </a>
                                     </b>
                                     <i> {project.tech}</i>
-                                    {expandedProjects.includes(index) && (
-                                        <li>{project.description}</li>
-                                    )}
+                                    {expandedProjects.includes(index) && <li>{project.description}</li>}
                                 </div>
                             ))}
+                        </div>
+                        <div className='show-more-container'>
+                            <button onClick={toggleShowAll} className='show-more-btn'>
+                                {showAll ? (
+                                    <>
+                                        Show Less <FaChevronUp />
+                                    </>
+                                ) : (
+                                    <>
+                                        Show All <FaChevronDown />
+                                    </>
+                                )}
+                            </button>
                         </div>
 
                         <div className="skills-courses-container">
