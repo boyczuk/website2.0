@@ -223,7 +223,7 @@ a:focus {
 
 .courses .clickable-link:hover,
 .courses .clickable-link:focus {
-    color: #4b2a1a; /* Dark brown for focus */
+    color: #4b2a1a;
     text-decoration: underline; 
 }
 
@@ -243,35 +243,58 @@ a:focus {
     aspect-ratio: 2 / 2; 
 }
 
-@media screen and (max-width: 850px) {
-    body {
-        font-size: 11px; 
-    }
-
-    .title {
-        font-size: 30px; 
+@media screen and (max-width: 1179px) {
+    .navbar {
+        display: none;
     }
 
     .sections {
-        font-size: 18px; 
+        font-size: 24px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .header {
+        margin-left: 20px;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 10px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .sections {
+        font-size: 16px;
     }
 
     .h3 {
-        font-size: 24px; 
+        font-size: 20px;
     }
 
     .skills h3 {
-        font-size: 22px; 
+        font-size: 18px;
     }
 
     .skills b {
-        font-size: 11px; 
+        font-size: 10px;
     }
 
     .rlink {
-        font-size: 32px;
+        font-size: 24px;
     }
 }
+
+
 
 @media screen and (max-width: 850px) {
     .image-row {
@@ -323,22 +346,3 @@ a:focus {
     }
 }
 
-@media screen and (max-width: 1179px) {
-    .navbar {
-        display: none;
-    }
-
-    .sections {
-        font-size: 24px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .header {
-        margin-left: 20px;
-    }
-
-    .content {
-        padding: 0 20px;
-    }
-}
