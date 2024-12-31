@@ -192,17 +192,20 @@ function HomePage() {
                                 </li>
                             </div>
 
-                            <div id="courses" className='courses'>
+                            <div id="courses" className="courses">
                                 <h3>Relevant Courses</h3>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-455" className="clickable-link" target="_blank" rel="noreferrer">Evolutionary Optimization</a></li>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-474" className="clickable-link" target="_blank" rel="noreferrer">Reinforcement Learning</a></li>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-365" className="clickable-link" target="_blank" rel="noreferrer">Algorithms</a></li>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-235" className="clickable-link" target="_blank" rel="noreferrer">Data Structures</a></li>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-352" className="clickable-link" target="_blank" rel="noreferrer">Artificial Intelligence</a></li>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-452" className="clickable-link" target="_blank" rel="noreferrer">Neural & Genetic Computing</a></li>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-324" className="clickable-link" target="_blank" rel="noreferrer">Operating Systems</a></li>
-                                <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-327" className="clickable-link" target="_blank" rel="noreferrer">Software Quality Assurance</a></li>
+                                <ul>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-455" className="clickable-link" target="_blank" rel="noreferrer">Evolutionary Optimization</a></li>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-474" className="clickable-link" target="_blank" rel="noreferrer">Reinforcement Learning</a></li>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-365" className="clickable-link" target="_blank" rel="noreferrer">Algorithms</a></li>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-235" className="clickable-link" target="_blank" rel="noreferrer">Data Structures</a></li>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-352" className="clickable-link" target="_blank" rel="noreferrer">Artificial Intelligence</a></li>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-452" className="clickable-link" target="_blank" rel="noreferrer">Neural & Genetic Computing</a></li>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-324" className="clickable-link" target="_blank" rel="noreferrer">Operating Systems</a></li>
+                                    <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-327" className="clickable-link" target="_blank" rel="noreferrer">Software Quality Assurance</a></li>
+                                </ul>
                             </div>
+
                         </div>
                     </div>
                 </div>
