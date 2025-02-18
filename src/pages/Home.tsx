@@ -193,7 +193,7 @@ function HomePage() {
                             </div>
 
                             <div id="courses" className="courses">
-                                <h3>Relevant Courses</h3>
+                                <h3>Relevant University Coursework</h3>
                                 <ul>
                                     <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-455" className="clickable-link" target="_blank" rel="noreferrer">Evolutionary Optimization</a></li>
                                     <li><a href="https://www.cs.queensu.ca/undergraduate/courses/CISC-474" className="clickable-link" target="_blank" rel="noreferrer">Reinforcement Learning</a></li>
