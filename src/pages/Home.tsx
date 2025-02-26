@@ -179,15 +179,15 @@ function HomePage() {
                                 <h3>Technical Skills</h3>
                                 <b>Languages:</b>
                                 <li>
-                                    Python, JavaScript, Typescript, Java, C, Bash, x86 Assembly,
+                                    Python, JavaScript, Typescript, Go, Java, C++, Bash, x86 Assembly
                                 </li>
                                 <b>Frameworks:</b>
                                 <li>
-                                    HTML/CSS, jQuery, Node.js, Express.js, React, Flask, Unity
+                                    Node.js, React, HTML/CSS, jQuery, Express.js Flask, Unity
                                 </li>
                                 <b>Technologies:</b>
                                 <li>
-                                    MongoDB, MySQL, pandas, NumPy, Pytest, Linux, Excel, Git,
+                                    PostgreSQL, AWS, Firebase, MongoDB, MySQL, pandas, NumPy, Pytest, Linux, Excel, Git,
                                     Docker, VS Code, NetBeans, Eclipse{" "}
                                 </li>
                             </div>
