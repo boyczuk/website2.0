@@ -1,0 +1,348 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    font-family: "Georgia", serif; 
+    background: linear-gradient(to bottom, #fbe8d3, #ffb385);
+    background-image: url('../assets/autumn-background2.jpg');
+    background-size: cover; 
+    background-position: center 10%; 
+    background-repeat: no-repeat; 
+    color: #4b2a1a;
+}
+
+a {
+    color: #e07a3f;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+a:hover,
+a:focus {
+    color: #af4e2c;
+    text-decoration: underline; 
+}
+
+.about .clickable-link {
+    color: #e07a3f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about .clickable-link:hover,
+.about .clickable-link:focus {
+    color: #4b2a1a;
+    text-decoration: underline; 
+}
+
+.rlink {
+    text-decoration: none;
+    color: #e07a3f; 
+    transition: color 0.3s ease;
+    font-size: 40px;
+}
+
+.rlink:hover,
+.rlink:focus {
+    color: #4b2a1a;
+    text-decoration: underline;
+}
+
+.container {
+    color: #4b2a1a; 
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar {
+    position: fixed;
+    width: 200px;
+    z-index: 1000;
+    background: rgba(255, 223, 191, 0.9); 
+    border-right: 2px solid #e07a3f; 
+}
+
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100vh;
+    line-height: 1.5;
+}
+
+.header {
+    text-align: left;
+    margin-left: 5%;
+}
+
+.title {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 5%;
+    color: #e07a3f;
+}
+
+.sections {
+    color: #4b2a1a;
+    font-size: 22px;
+    text-align: left;
+    margin-right: 20%;
+    margin-left: 20%;
+    background: rgba(255, 235, 210, 0.808);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.smaller-sec {
+    padding-bottom: 10%;
+}
+
+.h3 {
+    text-decoration: underline;
+    font-size: 32px;
+    color: #e07a3f;
+}
+
+.project-box {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(235, 205, 169, 0.808);;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-box:hover {
+    background-color: rgba(255, 235, 210, 0.808);
+}
+
+.project-box li {
+    margin-top: 10px;
+    list-style-type: disc;
+}
+
+.show-more-container {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.show-more-btn {
+    background-color: #e07a3fba;
+    color: white;
+    border: 1px solid #e07a3f;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; 
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.show-more-btn:hover {
+    background-color: #e07a3fa6;
+    transform: scale(1.05); 
+}
+
+.project li,
+.skills li {
+    list-style-type: none;
+    color: #4b2a1a;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.skills h3 {
+    font-size: 26px;
+    color: #e07a3f;
+    margin-bottom: 20px;
+}
+
+.skills b {
+    display: block;
+    font-size: 20px;
+    color: #af4e2c; 
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.skills-courses-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.skills,
+.courses {
+    flex: 1;
+    margin: 20px;
+    margin-bottom: 80px;
+    margin-top: 10%;
+    background: rgba(255, 223, 191, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.courses ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+}
+
+.courses li {
+    margin: 10px 0; 
+    display: block; 
+}
+
+.courses a {
+    text-decoration: none;
+    color: #333; 
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.courses a:hover {
+    color: #007bff;
+}
+
+
+.courses .clickable-link {
+    color: #e07a3f;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.courses .clickable-link:hover,
+.courses .clickable-link:focus {
+    color: #4b2a1a;
+    text-decoration: underline; 
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+}
+
+.image-row img {
+    max-width: 33%;
+    height: auto;
+    margin: 0 5px;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    object-fit: cover; 
+    aspect-ratio: 2 / 2; 
+}
+
+@media screen and (max-width: 1179px) {
+    .navbar {
+        display: none;
+    }
+
+    .sections {
+        font-size: 24px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .header {
+        margin-left: 20px;
+    }
+
+    .content {
+        padding: 0 20px;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 10px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .sections {
+        font-size: 16px;
+    }
+
+    .h3 {
+        font-size: 20px;
+    }
+
+    .skills h3 {
+        font-size: 18px;
+    }
+
+    .skills b {
+        font-size: 10px;
+    }
+
+    .rlink {
+        font-size: 24px;
+    }
+}
+
+
+
+@media screen and (max-width: 850px) {
+    .image-row {
+        display: none;
+    }
+
+    .courses {
+        background: rgba(255, 235, 200, 0.6);
+    }
+
+    .skills {
+        background: rgba(255, 235, 200, 0.6);
+    }
+}
+
+.icon {
+    font-size: 3.5rem;
+    color: #4b2a1a; 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    color: #e07a3f;
+}
+
+.linkedin-icon:hover {
+    color: #0e76a8;
+}
+
+.github-icon:hover {
+    color: #2c3e50;
+}
+
+.smoothcomp-icon:hover {
+    color: #00f39e;
+}
+
+@media screen and (max-width: 850px) {
+    .skills-courses-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills,
+    .courses {
+        margin: 20px 0;
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,132 @@
+.bar {
+    background-color: #F9F9F9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Use flexbox to separate left & right sections */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-left: 9%;
+    padding-right: 5%;
+    font-size: 25px;
+}
+
+/* Left-side navigation items */
+.nav-left {
+    display: flex;
+    gap: 3%;
+    padding: 0;
+    
+    list-style: none;
+}
+
+/* Right-side items (Français + Contact) */
+.nav-right {
+    display: flex;
+    gap: 20px;
+    margin-left: auto;
+    align-items: center;
+    list-style: none;
+}
+
+/* Individual buttons */
+.nav-button {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 5px 10px;
+}
+
+.nav-button:hover {
+    color: #369BED;
+}
+
+@media (min-width: 951px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* Hide default navbar for mobile */
+@media (max-width: 950px) {
+    .nav-container {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex !important;
+        font-size: 50px !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: black;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+}
+
+/* Mobile Menu */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1100;
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile menu items */
+.mobile-menu-item {
+    font-size: 38px;
+    color: white;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: color 0.2s ease-in-out;
+    border: none;
+    background: none;
+}
+
+.mobile-menu-item:hover {
+    color: #369BED;
+}
+
+/* Close button */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+}

@@ -1,0 +1,26 @@
+.contact-popup {
+    position: absolute;
+    user-select: text;
+    top: 100%; /* Ensures the popup is directly below */
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    background: #F9F9F9;
+    color: black;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+    z-index: 100;
+    white-space: nowrap;
+    width: max-content; /* Ensures the popup covers the button width */
+    min-width: 100%; /* Make sure it is at least as wide as the button */
+    text-align: center;
+}
+
+.contact-popup.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
