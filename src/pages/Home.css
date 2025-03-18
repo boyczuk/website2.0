@@ -309,3 +309,12 @@
     }
 }
 
+
+.warning-text {
+    background-color: #ffeb3b; /* Yellow warning color */
+    color: #333; /* Darker text for readability */
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block; /* Ensures proper spacing */
+}
