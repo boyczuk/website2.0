@@ -88,6 +88,7 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 350px; /* Reduce height slightly */
+    cursor: pointer;
 }
 
 .project-box:hover {
@@ -190,6 +191,44 @@
     font-weight: bold;
 }
 
+.scroll-arrow {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: #369BED;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+}
+
+@media (min-width: 1570px) and (max-width: 1800px) {
+    .scroll-arrow {
+        bottom: 13%;
+    }
+
+}
+
+@media (min-width: 1370px) and (max-width: 1569px) {
+    .scroll-arrow {
+        bottom: 15%;
+    }
+
+}
+
+/* Smooth bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@media (max-width: 1370px) {
+    .scroll-arrow {
+        display: none;
+    }
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .experience-entry {
@@ -213,6 +252,10 @@
         width: calc(45% - 20px); /* Show two per row on medium screens */
         max-width: 400px;
     }
+
+    .main-page {
+        margin-top: 3%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -221,3 +264,48 @@
         max-width: none;
     }
 }
+
+@media (max-width: 1370px) {
+    .intro {
+        flex-direction: column-reverse; /* Move text below the image */
+        align-items: center;
+        text-align: left;
+    }
+
+    .big-intro-text {
+        text-align: left; /* Ensure text is centered */
+    }
+}
+
+@media (max-width: 542px) {
+    .intro-image img {
+        width: 300px; /* Reduce image size */
+        height: auto;
+    }
+
+    .big-intro-text {
+        font-size: 21px; /* Reduce text size */
+    }
+
+    .small-intro-text {
+        font-size: 18px; /* Reduce subtext size */
+    }
+
+    .project-container {
+        padding: 2%;
+    }
+
+    .experience-details h2 {
+        text-align: left;
+    }
+
+    .experience-entry {
+        padding: 0%;
+        padding-top: 2%;
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-bottom: 10%;
+        gap: 0px;
+    }
+}
+

@@ -80,14 +80,14 @@ function Navbar({
 
                 {/* Hamburger Icon (Visible Below 950px) */}
                 <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-                    {menuOpen ? <CloseIcon /> : <MenuIcon />}
+                    {menuOpen ? <CloseIcon className="hamburger-icon" /> : <MenuIcon className="hamburger-icon" />}
                 </button>
             </div>
 
             {/* Full-Screen Overlay Menu */}
             <div className={`mobile-menu-overlay ${menuOpen ? "open" : ""}`}>
                 <button className="close-menu" onClick={() => setMenuOpen(false)}>
-                    <CloseIcon />
+                    <CloseIcon className="hamburger-icon" />
                 </button>
                 <ul>
                     {navItems.map((item) => (

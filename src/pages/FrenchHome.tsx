@@ -1,7 +1,7 @@
 import './Home.css';
 import meImage from '../assets/image.png';
 import { SetStateAction, useState } from 'react';
-import { FaLinkedin, FaGithub, FaFistRaised, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaFistRaised } from 'react-icons/fa';
 import tangleChatImg from '../assets/project_covers/tanglechat.jpg';
 import arcadeRateImg from '../assets/project_covers/arcaderate.jpg';
 import blackMarketImg from '../assets/project_covers/blackmarket.jpg';
@@ -22,18 +22,19 @@ type Project = {
     desc: string;
     skills: string;
     image: string;
+    link: string;
 }
 
 const projects: Project[] = [
-    { id: 1, name: "Tangle-chat", desc: "Une application de messagerie décentralisée.", skills: "Javascript, Go, React, PostgreSQL, AWS EC2, Docker", image: tangleChatImg },
-    { id: 2, name: "Arcade-Rate", desc: "Une plateforme de notation de jeux vidéo.", skills: "TypeScript, Node.js, React, Firebase", image: arcadeRateImg },
-    { id: 3, name: "Black Market - Jeu Unity", desc: "Un jeu criminel en 2D.", skills: "C#, Unity, Développement de jeux 2D", image: blackMarketImg },
-    { id: 4, name: "Le Monde de Yasu", desc: "Un jeu d'exploration en ligne.", skills: "TypeScript, React, Firebase, TailwindCSS", image: yasuImg },
-    { id: 5, name: "Proxima Command", desc: "Un projet de commande spatiale basé sur Arduino.", skills: "Python, Pygame, CircuitPython, Arduino", image: proximaImg },
-    { id: 6, name: "Flappy Bird Apprentissage par Renforcement", desc: "Une IA qui joue à Flappy Bird grâce au RL.", skills: "Python, PyTorch, OpenAI Gym, NumPy, Pandas", image: flappyBirdImg },
-    { id: 7, name: "Bot de Trading d'Actions", desc: "Un bot automatisé pour le trading d'actions.", skills: "Python, QuantConnect, Jupyter Notebook, NumPy, Pandas, Scikit-learn", image: quantImg },
-    { id: 8, name: "QBNB - Clone d'Airbnb", desc: "Un clone d'Airbnb.", skills: "Python, Flask, MongoDB, Pytest, Linux, Docker", image: qbnbImg },
-    { id: 9, name: "Détection d'UAV", desc: "Un modèle d'apprentissage machine pour la détection de drones.", skills: "Python, YOLOv5, OpenCV", image: uavImg }
+    { id: 1, name: "Tangle-chat", desc: "Une application de chat décentralisée.", skills: "Javascript, Go, React, PostgreSQL, AWS EC2, Docker", image: tangleChatImg, link: "https://github.com/boyczuk/GoChat" },
+    { id: 2, name: "Arcade-Rate", desc: "Une plateforme de notation de jeux vidéo.", skills: "TypeScript, Node.js, React, Firebase", image: arcadeRateImg, link: "https://github.com/boyczuk/web-arcade-rate" },
+    { id: 3, name: "Black Market - Jeu Unity", desc: "Un jeu 2D sur le crime.", skills: "C#, Unity, Développement de jeux 2D", image: blackMarketImg, link: "https://github.com/boyczuk/BlackMarket2D" },
+    { id: 4, name: "The World of Yasu", desc: "Un jeu d'exploration en ligne.", skills: "TypeScript, React, Firebase, TailwindCSS", image: yasuImg, link: "https://theworldofyasu.com/explore-world" },
+    { id: 5, name: "Proxima Command", desc: "Un simulateur de vaisseau spatial conçu avec Arduino.", skills: "Python, Pygame, CircuitPython, Arduino", image: proximaImg, link: "https://proximacommand.com/" },
+    { id: 6, name: "Flappy Bird Reinforcement Learning", desc: "Un modèle d'IA joue à Flappy Bird en utilisant l'apprentissage par renforcement.", skills: "Python, PyTorch, OpenAI Gym, NumPy, Pandas", image: flappyBirdImg, link: "https://github.com/boyczuk/FlappyBird-ReinforcementLearning" },
+    { id: 7, name: "Bot de Trading en Bourse", desc: "Un bot de trading automatisé.", skills: "Python, QuantConnect, Jupyter Notebook, NumPy, Pandas, Scikit-learn", image: quantImg, link: "https://github.com/boyczuk" },
+    { id: 8, name: "QBNB - Clone d'Airbnb", desc: "Un clone d'Airbnb.", skills: "Python, Flask, MongoDB, Pytest, Linux, Docker", image: qbnbImg, link: "https://github.com/mad-cat-lon/qbnb" },
+    { id: 9, name: "Détection UAV", desc: "Un modèle de Machine Learning pour la détection des drones.", skills: "Python, YOLOv5, OpenCV", image: uavImg, link: "https://l1nna.com/" }
 ];
 
 function FrenchHomePage() {
@@ -41,11 +42,11 @@ function FrenchHomePage() {
         <div className='main-page'>
             <div id='intro' className='intro'>
                 <div className='big-intro-text'>
-                    Salut! Je suis <span className='highlight'>Adlai Bridson-Boyczuk</span>,<br></br>
-                    un développeur logiciel et diplômé en informatique de l'Université Queen’s.
+                    Salut ! Je suis <span className='highlight'>Adlai Bridson-Boyczuk</span>,<br></br>
+                    développeur logiciel et diplômé en informatique de l'Université Queen’s.
                     <div className='small-intro-text'>
-                        J'adore créer des choses ! J'aime travailler sur des applications web et utiliser
-                        TypeScript, Python, React et Go. Actuellement, j'apprends encore et j'explore de nouvelles technologies !
+                        J'adore créer des choses ! Professionnellement, j’ai développé des applications web avec TypeScript, React et Firebase.
+                        Actuellement, j’apprends Go et j'approfondis mes connaissances en Java.
                     </div>
                 </div>
 
@@ -57,13 +58,14 @@ function FrenchHomePage() {
                         <li><FaFistRaised onClick={() => window.open('https://smoothcomp.com/en/profile/1073699', '_blank')} /></li>
                     </div>
                 </div>
+
             </div>
 
             <div id='projects' className='projects'>
                 <h1>Projets</h1>
                 <div className='project-container'>
                     {projects.map((project) => (
-                        <div className='project-box'>
+                        <div className='project-box' onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}>
                             <img className='project-cover' src={project.image} alt={project.name}></img>
                             <p>{project.name}</p>
                         </div>
@@ -76,59 +78,63 @@ function FrenchHomePage() {
 
                 <div className="experience-entry">
                     <img src={ProximaCommandLogo} alt="Proxima Command" className="experience-logo" />
-                    
                     <div className="experience-details">
                         <h2>Développeur Logiciel · Proxima Command</h2>
-                        <div className="experience-time">2024 — Présent</div>
+                        <div className="experience-time">Juillet 2024 – Oct 2024</div>
                         <p>
-                            Développement d'un logiciel en Python pour un simulateur spatial 8 joueurs.
-                            Intégration de contrôles physiques avec un ingénieur en mécanique.
-                            Optimisation du traitement des entrées, réduisant la latence de 30ms.
+                            Développement d’un simulateur de vaisseau spatial en Python pour une arcade à 8 joueurs, en intégrant des contrôles physiques via Arduino et PySerial. Optimisation du traitement des entrées et réduction de la latence de 30 ms grâce à un système multithread.
                         </p>
                         <div className="experience-skills">
                             <span>Python</span>
                             <span>Pygame</span>
                             <span>Arduino</span>
                             <span>Multithreading</span>
+                            <span>Concurrency</span>
+                            <span>Asyncio</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="experience-entry">
                     <img src={theWorldofYasuLogo} alt="World of Yasu" className="experience-logo" />
-                    
                     <div className="experience-details">
-                        <h2>Développeur Junior · Le Monde de Yasu</h2>
-                        <div className="experience-time">2023 — 2024</div>
+                        <h2>Développeur Junior · The World of Yasu</h2>
+                        <div className="experience-time">Mai 2023 – Jan 2024</div>
                         <p>
-                            Création d'une application web avec une animation d'intro personnalisée pour une startup de boisson énergisante.
-                            Optimisation des performances de 100% grâce à un CDN et compatibilité mobile assurée.
+                            Développé une application web interactive pour une startup en énergie avec TypeScript et React, réduisant le taux de rebond de 30%.
                         </p>
                         <div className="experience-skills">
                             <span>TypeScript</span>
                             <span>React</span>
                             <span>Tailwind CSS</span>
                             <span>Firebase</span>
+                            <span>CI/CD</span>
+                            <span>UI/UX</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="experience-entry">
-                    <img src={QueensLogo} alt="Queen's University" className="experience-logo" />
-                    
+                    <img src={QueensLogo} alt="Université Queen’s" className="experience-logo" />
                     <div className="experience-details">
-                        <h2>Informatique · Université Queen's</h2>
-                        <div className="experience-time">2020 — 2024</div>
+                        <h2>Informatique · Université Queen’s</h2>
+                        <div className="experience-time">Sept 2020 – Avril 2024</div>
                         <p>
-                            Obtention d'un baccalauréat spécialisé en informatique avec une moyenne de 3.7.
-                            Spécialisation en développement logiciel, structures de données et intelligence artificielle.
-                            Réalisation d'un projet de fin d'études sur la détection de drones à l'aide de l'apprentissage machine.
+                            Diplôme en informatique avec une moyenne de 3.7 GPA, spécialisé en Intelligence Artificielle. Mon projet de fin d’études était axé sur la détection de drones avec Machine Learning (YOLOv5 et OpenCV).<br></br> Liste d'honneur du Doyen (2022, 2023, 2024).
                         </p>
                         <div className="experience-skills">
                             <span>Python</span>
-                            <span>Apprentissage Automatique</span>
-                            <span>YOLOv5</span>
-                            <span>OpenCV</span>
+                            <span>Java</span>
+                            <span>C#</span>
+                            <span>C</span>
+                            <span>SQL</span>
+                            <span>PHP</span>
+                            <span>Bash Scripting</span>
+                            <span>Unity</span>
+                            <span>Programmation Fonctionnelle</span>
+                            <span>Vision par Ordinateur</span>
+                            <span>Apprentissage Profond</span>
+                            <span>Apprentissage par Renforcement</span>
                         </div>
                     </div>
                 </div>
