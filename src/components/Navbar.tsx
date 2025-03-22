@@ -72,7 +72,7 @@ function Navbar({
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <button className="nav-button">{isFrench ? "Contactez-moi" : "Contact me"}</button>
+                            <button className="nav-button">{isFrench ? "Contactez-moi" : "Contact info"}</button>
                             <ContactPopup isPopupOpen={isPopupOpen} setPopupOpen={setPopupOpen} />
                         </li>
                     </ul>
@@ -80,7 +80,7 @@ function Navbar({
 
                 {/* Hamburger Icon (Visible Below 950px) */}
                 <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-                    {menuOpen ? <CloseIcon className="hamburger-icon" /> : <MenuIcon className="hamburger-icon" />}
+                    {menuOpen ? "" : <MenuIcon className="hamburger-icon" />}
                 </button>
             </div>
 

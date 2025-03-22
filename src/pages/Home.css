@@ -26,7 +26,7 @@
     list-style: none;
     justify-content: center;
     gap: 10px;
-   
+
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
@@ -64,7 +64,7 @@
 .projects h1 {
     font-size: 42px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 .project-container {
@@ -76,8 +76,10 @@
 }
 
 .project-box {
-    width: calc(30% - 20px); /* Reduce width from 33.33% to 30% */
-    max-width: 500px; /* Reduce the max width */
+    width: calc(30% - 20px);
+    /* Reduce width from 33.33% to 30% */
+    max-width: 500px;
+    /* Reduce the max width */
     text-align: center;
     padding: 15px;
     background: #1e1f2b;
@@ -86,25 +88,59 @@
     transition: transform 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 350px; /* Reduce height slightly */
+    min-height: 350px;
+    /* Reduce height slightly */
     cursor: pointer;
+    align-items: center;
 }
 
 .project-box:hover {
     transform: scale(1.05);
 }
 
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
 .project-cover {
     width: 100%;
-    height: 300px; /* Reduce image height */
+    height: 300px;
+    /* Reduce image height */
     object-fit: cover;
     border-radius: 8px;
+    display: block;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6); /* dark translucent overlay */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+}
+
+.project-tag {
+    background-color: #3b3f58;
+    color: #d0f0ff;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .project-box p {
     margin: 10px 0;
-    font-size: 32px; /* Reduce text size slightly */
+    font-size: 32px;
+    /* Reduce text size slightly */
 }
 
 .experience {
@@ -131,11 +167,13 @@
 }
 
 .experience-entry:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle darkening effect */
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Subtle darkening effect */
 }
 
 .experience-logo {
-    width: 80px; /* Keeping original size */
+    width: 80px;
+    /* Keeping original size */
     height: 80px;
     border-radius: 8px;
     object-fit: contain;
@@ -143,7 +181,8 @@
 }
 
 .experience-time {
-    font-size: 16px; /* Keep it readable */
+    font-size: 16px;
+    /* Keep it readable */
     font-weight: bold;
     color: #A0A0A0;
     text-align: left;
@@ -202,6 +241,15 @@
     animation: bounce 1.5s infinite;
 }
 
+.Resume-link {
+    padding: 2%;
+    cursor: pointer;
+}
+
+.Resume-link:hover {
+    color: #369BED;
+}
+
 @media (min-width: 1570px) and (max-width: 1800px) {
     .scroll-arrow {
         bottom: 13%;
@@ -218,8 +266,15 @@
 
 /* Smooth bounce animation */
 @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(10px); }
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
 }
 
 @media (max-width: 1370px) {
@@ -228,93 +283,244 @@
     }
 }
 
-
-/* Responsive adjustments */
+/* Mobile Styles (Only modifies sizes below 600px) */
 @media (max-width: 600px) {
+    .mobile-intro {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .big-intro-text {
+        font-size: 24px;
+        margin-bottom: -25px;
+    }
+
+    .intro-subtext {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: -15px;
+    }
+
+    .intro-image {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .intro-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 20%;
+        object-fit: cover;
+
+    }
+
+    .small-intro-text {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 24px;
+        margin-top: 10px;
+
+    }
+
+    .warning-text {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .projects h1,
+    .experience h1 {
+        font-size: 26px;
+    }
+
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #2B2D3A;
+        color: #F9F9F9;
+    }
+
+    .projects h1 {
+        padding-left: 5%;
+    }
+
+    /* --- MODIFICATION FOR MOBILE --- */
+    .project-box {
+        width: 90vw;
+        padding: 20px;
+        border-radius: 12px;
+        transition: transform 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #2B2D3A;
+        box-shadow: none;
+    }
+
+    .mobile-project-content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .project-header {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .project-title {
+        font-size: 23px !important;
+        font-weight: bold;
+        color: white;
+    }
+
+    .project-desc {
+        font-size: 14px !important;
+        color: #d1d5db;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 6px;
+    }
+
+    .project-tag {
+        background-color: #3b3f58;
+        color: #d0f0ff;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .project-cover {
+        width: 100%;
+        height: auto;
+        max-height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+
+    /* --- EXPERIENCE SECTION UNCHANGED --- */
+    .experience-entry {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 20px;
+        gap: 0px;
+    }
+
+    .experience-logo {
+        width: 50px;
+        height: 50px;
+    }
+
     .experience-entry {
         flex-direction: column;
         align-items: flex-start;
+        padding: 0;
+    }
+
+    .experience-entry h2 {
+        font-size: 19px;
+        text-align: left;
     }
 
     .experience-time {
         position: static;
-        margin-bottom: 5px;
+        margin-bottom: -15px;
+        margin-top: 15px;
     }
 
     .experience-logo {
         width: 60px;
         height: 60px;
+        margin-top: 45px;
+    }
+
+    .experience-skills span{
+        font-size: 12px;
+    }
+
+    .Resume-link {
+        margin-top: 5%;
+    }
+
+    .footer {
+        background-color: #2B2D3A;
+        padding: 4%;
+        color: white;
     }
 }
 
-@media (max-width: 900px) {
+
+
+@media (max-width: 900px) and (min-width: 601px) {
     .project-box {
-        width: calc(45% - 20px); /* Show two per row on medium screens */
+        width: calc(45% - 20px);
+        /* Show two per row on medium screens */
         max-width: 400px;
     }
-
-    .main-page {
-        margin-top: 3%;
-    }
 }
 
-@media (max-width: 600px) {
-    .project-box {
-        width: 100%; /* Single column on small screens */
-        max-width: none;
-    }
-}
 
 @media (max-width: 1370px) {
     .intro {
-        flex-direction: column-reverse; /* Move text below the image */
+        flex-direction: column-reverse;
+        /* Move text below the image */
         align-items: center;
         text-align: left;
     }
 
     .big-intro-text {
-        text-align: left; /* Ensure text is centered */
-    }
-}
-
-@media (max-width: 542px) {
-    .intro-image img {
-        width: 300px; /* Reduce image size */
-        height: auto;
-    }
-
-    .big-intro-text {
-        font-size: 21px; /* Reduce text size */
-    }
-
-    .small-intro-text {
-        font-size: 18px; /* Reduce subtext size */
-    }
-
-    .project-container {
-        padding: 2%;
-    }
-
-    .experience-details h2 {
         text-align: left;
-    }
-
-    .experience-entry {
-        padding: 0%;
-        padding-top: 2%;
-        padding-left: 0%;
-        padding-right: 0%;
-        padding-bottom: 10%;
-        gap: 0px;
+        /* Ensure text is centered */
     }
 }
+
+
 
 
 .warning-text {
-    background-color: #ffeb3b; /* Yellow warning color */
-    color: #333; /* Darker text for readability */
+    background-color: #ffeb3b;
+    /* Yellow warning color */
+    color: #333;
+    /* Darker text for readability */
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: bold;
-    display: inline-block; /* Ensures proper spacing */
+    display: inline-block;
+    /* Ensures proper spacing */
+}
+
+.footer {
+    background-color: #2B2D3A;
+    padding: 1%;
+    color: white;
+    font-size: 22px;
 }

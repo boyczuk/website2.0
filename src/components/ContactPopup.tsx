@@ -8,11 +8,6 @@ function ContactPopup({ isPopupOpen, setPopupOpen }: { isPopupOpen: boolean, set
             onMouseLeave={() => setPopupOpen(false)}
         >
             <p>adlaibb@gmail.com</p>
-            <p>
-                <a href="https://instagram.com/boyczuk" target="_blank" rel="noopener noreferrer">
-                    instagram.com/boyczuk
-                </a>
-            </p>
         </div>
     );
 }
