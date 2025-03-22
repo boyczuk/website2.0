@@ -376,6 +376,10 @@
         box-shadow: none;
     }
 
+    .project-box:hover {
+        transform: scale(1);
+    }
+
     .mobile-project-content {
         display: flex;
         flex-direction: column;
