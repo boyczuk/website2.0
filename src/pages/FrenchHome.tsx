@@ -1,8 +1,7 @@
 import './Home.css';
 import meImage from '../assets/image.png';
-import resume from '../assets/WebsiteResume.pdf';
 import { SetStateAction, useState, useEffect } from 'react';
-import { FaLinkedin, FaGithub, FaFistRaised, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
@@ -315,7 +314,7 @@ function FrenchHomePage() {
                     </div>
                 </div>
 
-                <div className="Resume-link" onClick={() => { window.open(resume, '_blank') }}>
+                <div className="Resume-link" onClick={() => { window.open('/WebsiteResume.pdf', '_blank') }}>
                     <h2>CV {<OpenInNewIcon />}</h2>
                 </div>
             </div>

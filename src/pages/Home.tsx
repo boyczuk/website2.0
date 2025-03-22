@@ -1,6 +1,5 @@
 import './Home.css';
 import meImage from '../assets/image.png';
-import resume from '../assets/WebsiteResume.pdf';
 import { useState, useEffect } from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -261,7 +260,7 @@ function HomePage() {
                     </div>
                 </div>
 
-                <div className="Resume-link" onClick={() => { window.open(resume, '_blank') }}>
+                <div className="Resume-link" onClick={() => { window.open('/WebsiteResume.pdf', '_blank') }}>
                     <h2>Resume {<OpenInNewIcon />}</h2>
                 </div>
             </div>
