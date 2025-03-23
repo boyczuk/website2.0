@@ -100,7 +100,6 @@ function HomePage() {
                                 I love building things! Professionally, I’ve developed web apps and software using TypeScript, Python, React, and Firebase,
                                 while in my free time I’m currently focused on learning Go and strengthening my knowledge of Java.
                                 <br /><br />
-                                <span className='warning-text'>p.s. This site is still a work in progress.</span>
                             </div>
                         </div>
 

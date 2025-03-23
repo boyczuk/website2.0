@@ -146,7 +146,6 @@ function FrenchHomePage() {
                             <h3>À propos</h3>
                             <p>J’adore créer des choses ! Professionnellement, j’ai développé des applications web et des logiciels avec TypeScript, Python, React et Firebase.</p>
                             <p>En ce moment, je travaille sur un site de messagerie en Go et j’approfondis mes connaissances en Java.</p>
-                            <span className='warning-text'>p.s. Ce site est encore en construction.</span>
                         </div>
                     </div>
                 ) : (
@@ -158,7 +157,6 @@ function FrenchHomePage() {
                                 J’adore créer des choses ! Professionnellement, j’ai développé des applications web et des logiciels avec TypeScript, Python, React et Firebase.
                                 En ce moment, je me concentre sur l’apprentissage de Go et le renforcement de mes compétences en Java.
                                 <br /><br />
-                                <span className='warning-text'>p.s. Ce site est encore en construction.</span>
                             </div>
                         </div>
 
