@@ -36,7 +36,7 @@ const projects: Project[] = [
         desc: "Application web de messagerie en temps réel que je développe progressivement en une plateforme sociale complète. Fonctionnalité principale : messagerie instantanée avec persistance des messages. En cours d’ajout de mesures de sécurité et d’un système de publication.",
         skills: "Javascript, Go, React, PostgreSQL, AWS EC2, Docker",
         image: tangleChatImg,
-        link: "https://github.com/boyczuk/GoChat"
+        link: "http://tangle-chat.com/"
     },
     {
         id: 2,
