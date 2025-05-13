@@ -16,6 +16,8 @@ import quantImg from '../assets/project_covers/quant.jpg';
 import qbnbImg from '../assets/project_covers/qbnb.jpg';
 import uavImg from '../assets/project_covers/UAV.jpg';
 
+import ClutchLogo from '../assets/ClutchLogo.png'
+import Phase5Logo from '../assets/Phase5Logo.png';
 import ProximaCommandLogo from '../assets/ProximaCommandLogo.jpg';
 import theWorldofYasuLogo from '../assets/the_world_of_yasu_logo.jpg';
 import QueensLogo from '../assets/QueensLogo.jpg';
@@ -125,6 +127,7 @@ function FrenchHomePage() {
         <div className='main-page'>
             <div id='intro' className='intro'>
                 {isMobile ? (
+                    // STRUCTURE MOBILE
                     <div className='mobile-intro'>
                         <div className='big-intro-text'>
                             <p>Adlai Bridson-Boyczuk</p>
@@ -138,24 +141,27 @@ function FrenchHomePage() {
                             <li><SportsKabaddiIcon onClick={() => window.open('https://smoothcomp.com/en/profile/1073699', '_blank')} /></li>
                         </div>
 
+                        {/* L'image passe sous le nom et la description sur mobile */}
                         <div className='intro-image'>
                             <img src={meImage} alt="Adlai Bridson-Boyczuk" />
                         </div>
 
                         <div className='small-intro-text'>
                             <h3>À propos</h3>
-                            <p>J’adore créer des choses ! Professionnellement, j’ai développé des applications web et des logiciels avec TypeScript, Python, React et Firebase.</p>
-                            <p>En ce moment, je travaille sur un site de messagerie en Go et j’approfondis mes connaissances en Java.</p>
+                            J'adore créer des choses ! J'ai développé des applications web et des logiciels en utilisant TypeScript, Python, React et Firebase.
+                            Actuellement, je perfectionne mes compétences en TypeScript, Node, Express, React et PostgreSQL.
+                            <br /><br />
                         </div>
                     </div>
                 ) : (
+                    // STRUCTURE DESKTOP (Inchangée sauf texte)
                     <>
                         <div className='big-intro-text'>
-                            Salut ! Je m’appelle <span className='highlight'>Adlai Bridson-Boyczuk</span>,<br />
-                            développeur logiciel basé à Toronto, Ontario.
+                            Bonjour ! Je suis <span className='highlight'>Adlai Bridson-Boyczuk</span>,<br />
+                            un développeur logiciel basé à Toronto, Ontario.
                             <div className='small-intro-text'>
-                                J’adore créer des choses ! Professionnellement, j’ai développé des applications web et des logiciels avec TypeScript, Python, React et Firebase.
-                                En ce moment, je me concentre sur l’apprentissage de Go et le renforcement de mes compétences en Java.
+                                J'adore créer des choses ! J'ai développé des applications web et des logiciels en utilisant TypeScript, Python, React et Firebase.
+                                Actuellement, je perfectionne mes compétences en TypeScript, Node, Express, React et PostgreSQL.
                                 <br /><br />
                             </div>
                         </div>
@@ -173,8 +179,36 @@ function FrenchHomePage() {
                 )}
             </div>
 
-            <div className="scroll-arrow" onClick={() => scrollToSection('projects')}>
-                ↓
+
+            <div className="cat-divider">
+                <div className="catContainer">
+                    <div className="catHead catColor">
+                        <div className="catLeftEye catEye">
+                            <div className="leftEyelid eyelid catColor"></div>
+                            <div className="pupil"></div>
+                        </div>
+                        <div className="catRightEye catEye">
+                            <div className="rightEyelid eyelid catColor"></div>
+                            <div className="pupil"></div>
+                        </div>
+                    </div>
+                    <div className="catLeftEar catEar catColor">
+                        <div className="catLeftInsideEar catInsideEar"></div>
+                    </div>
+                    <div className="catRightEar catEar catColor">
+                        <div className="catRightInsideEar catInsideEar"></div>
+                    </div>
+                    <div className="catHair catColor"></div>
+                    <div className="catBody catColor">
+                        <div className="catFoot leftFoot catColor"></div>
+                        <div className="catFoot rightFoot catColor"></div>
+                    </div>
+                    <div className="catTail">
+                        {Array.from({ length: 15 }).map((_, index) => (
+                            <span className="catColor" key={index}></span>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             <div id='projects' className='projects'>
@@ -217,6 +251,67 @@ function FrenchHomePage() {
 
             <div id="experience" className="experience">
                 <h1>Expérience</h1>
+
+                {/* <div className="experience-entry">
+                    <img src={ClutchLogo} alt="Clutch" className="experience-logo" />
+                    <div className="experience-details">
+                        {isMobile ? (
+                            <>
+                                <div className="experience-time">Mai 2025 – Présent</div>
+                                <h2>Ingénieur Logiciel · Clutch</h2>
+                            </>
+                        ) : (
+                            <>
+                                <h2>Ingénieur Logiciel · Clutch</h2>
+                                <div className="experience-time">Mai 2025 – Présent</div>
+                            </>
+                        )}
+
+                        <p>
+                            Poste à venir. Pas encore commencé.
+                        </p>
+                        <div className="experience-skills">
+                            <span>TypeScript</span>
+                            <span>Express</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>PostgreSQL</span>
+                            <span>Next.js</span>
+                            <span>Kafka</span>
+                            <span>RabbitMQ</span>
+                            <span>Terraform</span>
+                        </div>
+                    </div>
+                </div> */}
+
+                <div className="experience-entry">
+                    <img src={Phase5Logo} alt="Phase 5" className="experience-logo" />
+                    <div className="experience-details">
+                        {isMobile ? (
+                            <>
+                                <div className="experience-time">Avril 2025 – Mai 2025</div>
+                                <h2>Développeur Logiciel (Contrat) · Phase 5</h2>
+                            </>
+                        ) : (
+                            <>
+                                <h2>Développeur Logiciel · Phase 5</h2>
+                                <div className="experience-time">Avril 2025 – Mai 2025</div>
+                            </>
+                        )}
+
+                        <p>
+                            Développement d’un outil d’automatisation en Python pour générer des présentations à partir de rapports d’études de marché.
+                        </p>
+                        <div className="experience-skills">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                            <span>win32com</span>
+                            <span>Excel</span>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div className="experience-entry">
                     <img src={ProximaCommandLogo} alt="Proxima Command" className="experience-logo" />
@@ -319,6 +414,18 @@ function FrenchHomePage() {
 
             <div className="footer">
                 <p>© {new Date().getFullYear()} Adlai Bridson-Boyczuk. Tous droits réservés.</p>
+                <p>
+                    Crédit de l'animation du chat :{" "}
+                    <a
+                        href="https://www.reddit.com/user/RealLacomus"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="cat-credit-link"
+                    >
+                        u/RealLacomus
+                    </a>
+                </p>
+
             </div>
         </div>
     );

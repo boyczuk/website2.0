@@ -16,6 +16,8 @@ import quantImg from '../assets/project_covers/quant.jpg';
 import qbnbImg from '../assets/project_covers/qbnb.jpg';
 import uavImg from '../assets/project_covers/UAV.jpg';
 
+import ClutchLogo from '../assets/ClutchLogo.png'
+import Phase5Logo from '../assets/Phase5Logo.png';
 import ProximaCommandLogo from '../assets/ProximaCommandLogo.jpg';
 import theWorldofYasuLogo from '../assets/the_world_of_yasu_logo.jpg';
 import QueensLogo from '../assets/QueensLogo.jpg';
@@ -59,214 +61,321 @@ function HomePage() {
     };
 
     return (
-        <div className='main-page'>
-            <div id='intro' className='intro'>
-                {isMobile ? (
-                    // MOBILE STRUCTURE
-                    <div className='mobile-intro'>
-                        <div className='big-intro-text'>
-                            <p>Adlai Bridson-Boyczuk</p>
-                            <p className='intro-subtext'>Software Developer</p>
-                        </div>
-
-                        <div className='icons'>
-                            <li><FaGithub onClick={() => window.open('https://github.com/boyczuk', '_blank')} /></li>
-                            <li><FaLinkedin onClick={() => window.open('https://www.linkedin.com/in/adlai-bridson-boyczuk/', '_blank')} /></li>
-                            <li><InstagramIcon onClick={() => window.open('https://www.instagram.com/boyczuk/', '_blank')} /></li>
-                            <li><SportsKabaddiIcon onClick={() => window.open('https://smoothcomp.com/en/profile/1073699', '_blank')} /></li>
-                        </div>
-
-                        {/* Image moves below name and some description on mobile */}
-                        <div className='intro-image'>
-                            <img src={meImage} alt="Adlai Bridson-Boyczuk" />
-                        </div>
-
-
-                        <div className='small-intro-text'>
-                            <h3>About</h3>
-                            <p>I love building things! Professionally, I’ve developed web apps and software using TypeScript, Python, React, and Firebase.</p>
-                            <p>In my free time, I’m currently focused on building a messaging website using Go and strengthening my knowledge of Java.</p>
-                        </div>
-
-
-                    </div>
-                ) : (
-                    // DESKTOP STRUCTURE (Unchanged)
-                    <>
-                        <div className='big-intro-text'>
-                            Hi! I’m <span className='highlight'>Adlai Bridson-Boyczuk</span>,<br />
-                            a software developer from Toronto, Ontario.
-                            <div className='small-intro-text'>
-                                I love building things! Professionally, I’ve developed web apps and software using TypeScript, Python, React, and Firebase,
-                                while in my free time I’m currently focused on learning Go and strengthening my knowledge of Java.
-                                <br /><br />
+        <>
+            <div className='main-page'>
+                <div id='intro' className='intro'>
+                    {isMobile ? (
+                        // MOBILE STRUCTURE
+                        <div className='mobile-intro'>
+                            <div className='big-intro-text'>
+                                <p>Adlai Bridson-Boyczuk</p>
+                                <p className='intro-subtext'>Software Developer</p>
                             </div>
-                        </div>
 
-                        <div className='intro-image'>
-                            <img src={meImage} alt="Adlai Bridson-Boyczuk" />
                             <div className='icons'>
                                 <li><FaGithub onClick={() => window.open('https://github.com/boyczuk', '_blank')} /></li>
                                 <li><FaLinkedin onClick={() => window.open('https://www.linkedin.com/in/adlai-bridson-boyczuk/', '_blank')} /></li>
-                                <li><InstagramIcon onClick={() => window.open('https://www.instagram.com/boyczuk/', '_blank')} sx={{ fontSize: '100px' }} /></li>
-                                <li><SportsKabaddiIcon onClick={() => window.open('https://smoothcomp.com/en/profile/1073699', '_blank')} sx={{ fontSize: '100px' }} /></li>
+                                <li><InstagramIcon onClick={() => window.open('https://www.instagram.com/boyczuk/', '_blank')} /></li>
+                                <li><SportsKabaddiIcon onClick={() => window.open('https://smoothcomp.com/en/profile/1073699', '_blank')} /></li>
+                            </div>
+
+                            {/* Image moves below name and some description on mobile */}
+                            <div className='intro-image'>
+                                <img src={meImage} alt="Adlai Bridson-Boyczuk" />
+                            </div>
+
+
+                            <div className='small-intro-text'>
+                                <h3>About</h3>
+                                I love building things! Professionally, I’ve developed web apps and software using TypeScript, Python, React, and Firebase.
+                                Currently, I'm focused on building my skills in TypeScript, Node, Express, React, and PostgreSQL.
+                                <br /><br />
+                            </div>
+
+
+                        </div>
+                    ) : (
+                        // DESKTOP STRUCTURE (Unchanged)
+                        <>
+                            <div className='big-intro-text'>
+                                Hi! I’m <span className='highlight'>Adlai Bridson-Boyczuk</span>,<br />
+                                a software developer from Toronto, Ontario.
+                                <div className='small-intro-text'>
+                                    I love building things! Professionally, I’ve developed web apps and software using TypeScript, Python, React, and Firebase.
+                                    Currently, I'm focused on building my skills in TypeScript, Node, Express, React, and PostgreSQL.
+                                    <br /><br />
+                                </div>
+                            </div>
+
+                            <div className='intro-image'>
+                                <img src={meImage} alt="Adlai Bridson-Boyczuk" />
+                                <div className='icons'>
+                                    <li><FaGithub onClick={() => window.open('https://github.com/boyczuk', '_blank')} /></li>
+                                    <li><FaLinkedin onClick={() => window.open('https://www.linkedin.com/in/adlai-bridson-boyczuk/', '_blank')} /></li>
+                                    <li><InstagramIcon onClick={() => window.open('https://www.instagram.com/boyczuk/', '_blank')} sx={{ fontSize: '100px' }} /></li>
+                                    <li><SportsKabaddiIcon onClick={() => window.open('https://smoothcomp.com/en/profile/1073699', '_blank')} sx={{ fontSize: '100px' }} /></li>
+                                </div>
+                            </div>
+
+
+                        </>
+                    )}
+                </div>
+
+                <div className="cat-divider">
+                    <div className="catContainer">
+                        <div className="catHead catColor">
+                            <div className="catLeftEye catEye">
+                                <div className="leftEyelid eyelid catColor"></div>
+                                <div className="pupil"></div>
+                            </div>
+                            <div className="catRightEye catEye">
+                                <div className="rightEyelid eyelid catColor"></div>
+                                <div className="pupil"></div>
                             </div>
                         </div>
-                    </>
-                )}
-            </div>
+                        <div className="catLeftEar catEar catColor">
+                            <div className="catLeftInsideEar catInsideEar"></div>
+                        </div>
+                        <div className="catRightEar catEar catColor">
+                            <div className="catRightInsideEar catInsideEar"></div>
+                        </div>
+                        <div className="catHair catColor"></div>
+                        <div className="catBody catColor">
+                            <div className="catFoot leftFoot catColor"></div>
+                            <div className="catFoot rightFoot catColor"></div>
+                        </div>
+                        <div className="catTail">
+                            {Array.from({ length: 15 }).map((_, index) => (
+                                <span className="catColor" key={index}></span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
 
-            <div className="scroll-arrow" onClick={() => scrollToSection('projects')}>
-                ↓
-            </div>
+                <div id='projects' className='projects'>
 
-            <div id='projects' className='projects'>
-                <h1>Projects</h1>
-                <div className='project-container'>
-                    {projects.map((project) => (
-                        isMobile ? (
-                            // Mobile Structure (Image Left, Title Right)
-                            <div className='project-box' key={project.id} onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}>
-                                <div className='mobile-project-content'>
-                                    <div className='project-info'>
-                                        <div className='project-header'>
-                                            <p className='project-title'>{project.name} <OpenInNewIcon className='projects-icon' /></p>
+                    <h1>Projects</h1>
+                    <div className='project-container'>
+                        {projects.map((project) => (
+                            isMobile ? (
+                                // Mobile Structure (Image Left, Title Right)
+                                <div className='project-box' key={project.id} onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}>
+                                    <div className='mobile-project-content'>
+                                        <div className='project-info'>
+                                            <div className='project-header'>
+                                                <p className='project-title'>{project.name} <OpenInNewIcon className='projects-icon' /></p>
+                                            </div>
+                                            <p className='project-desc'>{project.desc}</p>
+                                            <div className='project-tags'>
+                                                {project.skills.split(',').map((skill, idx) => (
+                                                    <span className='project-tag' key={idx}>{skill.trim()}</span>
+                                                ))}
+                                            </div>
                                         </div>
-                                        <p className='project-desc'>{project.desc}</p>
-                                        <div className='project-tags'>
+                                        <img className='project-cover' src={project.image} alt={project.name} />
+                                    </div>
+                                </div>
+                            ) : (
+                                // Desktop Structure (Image on Top, Title Below)
+                                <div className='project-box' key={project.id} onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}>
+                                    <div className='project-image-wrapper'>
+                                        <img className='project-cover' src={project.image} alt={project.name} />
+                                        <div className='project-overlay'>
                                             {project.skills.split(',').map((skill, idx) => (
                                                 <span className='project-tag' key={idx}>{skill.trim()}</span>
                                             ))}
                                         </div>
                                     </div>
-                                    <img className='project-cover' src={project.image} alt={project.name} />
+                                    <p>{project.name}</p>
                                 </div>
+                            )
+                        ))}
+                    </div>
+                </div>
+
+                <div id="experience" className="experience">
+                    <h1>Experience</h1>
+
+                    {/* <div className="experience-entry">
+                        <img src={ClutchLogo} alt="Clutch" className="experience-logo" />
+                        <div className="experience-details">
+                            {isMobile ? (
+                                <>
+                                    <div className="experience-time">May 2025 – Present</div>
+                                    <h2>Software Engineer · Clutch</h2>
+                                </>
+                            ) : (
+                                <>
+                                    <h2>Software Engineer · Clutch</h2>
+                                    <div className="experience-time">May 2025 – Present</div>
+                                </>
+                            )}
+
+                            <p>
+                                Incoming role. Haven't started yet.
+                            </p>
+                            <div className="experience-skills">
+                                <span>TypeScript</span>
+                                <span>Express</span>
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
+                                <span>Next.js</span>
+                                <span>Kafka</span>
+                                <span>RabbitMQ</span>
+                                <span>Terraform</span>
                             </div>
-                        ) : (
-                            // Desktop Structure (Image on Top, Title Below)
-                            <div className='project-box' key={project.id} onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}>
-                                <div className='project-image-wrapper'>
-                                    <img className='project-cover' src={project.image} alt={project.name} />
-                                    <div className='project-overlay'>
-                                        {project.skills.split(',').map((skill, idx) => (
-                                            <span className='project-tag' key={idx}>{skill.trim()}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                                <p>{project.name}</p>
+                        </div>
+                    </div> */}
+
+                    <div className="experience-entry">
+                        <img src={Phase5Logo} alt="Phase 5" className="experience-logo" />
+                        <div className="experience-details">
+                            {isMobile ? (
+                                <>
+                                    <div className="experience-time">April 2025 – May 2025</div>
+                                    <h2>Software Developer (Contract)· Phase 5</h2>
+                                </>
+                            ) : (
+                                <>
+                                    <h2>Software Developer · Phase 5</h2>
+                                    <div className="experience-time">April 2025 – May 2025</div>
+                                </>
+                            )}
+
+                            <p>
+                                Programmed a Python-based automation tool to generate presentations based on market research reports.
+                            </p>
+                            <div className="experience-skills">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>NumPy</span>
+                                <span>win32com</span>
+                                <span>Excel</span>
                             </div>
-                        )
-                    ))}
-                </div>
-            </div>
-
-            <div id="experience" className="experience">
-                <h1>Experience</h1>
-
-                <div className="experience-entry">
-                    <img src={ProximaCommandLogo} alt="Proxima Command" className="experience-logo" />
-                    <div className="experience-details">
-                        {isMobile ? (
-                            <>
-                                <div className="experience-time">July 2024 – Oct 2024</div>
-                                <h2>Software Developer · Proxima Command</h2>
-                            </>
-                        ) : (
-                            <>
-                                <h2>Software Developer · Proxima Command</h2>
-                                <div className="experience-time">July 2024 – Oct 2024</div>
-                            </>
-                        )}
-
-                        <p>
-                            Developed Python software for an 8-player arcade starship simulator, integrating physical controls via Arduino and PySerial. Optimized input processing, reducing latency by 30ms, and implemented a multithreading system to enhance system responsiveness.
-                        </p>
-                        <div className="experience-skills">
-                            <span>Python</span>
-                            <span>Pygame</span>
-                            <span>Arduino</span>
-                            <span>Multithreading</span>
-                            <span>Concurrency</span>
-                            <span>Asyncio</span>
                         </div>
+                    </div>
+
+                    <div className="experience-entry">
+                        <img src={ProximaCommandLogo} alt="Proxima Command" className="experience-logo" />
+                        <div className="experience-details">
+                            {isMobile ? (
+                                <>
+                                    <div className="experience-time">July 2024 – Oct 2024</div>
+                                    <h2>Software Developer · Proxima Command</h2>
+                                </>
+                            ) : (
+                                <>
+                                    <h2>Software Developer · Proxima Command</h2>
+                                    <div className="experience-time">July 2024 – Oct 2024</div>
+                                </>
+                            )}
+
+                            <p>
+                                Developed Python software for an 8-player arcade starship simulator, integrating physical controls via Arduino and PySerial. Optimized input processing, reducing latency by 30ms, and implemented a multithreading system to enhance system responsiveness.
+                            </p>
+                            <div className="experience-skills">
+                                <span>Python</span>
+                                <span>Pygame</span>
+                                <span>Arduino</span>
+                                <span>Multithreading</span>
+                                <span>Concurrency</span>
+                                <span>Asyncio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="experience-entry">
+                        <img src={theWorldofYasuLogo} alt="World of Yasu" className="experience-logo" />
+                        <div className="experience-details">
+                            {isMobile ? (
+                                <>
+                                    <div className="experience-time">May 2023 – Jan 2024</div>
+                                    <h2>Junior Developer · The World of Yasu</h2>
+                                </>
+                            ) : (
+                                <>
+                                    <h2>Junior Developer · The World of Yasu</h2>
+                                    <div className="experience-time">May 2023 – Jan 2024</div>
+                                </>
+                            )}
+
+                            <p>
+                                Built a custom animated web app for a startup using TypeScript and React, reducing bounce rates by 30%. Improved performance through CDN asset hosting and ensured full mobile compatibility using Tailwind CSS.
+                            </p>
+                            <div className="experience-skills">
+                                <span>TypeScript</span>
+                                <span>React</span>
+                                <span>Tailwind CSS</span>
+                                <span>Firebase</span>
+                                <span>CI/CD</span>
+                                <span>UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="experience-entry">
+                        <img src={QueensLogo} alt="Queen's University" className="experience-logo" />
+                        <div className="experience-details">
+                            {isMobile ? (
+                                <>
+                                    <div className="experience-time">Sept 2020 – April 2024</div>
+                                    <h2>Computer Science · Queen's University</h2>
+                                </>
+                            ) : (
+                                <>
+                                    <h2>Computer Science · Queen's University</h2>
+                                    <div className="experience-time">Sept 2020 – April 2024</div>
+                                </>
+                            )}
+
+                            <p>
+                                Earned a Bachelor of Computing with a 3.7 GPA, specializing in Artificial Intelligence. My capstone project was focused on drone detection using Machine Learning
+                                (YOLOv5 and OpenCV).<br></br> Dean’s Honour List (2022, 2023, 2024).
+                            </p>
+                            <div className="experience-skills">
+                                <span>Python</span>
+                                <span>Java</span>
+                                <span>C#</span>
+                                <span>C</span>
+                                <span>SQL</span>
+                                <span>PHP</span>
+                                <span>Bash Scripting</span>
+                                <span>Unity</span>
+                                <span>Assembly</span>
+                                <span>Functional Programming</span>
+                                <span>Computer Vision</span>
+                                <span>Deep Learning</span>
+                                <span>Reinforcement Learning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="Resume-link" onClick={() => { window.open('/WebsiteResume.pdf', '_blank') }}>
+                        <h2>Resume {<OpenInNewIcon />}</h2>
                     </div>
                 </div>
 
-                <div className="experience-entry">
-                    <img src={theWorldofYasuLogo} alt="World of Yasu" className="experience-logo" />
-                    <div className="experience-details">
-                        {isMobile ? (
-                            <>
-                                <div className="experience-time">May 2023 – Jan 2024</div>
-                                <h2>Junior Developer · The World of Yasu</h2>
-                            </>
-                        ) : (
-                            <>
-                                <h2>Junior Developer · The World of Yasu</h2>
-                                <div className="experience-time">May 2023 – Jan 2024</div>
-                            </>
-                        )}
+                <div className="footer">
+                    <p>© {new Date().getFullYear()} Adlai Bridson-Boyczuk. All rights reserved.</p>
+                    <p>
+                        Cat animation credit:
+                        {" "}
+                        <a
+                            href="https://www.reddit.com/user/RealLacomus"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="cat-credit-link"
+                        >
+                            u/RealLacomus
+                        </a>
+                    </p>
 
-                        <p>
-                            Built a custom animated web app for a startup using TypeScript and React, reducing bounce rates by 30%. Improved performance through CDN asset hosting and ensured full mobile compatibility using Tailwind CSS.
-                        </p>
-                        <div className="experience-skills">
-                            <span>TypeScript</span>
-                            <span>React</span>
-                            <span>Tailwind CSS</span>
-                            <span>Firebase</span>
-                            <span>CI/CD</span>
-                            <span>UI/UX</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div className="experience-entry">
-                    <img src={QueensLogo} alt="Queen's University" className="experience-logo" />
-                    <div className="experience-details">
-                        {isMobile ? (
-                            <>
-                                <div className="experience-time">Sept 2020 – April 2024</div>
-                                <h2>Computer Science · Queen's University</h2>
-                            </>
-                        ) : (
-                            <>
-                                <h2>Computer Science · Queen's University</h2>
-                                <div className="experience-time">Sept 2020 – April 2024</div>
-                            </>
-                        )}
-
-                        <p>
-                            Earned a Bachelor of Computing with a 3.7 GPA, specializing in Artificial Intelligence. My capstone project was focused on drone detection using Machine Learning
-                            (YOLOv5 and OpenCV).<br></br> Dean’s Honour List (2022, 2023, 2024).
-                        </p>
-                        <div className="experience-skills">
-                            <span>Python</span>
-                            <span>Java</span>
-                            <span>C#</span>
-                            <span>C</span>
-                            <span>SQL</span>
-                            <span>PHP</span>
-                            <span>Bash Scripting</span>
-                            <span>Unity</span>
-                            <span>Assembly</span>
-                            <span>Functional Programming</span>
-                            <span>Computer Vision</span>
-                            <span>Deep Learning</span>
-                            <span>Reinforcement Learning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="Resume-link" onClick={() => { window.open('/WebsiteResume.pdf', '_blank') }}>
-                    <h2>Resume {<OpenInNewIcon />}</h2>
                 </div>
             </div>
-
-            <div className="footer">
-                <p>© {new Date().getFullYear()} Adlai Bridson-Boyczuk. All rights reserved.</p>
-            </div>
-        </div>
+        </>
     )
 }
 

@@ -1,5 +1,340 @@
 .main-page {}
 
+.cat-divider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    margin-top: -400px;
+}
+
+.catContainer {
+    width: 30vw;
+    max-width: 400px;
+    min-width: 200px;
+    aspect-ratio: 2 / 1;
+    position: relative;
+    left: -60%;
+    top: -125px;
+}
+
+@media (max-width: 1320px) {
+    .catContainer {
+        left: -80%;
+        top: -160px;
+    }
+
+    .cat-divider {
+        margin-top: 0px;
+    }
+}
+
+@media (min-width: 1250px) and (max-width: 1320px) {
+    .catContainer {
+        left: -80%;
+        top: -125px;
+    }
+}
+
+@media (min-width: 690px) and (max-width: 1249px) {
+    .catContainer {
+        left: -900px;
+        top: -140px;
+    }
+}
+
+
+@media (min-width: 200px) and (max-width: 690px) {
+    .catContainer {
+        left: -800px;
+        top: -220px;
+    }
+}
+
+.catColor {
+    background-color: #242424;
+}
+
+.catHead {
+    width: 170px;
+    height: 130px;
+    border-radius: 55% 55% 50% 50%;
+    margin-left: 718px;
+    margin-top: 200px;
+    position: absolute;
+    z-index: 2;
+    box-shadow: 0px 4px 8px -6px #111;
+}
+
+
+.catEar {
+    width: 80px;
+    height: 100px;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.catLeftEar {
+    transform: rotateZ(-45deg);
+    margin-left: 717px;
+    margin-top: 173px;
+}
+
+.catRightEar {
+    transform: rotateZ(20deg);
+    margin-left: 820px;
+    margin-top: 175px;
+}
+
+.catInsideEar {
+    width: 60px;
+    height: 100px;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    background: #CC8888;
+    z-index: 1;
+}
+
+.catLeftInsideEar {
+    margin-left: 12px;
+    margin-top: 6px;
+}
+
+.catRightInsideEar {
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.catEye {
+    width: 62px;
+    height: 50px;
+    border-radius: 60%;
+    background-color: #E6E6E6;
+    z-index: 3;
+    position: absolute;
+    margin-top: 32px;
+}
+
+.catLeftEye {
+    margin-left: 17px;
+}
+
+.catRightEye {
+    margin-left: 93px;
+}
+
+.eyelid {
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    margin-top: -5%;
+    border-radius: 100% 100% 10% 10%;
+    animation: blink 6s infinite ease-in-out;
+    animation-delay: 7s;
+}
+
+@keyframes blink {
+    1% {
+        height: 60%;
+    }
+
+    2% {
+        height: 80%;
+    }
+
+    3% {
+        height: 100%;
+    }
+
+    4% {
+        height: 80%;
+    }
+
+    5% {
+        height: 60%;
+    }
+
+    100% {
+        height: 60%;
+    }
+}
+
+.pupil {
+    width: 20px;
+    height: 35px;
+    background-color: #222;
+    border-radius: 50%;
+    margin-left: 20px;
+    z-index: 5;
+    margin-top: 3px;
+}
+
+.catBody {
+    width: 185px;
+    height: 110px;
+    border-radius: 50% / 80% 80% 50% 50%;
+    position: absolute;
+    margin-left: 712px;
+    margin-top: 276px;
+    z-index: 1;
+}
+
+.catFoot {
+    height: 28%;
+    width: 30%;
+    position: absolute;
+    z-index: 10;
+    margin-top: 43%;
+    border-radius: 100% 100% 70% 70%;
+    box-shadow: -2px -4px 10px -6px rgba(0, 0, 0, 1);
+}
+
+.leftFoot {
+    margin-left: 8%;
+    animation: step 9s infinite ease-in-out;
+    animation-delay: 7.4s;
+}
+
+.rightFoot {
+    margin-left: 60%;
+    animation: step 9s infinite ease-in-out;
+    animation-delay: 8s;
+}
+
+@keyframes step {
+    1% {
+        transform: translateY(-1px);
+    }
+
+    2% {
+        transform: translateY(-2px);
+    }
+
+    3% {
+        transform: translateY(-3px);
+    }
+
+    4% {
+        transform: translateY(-2px);
+    }
+
+    5% {
+        transform: translateY(-1px);
+    }
+
+    6% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.catTail {
+    position: absolute;
+    margin-left: 870px;
+    margin-top: 352px;
+    transform: rotate(-10deg);
+}
+
+.catTail span {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    animation: tailWave 3s infinite ease-in-out;
+}
+
+.catTail span:nth-child(2) {
+    left: 5px;
+    animation-delay: 0.2s;
+}
+
+.catTail span:nth-child(3) {
+    left: 10px;
+    animation-delay: 0.4s;
+}
+
+.catTail span:nth-child(4) {
+    left: 15px;
+    animation-delay: 0.6s;
+}
+
+.catTail span:nth-child(5) {
+    left: 20px;
+    animation-delay: 0.8s;
+}
+
+.catTail span:nth-child(6) {
+    left: 25px;
+    animation-delay: 1s;
+}
+
+.catTail span:nth-child(7) {
+    left: 30px;
+    animation-delay: 1.2s;
+}
+
+.catTail span:nth-child(8) {
+    left: 35px;
+    animation-delay: 1.4s;
+}
+
+.catTail span:nth-child(9) {
+    left: 40px;
+    animation-delay: 1.6s;
+}
+
+.catTail span:nth-child(10) {
+    left: 45px;
+    animation-delay: 1.8s;
+}
+
+.catTail span:nth-child(11) {
+    left: 50px;
+    animation-delay: 2s;
+}
+
+.catTail span:nth-child(12) {
+    left: 55px;
+    animation-delay: 2.2s;
+}
+
+.catTail span:nth-child(13) {
+    left: 60px;
+    animation-delay: 2.4s;
+}
+
+.catTail span:nth-child(14) {
+    left: 65px;
+    animation-delay: 2.6s;
+}
+
+.catTail span:nth-child(15) {
+    left: 70px;
+    animation-delay: 2.8s;
+}
+
+@keyframes tailWave {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
 .intro {
     display: flex;
     align-items: center;
@@ -119,7 +454,8 @@
     left: 0;
     width: 100%;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.6); /* dark translucent overlay */
+    background: rgba(0, 0, 0, 0.6);
+    /* dark translucent overlay */
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -366,7 +702,7 @@
     /* --- MODIFICATION FOR MOBILE --- */
     .project-box {
         width: 90vw;
-        padding: 20px;
+        
         border-radius: 12px;
         transition: transform 0.2s ease-in-out;
         display: flex;
@@ -467,7 +803,7 @@
         margin-top: 45px;
     }
 
-    .experience-skills span{
+    .experience-skills span {
         font-size: 12px;
     }
 
@@ -527,4 +863,15 @@
     padding: 1%;
     color: white;
     font-size: 22px;
+}
+
+.cat-credit-link {
+    color: inherit; /* Matches surrounding text */
+    text-decoration: none;
+    font-weight: bold; /* Optional for emphasis */
+}
+
+.cat-credit-link:hover {
+    color: #369BED; /* Your nice blue */
+    text-decoration: underline;
 }
