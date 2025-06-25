@@ -101,8 +101,8 @@ function HomePage() {
                                 Hi! I’m <span className='highlight'>Adlai Bridson-Boyczuk</span>,<br />
                                 a software developer from Toronto, Ontario.
                                 <div className='small-intro-text'>
-                                    I love building things! Professionally, I’ve developed web apps and software using TypeScript, Python, React, and Firebase.
-                                    Currently, I'm focused on building my skills in TypeScript, Node, Express, React, and PostgreSQL.
+                                    I love building things! Professionally, I’ve developed web apps and software using TypeScript, Python, React, PostgreSQL, AWS, and Firebase.
+                                    Currently, I'm focused on becoming a TypeScript menace.
                                     <br /><br />
                                 </div>
                             </div>
@@ -197,7 +197,7 @@ function HomePage() {
                 <div id="experience" className="experience">
                     <h1>Experience</h1>
 
-                    {/* <div className="experience-entry">
+                    <div className="experience-entry">
                         <img src={ClutchLogo} alt="Clutch" className="experience-logo" />
                         <div className="experience-details">
                             {isMobile ? (
@@ -213,9 +213,9 @@ function HomePage() {
                             )}
 
                             <p>
-                                Incoming role. Haven't started yet.
+                                
                             </p>
-                            <div className="experience-skills">
+                            {/* <div className="experience-skills">
                                 <span>TypeScript</span>
                                 <span>Express</span>
                                 <span>React</span>
@@ -225,9 +225,9 @@ function HomePage() {
                                 <span>Kafka</span>
                                 <span>RabbitMQ</span>
                                 <span>Terraform</span>
-                            </div>
+                            </div> */}
                         </div>
-                    </div> */}
+                    </div>
 
                     <div className="experience-entry">
                         <img src={Phase5Logo} alt="Phase 5" className="experience-logo" />
