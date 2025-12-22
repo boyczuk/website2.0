@@ -1,4 +1,5 @@
 import Home from './pages/Home';
+import { NewHomepage } from './pages/NewHomepage';
 //import Navbar from './components/FloatingNavbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <Navbar isFrench={isFrench} setIsFrench={setIsFrench} isPopupOpen={isPopupOpen} setPopupOpen={setPopupOpen} />
         <Routes>
+          {/* <Route path='/' element={<NewHomepage />} /> */}
           <Route path='/' element={isFrench ? <FrenchHomePage /> : <Home />} />
         </Routes>
         <Analytics />
