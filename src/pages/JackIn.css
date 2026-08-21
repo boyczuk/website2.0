@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Share+Tech+Mono&display=swap');
 
-/* ============ BOOT SEQUENCE ============ */
+/* ============ BOOT SEQUENCE (unchanged from the original) ============ */
 
 .ji-boot {
     position: fixed;
@@ -118,6 +118,11 @@
     animation: ji-fade-in 0.5s ease;
 }
 
+.ji-theme *:focus-visible {
+    outline: 2px solid #38e0ff;
+    outline-offset: 2px;
+}
+
 @keyframes ji-fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -132,24 +137,43 @@
     opacity: 0.4;
 }
 
+/* ---------- HUD bar: now sticky, with quick-nav + locale switcher ---------- */
+
 .ji-hud-bar {
-    position: relative;
-    z-index: 1;
+    position: sticky;
+    top: 0;
+    z-index: 20;
     display: flex;
-    gap: 24px;
+    gap: 20px;
     align-items: center;
     padding: 10px 24px;
     border-bottom: 1px solid rgba(56, 224, 255, 0.25);
-    background: rgba(5, 5, 8, 0.85);
+    background: rgba(3, 3, 4, 0.92);
+    backdrop-filter: blur(6px);
     font-size: 0.7rem;
     letter-spacing: 0.08em;
     color: #6c93a0;
     flex-wrap: wrap;
 }
 
+.ji-hud-status {
+    white-space: nowrap;
+}
+
 .ji-hud-right {
     margin-left: auto;
     color: #38e0ff;
+}
+
+.ji-good {
+    color: #39ff6a;
+    font-style: normal;
+}
+
+/* ---------- locale switcher ---------- */
+
+.ji-locale-switcher {
+    position: relative;
 }
 
 .ji-lang-toggle {
@@ -173,9 +197,50 @@
     border-color: #38e0ff;
 }
 
-.ji-good {
-    color: #39ff6a;
-    font-style: normal;
+.ji-locale-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 140px;
+    background: rgba(6, 8, 12, 0.97);
+    border: 1px solid rgba(56, 224, 255, 0.4);
+    padding: 6px;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 25;
+}
+
+.ji-locale-switcher.open .ji-locale-panel {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.ji-locale-option {
+    background: transparent;
+    border: none;
+    color: #a9d3e0;
+    text-align: left;
+    padding: 7px 10px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background 0.12s ease, color 0.12s ease;
+}
+
+.ji-locale-option:hover {
+    background: rgba(56, 224, 255, 0.1);
+    color: #eafcff;
+}
+
+.ji-locale-option.is-active {
+    color: #ff3b4e;
+    font-weight: 700;
 }
 
 .ji-content {
@@ -184,6 +249,12 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 50px 24px 40px;
+}
+
+#intro,
+#projects,
+#experience {
+    scroll-margin-top: 70px;
 }
 
 .ji-heading {
@@ -424,7 +495,7 @@ section#intro .ji-heading {
 .ji-log-skillcount {
     font-size: 0.6rem;
     letter-spacing: 0.05em;
-    color: #5c7680;
+    color: #7691a0;
 }
 
 .ji-log-link {
@@ -572,13 +643,23 @@ section#intro .ji-heading {
     margin-top: 80px;
     text-align: center;
     padding: 22px 0 10px;
-    color: #5c7680;
+    color: #7691a0;
     font-size: 0.78rem;
     border-top: 1px solid rgba(56, 224, 255, 0.2);
 }
 
 .ji-footer a {
     color: #38e0ff;
+}
+
+@media (max-width: 700px) {
+    .ji-hud-status-hide-sm {
+        display: none;
+    }
+
+    .ji-hud-bar {
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 600px) {
