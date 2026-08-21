@@ -68,8 +68,61 @@ function LocaleSwitcher({ locale, setLocale }: { locale: Locale; setLocale: (l: 
     );
 }
 
+const GLITCH_FILTER_IDS = ['ji-glitch-1', 'ji-glitch-2', 'ji-glitch-3', 'ji-glitch-4', 'ji-glitch-5', 'ji-glitch-6'];
+
+function randRange(min: number, max: number) {
+    return min + Math.random() * (max - min);
+}
+
+interface GlitchBand {
+    top: string;
+    height: number;
+    delay: number;
+    dir: 'l' | 'r';
+    color: string;
+    big: boolean;
+}
+
+/** Generates a fresh, randomized set of horizontal tear bands so the transition never plays identically twice. */
+function makeGlitchBands(): GlitchBand[] {
+    const bands: GlitchBand[] = [];
+    let top = Math.random() * 6;
+    while (top < 96) {
+        const big = Math.random() < 0.2;
+        const thin = !big && Math.random() < 0.4;
+        const height = big ? randRange(24, 60) : thin ? randRange(1.5, 4) : randRange(8, 22);
+        const dir: 'l' | 'r' = Math.random() < 0.5 ? 'l' : 'r';
+        const roll = Math.random();
+        const color = roll < 0.35
+            ? `rgba(255, 255, 255, ${randRange(0.65, 0.92).toFixed(2)})`
+            : roll < 0.68
+                ? `rgba(56, 224, 255, ${randRange(0.4, 0.6).toFixed(2)})`
+                : `rgba(255, 59, 78, ${randRange(0.4, 0.6).toFixed(2)})`;
+        bands.push({ top: `${top.toFixed(1)}%`, height, delay: Math.floor(randRange(0, 95)), dir, color, big });
+        top += randRange(3.5, 11);
+    }
+    return bands;
+}
+
+/** Generates a randomized sequence of pixel-displacement filters (and clean gaps) for the content-distortion animation. */
+function makeGlitchFilterSequence(): string[] {
+    const seq: string[] = [];
+    for (let i = 0; i < 8; i++) {
+        if (Math.random() < 0.22) {
+            seq.push('none');
+        } else {
+            const id = GLITCH_FILTER_IDS[Math.floor(Math.random() * GLITCH_FILTER_IDS.length)];
+            seq.push(`url(#${id})`);
+        }
+    }
+    return seq;
+}
+
 function JackIn() {
     const [booting, setBooting] = useState(true);
+    const [glitching, setGlitching] = useState(false);
+    const [glitchBands, setGlitchBands] = useState<GlitchBand[]>([]);
+    const [glitchFilters, setGlitchFilters] = useState<string[]>([]);
     const [progress, setProgress] = useState(0);
     const [lineIdx, setLineIdx] = useState(0);
     const [activeId, setActiveId] = useState<number>(projects[0].id);
@@ -93,7 +146,13 @@ function JackIn() {
             if (pct < 100) {
                 raf = requestAnimationFrame(tick);
             } else {
-                setTimeout(() => setBooting(false), 450);
+                setTimeout(() => {
+                    setBooting(false);
+                    setGlitchBands(makeGlitchBands());
+                    setGlitchFilters(makeGlitchFilterSequence());
+                    setGlitching(true);
+                    setTimeout(() => setGlitching(false), 550);
+                }, 450);
             }
         };
         raf = requestAnimationFrame(tick);
@@ -127,7 +186,56 @@ function JackIn() {
     }
 
     return (
-        <div className="ji-theme">
+        <div className={`ji-theme ${glitching ? 'is-glitching' : ''}`}>
+            <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden="true">
+                <defs>
+                    {/* Every filter uses a near-zero X frequency (near-constant along each row) paired with a much
+                        higher Y frequency, so displacement reads as independent horizontal shifts per scanline
+                        rather than a uniform warp — that's the dominant "horizontal tear" look. */}
+                    <filter id="ji-glitch-1" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.004 1.1" numOctaves="1" seed="3" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+                    <filter id="ji-glitch-2" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.006 0.5" numOctaves="1" seed="11" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="80" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+                    <filter id="ji-glitch-3" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.003 2.2" numOctaves="1" seed="21" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="38" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+                    <filter id="ji-glitch-4" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.008 0.35" numOctaves="1" seed="34" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="110" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+                    <filter id="ji-glitch-5" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.002 3.4" numOctaves="1" seed="47" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="26" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+                    <filter id="ji-glitch-6" x="-20%" y="-20%" width="140%" height="140%" colorInterpolationFilters="sRGB">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.005 0.8" numOctaves="2" seed="58" result="noise" />
+                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="65" xChannelSelector="R" yChannelSelector="G" />
+                    </filter>
+                </defs>
+            </svg>
+            {glitching && (
+                <div className="ji-glitch-overlay" aria-hidden="true">
+                    <span className="ji-glitch-dim" />
+                    {glitchBands.map((b, i) => (
+                        <span
+                            key={i}
+                            className={`ji-glitch-band ji-glitch-band-${b.dir} ${b.big ? 'ji-glitch-band-big' : ''}`}
+                            style={{
+                                top: b.top,
+                                height: b.height,
+                                animationDelay: `${b.delay}ms`,
+                                background: b.color,
+                            }}
+                        />
+                    ))}
+                    <span className="ji-glitch-flash" />
+                </div>
+            )}
             <div className="ji-scanlines" aria-hidden="true" />
             <div className="ji-hud-bar">
                 <span className="ji-hud-status">SIGNAL: <em className="ji-good">{t.ui.stableWord}</em></span>
@@ -136,7 +244,10 @@ function JackIn() {
                 <LocaleSwitcher locale={locale} setLocale={setLocale} />
             </div>
 
-            <div className="ji-content">
+            <div
+                className="ji-content"
+                style={glitching ? (Object.fromEntries(glitchFilters.map((f, i) => [`--gf${i}`, f])) as React.CSSProperties) : undefined}
+            >
                 <section id="intro">
                     <NetPanel tab="PERSONA.SYS" className="ji-intro-wrap">
                         <div className="ji-intro-body">
@@ -145,7 +256,7 @@ function JackIn() {
                             </div>
                             <div className="ji-intro-text">
                                 <span className="ji-eyebrow">{t.ui.eyebrowIdentity}</span>
-                                <h1 className="ji-name">{profile.name}</h1>
+                                <h1 className="ji-name" data-text={profile.name}>{profile.name}</h1>
                                 <p className="ji-role">{t.ui.role} <span className="ji-sep">//</span> {t.ui.location}</p>
                                 <p className="ji-blurb">{t.ui.blurb}</p>
                                 <div className="ji-socials">

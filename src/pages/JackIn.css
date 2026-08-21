@@ -115,7 +115,7 @@
     background: #030304;
     color: #d6faff;
     font-family: 'Share Tech Mono', monospace;
-    animation: ji-fade-in 0.5s ease;
+    animation: ji-fade-in 0.2s ease;
 }
 
 .ji-theme *:focus-visible {
@@ -126,6 +126,171 @@
 @keyframes ji-fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* ---------- boot-to-home glitch transition overlay ---------- */
+
+.ji-glitch-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ji-glitch-band {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    mix-blend-mode: screen;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(7, end);
+    animation-fill-mode: forwards;
+}
+
+.ji-glitch-band-l {
+    animation-name: ji-glitch-slide-l;
+}
+
+.ji-glitch-band-r {
+    animation-name: ji-glitch-slide-r;
+}
+
+.ji-glitch-band-big {
+    mix-blend-mode: hard-light;
+    animation-timing-function: steps(5, end);
+}
+
+@keyframes ji-glitch-slide-l {
+    0% { transform: translateX(-18%); opacity: 0.95; }
+    12% { transform: translateX(11%); }
+    24% { transform: translateX(-26%); }
+    36% { transform: translateX(16%); opacity: 0.85; }
+    50% { transform: translateX(-9%); opacity: 0.6; }
+    65% { transform: translateX(5%); opacity: 0.4; }
+    100% { transform: translateX(-220%); opacity: 0; }
+}
+
+@keyframes ji-glitch-slide-r {
+    0% { transform: translateX(18%); opacity: 0.95; }
+    12% { transform: translateX(-11%); }
+    24% { transform: translateX(26%); }
+    36% { transform: translateX(-16%); opacity: 0.85; }
+    50% { transform: translateX(9%); opacity: 0.6; }
+    65% { transform: translateX(-5%); opacity: 0.4; }
+    100% { transform: translateX(220%); opacity: 0; }
+}
+
+.ji-glitch-flash {
+    position: absolute;
+    inset: 0;
+    background: #eafcff;
+    mix-blend-mode: overlay;
+    animation: ji-glitch-flash 0.5s steps(1, end) forwards;
+}
+
+@keyframes ji-glitch-flash {
+    0%, 100% { opacity: 0; }
+    3% { opacity: 0.55; }
+    5% { opacity: 0; }
+    20% { opacity: 0.3; }
+    22% { opacity: 0; }
+    44% { opacity: 0.4; }
+    46% { opacity: 0; }
+}
+
+.ji-glitch-dim {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 40%, transparent 20%, rgba(2, 3, 4, 0.9) 85%);
+    animation: ji-glitch-dim 0.5s steps(1, end) forwards;
+}
+
+@keyframes ji-glitch-dim {
+    0%, 16% { opacity: 0; }
+    24% { opacity: 0.9; }
+    38% { opacity: 0.75; }
+    46% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* ---------- chromatic text tear (name heading) ---------- */
+
+.is-glitching .ji-name {
+    position: relative;
+}
+
+.is-glitching .ji-name::before,
+.is-glitching .ji-name::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.is-glitching .ji-name::before {
+    color: #38e0ff;
+    mix-blend-mode: screen;
+    animation: ji-text-tear-l 0.5s steps(6, end) forwards;
+}
+
+.is-glitching .ji-name::after {
+    color: #ff3b4e;
+    mix-blend-mode: screen;
+    animation: ji-text-tear-r 0.5s steps(6, end) forwards;
+}
+
+@keyframes ji-text-tear-l {
+    0% { transform: translate(-6px, -3px); opacity: 0.8; }
+    30% { transform: translate(5px, 2px); opacity: 0.7; }
+    55% { transform: translate(-3px, -1px); opacity: 0.5; }
+    100% { transform: translate(0, 0); opacity: 0; }
+}
+
+@keyframes ji-text-tear-r {
+    0% { transform: translate(6px, 3px); opacity: 0.8; }
+    30% { transform: translate(-5px, -2px); opacity: 0.7; }
+    55% { transform: translate(3px, 1px); opacity: 0.5; }
+    100% { transform: translate(0, 0); opacity: 0; }
+}
+
+/* ---------- chromatic ghost (profile photo) ---------- */
+
+.is-glitching .ji-photo-frame::before,
+.is-glitching .ji-photo-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.is-glitching .ji-photo-frame::before {
+    background: #ff3b4e;
+    mix-blend-mode: screen;
+    animation: ji-photo-chroma-l 0.5s steps(6, end) forwards;
+}
+
+.is-glitching .ji-photo-frame::after {
+    background: #38e0ff;
+    mix-blend-mode: screen;
+    animation: ji-photo-chroma-r 0.5s steps(6, end) forwards;
+}
+
+@keyframes ji-photo-chroma-l {
+    0% { opacity: 0.45; transform: translateX(-7px); }
+    30% { opacity: 0.3; transform: translateX(4px); }
+    60% { opacity: 0.18; transform: translateX(-3px); }
+    100% { opacity: 0; transform: translateX(0); }
+}
+
+@keyframes ji-photo-chroma-r {
+    0% { opacity: 0.45; transform: translateX(7px); }
+    30% { opacity: 0.3; transform: translateX(-4px); }
+    60% { opacity: 0.18; transform: translateX(3px); }
+    100% { opacity: 0; transform: translateX(0); }
 }
 
 .ji-scanlines {
@@ -251,6 +416,22 @@
     padding: 50px 24px 40px;
 }
 
+.is-glitching #intro {
+    animation: ji-glitch-distort 0.5s linear forwards;
+}
+
+@keyframes ji-glitch-distort {
+    0% { filter: var(--gf0, none); }
+    12% { filter: var(--gf1, none); }
+    24% { filter: var(--gf2, none); }
+    36% { filter: var(--gf3, none); }
+    48% { filter: var(--gf4, none); }
+    60% { filter: var(--gf5, none); }
+    72% { filter: var(--gf6, none); }
+    85% { filter: var(--gf7, none); }
+    100% { filter: none; }
+}
+
 #intro,
 #projects,
 #experience {
@@ -319,6 +500,7 @@ section#intro .ji-heading {
 }
 
 .ji-photo-frame {
+    position: relative;
     width: 190px;
     height: 190px;
     flex-shrink: 0;
