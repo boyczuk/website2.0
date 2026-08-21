@@ -1,26 +1,21 @@
-import Home from './pages/Home';
-import { NewHomepage } from './pages/NewHomepage';
-//import Navbar from './components/FloatingNavbar';
+import JackIn from './pages/JackIn';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Analytics } from "@vercel/analytics/react";
 import './App.css';
-import Navbar from './components/Navbar';
+import LanguageToggle from './components/LanguageToggle';
 import { useState } from 'react';
 import FrenchHomePage from './pages/FrenchHome';
-import ContactPopup from './components/ContactPopup';
 
 function App() {
   const [isFrench, setIsFrench] = useState(false);
-  const [isPopupOpen, setPopupOpen] = useState(false);
 
   return (
     <div className="App">
       <Router>
-        <Navbar isFrench={isFrench} setIsFrench={setIsFrench} isPopupOpen={isPopupOpen} setPopupOpen={setPopupOpen} />
         <Routes>
-          {/* <Route path='/' element={<NewHomepage />} /> */}
-          <Route path='/' element={isFrench ? <FrenchHomePage /> : <Home />} />
+          <Route path='/' element={isFrench ? <FrenchHomePage /> : <JackIn setIsFrench={setIsFrench} />} />
         </Routes>
+        {isFrench && <LanguageToggle isFrench={isFrench} setIsFrench={setIsFrench} />}
         <Analytics />
       </Router>
     </div>
