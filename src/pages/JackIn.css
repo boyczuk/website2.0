@@ -59,11 +59,11 @@
 .ji-boot-channels {
     display: flex;
     justify-content: space-between;
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    color: #6c93a0;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: #7f9aa6;
     border: 1px solid rgba(56, 224, 255, 0.3);
-    padding: 8px 14px;
+    padding: 10px 14px;
     margin-bottom: 18px;
 }
 
@@ -311,13 +311,13 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    padding: 10px 24px;
+    padding: 12px 24px;
     border-bottom: 1px solid rgba(56, 224, 255, 0.25);
     background: rgba(3, 3, 4, 0.92);
     backdrop-filter: blur(6px);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    color: #6c93a0;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: #7f9aa6;
     flex-wrap: wrap;
 }
 
@@ -348,10 +348,10 @@
     background: transparent;
     border: 1px solid rgba(56, 224, 255, 0.4);
     color: #7fe6ff;
-    padding: 4px 10px;
+    padding: 8px 12px;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
     cursor: pointer;
     transition: all 0.15s ease;
 }
@@ -391,9 +391,9 @@
     border: none;
     color: #a9d3e0;
     text-align: left;
-    padding: 7px 10px;
+    padding: 10px 12px;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.82rem;
     cursor: pointer;
     transition: background 0.12s ease, color 0.12s ease;
 }
@@ -440,10 +440,10 @@
 
 .ji-heading {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #ff3b4e;
-    letter-spacing: 0.08em;
-    margin: 70px 0 24px;
+    letter-spacing: 0.06em;
+    margin: 64px 0 24px;
 }
 
 section#intro .ji-heading {
@@ -459,13 +459,13 @@ section#intro .ji-heading {
 .ji-panel-tab {
     display: inline-block;
     margin: 0 0 -1px 16px;
-    padding: 4px 16px;
+    padding: 6px 18px;
     background: #ff3b4e;
     color: #050508;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 700;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
     clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
 }
 
@@ -474,7 +474,7 @@ section#intro .ji-heading {
     border: 1px solid rgba(56, 224, 255, 0.4);
     background: linear-gradient(155deg, rgba(10, 12, 18, 0.92), rgba(6, 8, 12, 0.92));
     clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
-    padding: 30px;
+    padding: 34px;
 }
 
 .ji-corner {
@@ -520,28 +520,31 @@ section#intro .ji-heading {
 .ji-intro-text {
     flex: 1;
     min-width: 260px;
+    text-align: left;
 }
 
 .ji-eyebrow {
     display: inline-block;
     color: #ff3b4e;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
 }
 
 .ji-name {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: clamp(1.8rem, 4.2vw, 2.6rem);
+    font-size: clamp(2rem, 4.6vw, 2.8rem);
     color: #eafcff;
     text-shadow: 0 0 10px rgba(56, 224, 255, 0.5);
-    margin: 0 0 8px;
+    margin: 0 0 10px;
+    line-height: 1.15;
 }
 
 .ji-role {
     color: #38e0ff;
     font-weight: 600;
-    margin: 0 0 14px;
+    font-size: 1.1rem;
+    margin: 0 0 16px;
 }
 
 .ji-sep {
@@ -549,29 +552,30 @@ section#intro .ji-heading {
 }
 
 .ji-blurb {
-    color: #a9d3e0;
-    line-height: 1.6;
+    color: #b7dbe6;
+    font-size: 1.05rem;
+    line-height: 1.7;
     max-width: 540px;
-    margin: 0 0 20px;
+    margin: 0 0 24px;
 }
 
 .ji-socials {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 18px;
+    gap: 12px;
+    margin-bottom: 22px;
 }
 
 .ji-socials a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 14px;
+    padding: 11px 18px;
     border: 1px solid rgba(56, 224, 255, 0.4);
     color: #d6faff;
     text-decoration: none;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
     clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
     transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
@@ -586,12 +590,12 @@ section#intro .ji-heading {
     display: inline-block;
     color: #ff3b4e;
     border: 1px solid #ff3b4e;
-    padding: 10px 20px;
+    padding: 13px 24px;
     text-decoration: none;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
     clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
     transition: all 0.15s ease;
 }
@@ -616,7 +620,7 @@ section#intro .ji-heading {
     padding: 0 18px 0 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     border-right: 1px solid rgba(56, 224, 255, 0.2);
 }
 
@@ -629,13 +633,13 @@ section#intro .ji-heading {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-align: left;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(56, 224, 255, 0.2);
     border-left: 3px solid transparent;
     color: #a9d3e0;
-    padding: 9px 10px;
+    padding: 13px 14px;
     cursor: pointer;
     font-family: 'Share Tech Mono', monospace;
     transition: all 0.15s ease;
@@ -654,37 +658,37 @@ section#intro .ji-heading {
 
 .ji-log-index {
     color: #38e0ff;
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     flex-shrink: 0;
 }
 
 .ji-log-row-text {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
     min-width: 0;
 }
 
 .ji-log-name {
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .ji-log-skillcount {
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
-    color: #7691a0;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: #85a2ad;
 }
 
 .ji-log-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
+    width: 44px;
     flex-shrink: 0;
     border: 1px solid rgba(56, 224, 255, 0.2);
     color: #38e0ff;
@@ -697,13 +701,19 @@ section#intro .ji-heading {
     border-color: #ff3b4e;
 }
 
+.ji-log-link.is-disabled {
+    color: #4a5a60;
+    border-color: rgba(56, 224, 255, 0.12);
+    cursor: not-allowed;
+}
+
 .ji-detail-readout {
     min-width: 0;
 }
 
 .ji-detail-imgwrap {
     width: 100%;
-    aspect-ratio: 16 / 8;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border: 1px solid rgba(56, 224, 255, 0.3);
     margin-bottom: 14px;
@@ -718,16 +728,16 @@ section#intro .ji-heading {
 
 .ji-detail-name {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: #eafcff;
-    margin: 6px 0 10px;
+    margin: 8px 0 12px;
 }
 
 .ji-detail-desc {
-    color: #a9d3e0;
-    line-height: 1.6;
-    font-size: 0.88rem;
-    margin: 0 0 14px;
+    color: #b7dbe6;
+    line-height: 1.65;
+    font-size: 0.95rem;
+    margin: 0 0 16px;
 }
 
 .ji-detail-open {
@@ -736,10 +746,10 @@ section#intro .ji-heading {
     gap: 6px;
     border: 1px solid #ff3b4e;
     color: #ff3b4e;
-    padding: 8px 16px;
+    padding: 11px 18px;
     text-decoration: none;
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
     transition: all 0.15s ease;
 }
 
@@ -749,19 +759,31 @@ section#intro .ji-heading {
     box-shadow: 0 0 18px rgba(255, 59, 78, 0.5);
 }
 
+.ji-detail-open.is-disabled {
+    color: #4a5a60;
+    border-color: rgba(56, 224, 255, 0.2);
+    cursor: not-allowed;
+}
+
+.ji-detail-open.is-disabled:hover {
+    background: transparent;
+    color: #4a5a60;
+    box-shadow: none;
+}
+
 /* ---------- experience log ---------- */
 
 .ji-log {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 26px;
 }
 
 .ji-log-entry {
     display: flex;
-    gap: 16px;
+    gap: 18px;
     border-bottom: 1px dashed rgba(56, 224, 255, 0.2);
-    padding-bottom: 20px;
+    padding-bottom: 24px;
 }
 
 .ji-log-entry:last-child {
@@ -770,8 +792,8 @@ section#intro .ji-heading {
 }
 
 .ji-log-logo {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
     background: #050508;
     border: 1px solid rgba(56, 224, 255, 0.4);
@@ -784,39 +806,43 @@ section#intro .ji-heading {
     flex-wrap: wrap;
     gap: 10px;
     align-items: baseline;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .ji-log-time {
     color: #ff3b4e;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
 }
 
 .ji-log-header h3 {
     margin: 0;
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 0.98rem;
+    font-size: 1.08rem;
     color: #eafcff;
 }
 
 .ji-log-entry p {
-    color: #a9d3e0;
-    font-size: 0.85rem;
-    line-height: 1.55;
-    margin: 0 0 10px;
+    color: #b7dbe6;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 12px;
 }
 
 .ji-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+}
+
+.ji-detail-readout .ji-tags {
+    margin-bottom: 18px;
 }
 
 .ji-tag {
     border: 1px solid rgba(56, 224, 255, 0.4);
-    color: #7fe6ff;
-    padding: 3px 9px;
-    font-size: 0.68rem;
+    color: #85e0ff;
+    padding: 5px 11px;
+    font-size: 0.74rem;
     letter-spacing: 0.02em;
     background: rgba(56, 224, 255, 0.06);
 }
@@ -824,9 +850,10 @@ section#intro .ji-heading {
 .ji-footer {
     margin-top: 80px;
     text-align: center;
-    padding: 22px 0 10px;
-    color: #7691a0;
-    font-size: 0.78rem;
+    padding: 24px 0 10px;
+    color: #85a2ad;
+    font-size: 0.85rem;
+    line-height: 1.8;
     border-top: 1px solid rgba(56, 224, 255, 0.2);
 }
 
@@ -847,16 +874,38 @@ section#intro .ji-heading {
 @media (max-width: 600px) {
     .ji-hud-bar {
         padding: 10px 16px;
+        gap: 12px;
+    }
+
+    .ji-content {
+        padding: 32px 18px 32px;
+    }
+
+    .ji-heading {
+        margin: 48px 0 20px;
+        font-size: 1.3rem;
     }
 
     .ji-intro-body {
         flex-direction: column;
         text-align: center;
+        gap: 24px;
     }
 
-    .ji-socials,
-    .ji-blurb {
+    .ji-intro-text {
+        text-align: center;
+    }
+
+    .ji-photo-frame {
+        width: 150px;
+        height: 150px;
+    }
+
+    .ji-socials {
         justify-content: center;
+    }
+
+    .ji-blurb {
         margin-left: auto;
         margin-right: auto;
     }
@@ -867,18 +916,47 @@ section#intro .ji-heading {
 
     .ji-missionlog {
         grid-template-columns: 1fr;
+        gap: 22px;
     }
 
     .ji-log-list {
         border-right: none;
         border-bottom: 1px solid rgba(56, 224, 255, 0.2);
         padding-right: 0;
-        padding-bottom: 16px;
+        padding-bottom: 18px;
+    }
+
+    .ji-log-entry {
+        gap: 14px;
+    }
+
+    .ji-log-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .ji-footer {
+        margin-top: 56px;
     }
 
     .ji-boot-channels {
         flex-direction: column;
-        gap: 6px;
+        gap: 8px;
         text-align: left;
+    }
+}
+
+@media (max-width: 380px) {
+    .ji-socials a span,
+    .ji-lang-toggle {
+        font-size: 0.72rem;
+    }
+
+    .ji-socials a {
+        padding: 9px 12px;
+    }
+
+    .ji-name {
+        font-size: 1.8rem;
     }
 }

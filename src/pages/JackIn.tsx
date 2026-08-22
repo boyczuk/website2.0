@@ -292,15 +292,21 @@ function JackIn() {
                                                 <span className="ji-log-skillcount">{project.skills.length} {t.ui.daemonsWord}</span>
                                             </span>
                                         </button>
-                                        <a
-                                            className="ji-log-link"
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label={`Open ${project.name} in a new tab`}
-                                        >
-                                            <OpenInNewIcon fontSize="inherit" />
-                                        </a>
+                                        {project.link ? (
+                                            <a
+                                                className="ji-log-link"
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label={`Open ${project.name} in a new tab`}
+                                            >
+                                                <OpenInNewIcon fontSize="inherit" />
+                                            </a>
+                                        ) : (
+                                            <span className="ji-log-link is-disabled" aria-hidden="true">
+                                                <OpenInNewIcon fontSize="inherit" />
+                                            </span>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -317,9 +323,15 @@ function JackIn() {
                                         <span key={skill} className="ji-tag">{skill}</span>
                                     ))}
                                 </div>
-                                <a className="ji-detail-open" href={activeProject.link} target="_blank" rel="noopener noreferrer">
-                                    <OpenInNewIcon fontSize="inherit" /> {t.ui.executeLabel}
-                                </a>
+                                {activeProject.link ? (
+                                    <a className="ji-detail-open" href={activeProject.link} target="_blank" rel="noopener noreferrer">
+                                        <OpenInNewIcon fontSize="inherit" /> {t.ui.executeLabel}
+                                    </a>
+                                ) : (
+                                    <span className="ji-detail-open is-disabled" aria-disabled="true">
+                                        <OpenInNewIcon fontSize="inherit" /> {t.ui.comingSoonLabel}
+                                    </span>
+                                )}
                             </div>
                         </div>
                     </NetPanel>

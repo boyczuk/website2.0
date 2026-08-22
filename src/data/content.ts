@@ -31,11 +31,11 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        name: 'Black Market - Unity game',
+        name: 'Black Market',
         desc: 'Top down 2D strategy crime game coded in Unity2D. Think Rimworld but for organized crime. In this game you create, hire and organize your new organized crime group/mafia/cartel and fight for territory in the city of Senago. Implemented modern A* pathfinding algorithms to ensure responsive and intelligent NPCs.',
         skills: ['C#', 'Unity', '2D Game Development'],
         image: blackMarketImg,
-        link: 'https://github.com/boyczuk/BlackMarket2D',
+        link: '',
     },
     {
         id: 3,
@@ -129,7 +129,7 @@ export const profile = {
     blurb: "I love building things! Professionally, I've developed web apps and software using TypeScript, Python, React, PostgreSQL, AWS, and Firebase. Currently, I'm focused on becoming a TypeScript menace.",
     photo: meImage,
     email: 'adlaibb@gmail.com',
-    resumeUrl: '/WebsiteResume.pdf',
+    resumeUrl: '/Adlai_Resume_07_2026.pdf',
     socials: {
         github: 'https://github.com/boyczuk',
         linkedin: 'https://www.linkedin.com/in/adlai-bridson-boyczuk/',
