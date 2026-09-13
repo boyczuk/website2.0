@@ -649,7 +649,7 @@ section#intro .ji-heading {
     border-bottom: 1px solid rgba(56, 224, 255, 0.12);
 }
 
-.ji-book-row:last-child {
+.ji-book-row:last-of-type {
     border-bottom: none;
 }
 
@@ -688,6 +688,16 @@ section#intro .ji-heading {
 .ji-book-author {
     color: #6d8a91;
     font-size: 0.8rem;
+}
+
+.ji-book-source {
+    margin: 14px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(56, 224, 255, 0.15);
+    color: #4a5a60;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-align: left;
 }
 
 .ji-book-row:hover .ji-book-title {

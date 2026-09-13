@@ -135,6 +135,7 @@ function Bookshelf({ t }: { t: Translation }) {
                 ) : (
                     recent.map((book) => <BookRow key={book.link} book={book} />)
                 )}
+                <p className="ji-book-source">{t.ui.goodreadsSourceLabel}</p>
             </div>
         </NetPanel>
     );
