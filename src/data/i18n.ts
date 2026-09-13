@@ -35,6 +35,10 @@ export interface UiStrings {
     footerConnection: string;
     footerUplink: string;
     bootLines: string[];
+    bookshelfTab: string;
+    recentlyReadLabel: string;
+    readingLoadingLabel: string;
+    readingEmptyLabel: string;
 }
 
 export interface ProjectOverride {
@@ -81,6 +85,10 @@ export const translations: Record<Locale, Translation> = {
                 'NETWATCH TRACE: EVADED',
                 'CONNECTING...',
             ],
+            bookshelfTab: 'BOOKSHELF.LOG',
+            recentlyReadLabel: 'RECENTLY READ',
+            readingLoadingLabel: 'LOADING...',
+            readingEmptyLabel: 'NO DATA',
         },
         projects: {
             1: { desc: "Built a real-time messaging web app that I can slowly expand into a full social media platform. Currently the main functional feature is real time messaging, and messaging persistence. Currently in the process of implementing security precautions and adding a posting system." },
@@ -125,6 +133,10 @@ export const translations: Record<Locale, Translation> = {
                 'TRACE NETWATCH : ÉVITÉE',
                 'CONNEXION EN COURS...',
             ],
+            bookshelfTab: 'JOURNAL_LECTURE',
+            recentlyReadLabel: 'LU RÉCEMMENT',
+            readingLoadingLabel: 'CHARGEMENT...',
+            readingEmptyLabel: 'AUCUNE DONNÉE',
         },
         projects: {
             1: { desc: "Création d'une application web de messagerie en temps réel que je développe progressivement en une plateforme sociale complète. La fonctionnalité principale actuelle est la messagerie instantanée avec persistance des messages. Je travaille actuellement à l'ajout de mesures de sécurité et d'un système de publication." },
@@ -169,6 +181,10 @@ export const translations: Record<Locale, Translation> = {
                 'RASTREO NETWATCH: EVADIDO',
                 'CONECTANDO...',
             ],
+            bookshelfTab: 'REGISTRO_LECTURA',
+            recentlyReadLabel: 'LEÍDO RECIENTEMENTE',
+            readingLoadingLabel: 'CARGANDO...',
+            readingEmptyLabel: 'SIN DATOS',
         },
         projects: {
             1: { desc: 'Desarrollé una aplicación web de mensajería en tiempo real que planeo expandir gradualmente hasta convertirla en una plataforma social completa. Actualmente, la función principal es la mensajería en tiempo real con persistencia de mensajes. Estoy implementando medidas de seguridad y un sistema de publicaciones.' },
@@ -213,6 +229,10 @@ export const translations: Record<Locale, Translation> = {
                 '넷워치 추적: 회피됨',
                 '접속 중...',
             ],
+            bookshelfTab: '독서_기록',
+            recentlyReadLabel: '최근 읽음',
+            readingLoadingLabel: '로딩 중...',
+            readingEmptyLabel: '데이터 없음',
         },
         projects: {
             1: { desc: '실시간 메시징 웹 앱을 개발했으며, 이를 점차 완전한 소셜 미디어 플랫폼으로 확장하고 있습니다. 현재 주요 기능은 실시간 메시징과 메시지 영속성입니다. 현재 보안 조치를 구현하고 게시 시스템을 추가하는 작업을 진행 중입니다.' },
@@ -257,6 +277,10 @@ export const translations: Record<Locale, Translation> = {
                 '网络监视追踪：已规避',
                 '正在接入...',
             ],
+            bookshelfTab: '读书_日志',
+            recentlyReadLabel: '最近读完',
+            readingLoadingLabel: '加载中...',
+            readingEmptyLabel: '暂无数据',
         },
         projects: {
             1: { desc: '开发了一款实时消息网页应用，计划逐步将其扩展为完整的社交媒体平台。目前主要功能是实时消息传递和消息持久化存储。目前正在实施安全防护措施并添加发布系统。' },

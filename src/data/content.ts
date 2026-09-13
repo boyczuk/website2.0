@@ -129,7 +129,7 @@ export const profile = {
     blurb: "I love building things! Professionally, I've developed web apps and software using TypeScript, Python, React, PostgreSQL, AWS, and Firebase. Currently, I'm focused on becoming a TypeScript menace.",
     photo: meImage,
     email: 'adlaibb@gmail.com',
-    resumeUrl: '/Adlai_Resume_07_2026.pdf',
+    resumeUrl: '/Adlai_Resume2026_09_13.pdf',
     socials: {
         github: 'https://github.com/boyczuk',
         linkedin: 'https://www.linkedin.com/in/adlai-bridson-boyczuk/',

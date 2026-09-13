@@ -5,7 +5,7 @@ import SportsKabaddiIcon from '@mui/icons-material/SportsKabaddi';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { profile, projects, experience } from '../data/content';
-import { LOCALES, translations, type Locale } from '../data/i18n';
+import { LOCALES, translations, type Locale, type Translation } from '../data/i18n';
 import './JackIn.css';
 
 const BOOT_DURATION_MS = 2600;
@@ -65,6 +65,78 @@ function LocaleSwitcher({ locale, setLocale }: { locale: Locale; setLocale: (l: 
                 ))}
             </div>
         </div>
+    );
+}
+
+interface GoodreadsBook {
+    title: string;
+    link: string;
+    author: string;
+    imageUrl: string;
+    rating: number;
+    dateRead: string;
+}
+
+interface GoodreadsData {
+    recentlyRead: GoodreadsBook[];
+}
+
+function BookRow({ book }: { book: GoodreadsBook }) {
+    return (
+        <a className="ji-book-row" href={book.link} target="_blank" rel="noopener noreferrer">
+            {book.imageUrl ? (
+                <img className="ji-book-cover" src={book.imageUrl} alt="" />
+            ) : (
+                <span className="ji-book-cover ji-book-cover-empty" aria-hidden="true" />
+            )}
+            <span className="ji-book-info">
+                <span className="ji-book-title">{book.title}</span>
+                <span className="ji-book-author">{book.author}</span>
+            </span>
+        </a>
+    );
+}
+
+/** Fetches the recently-read shelf via /api/goodreads (server-side RSS proxy). */
+function Bookshelf({ t }: { t: Translation }) {
+    const [data, setData] = useState<GoodreadsData | null>(null);
+    const [failed, setFailed] = useState(false);
+
+    useEffect(() => {
+        let cancelled = false;
+        fetch('/api/goodreads')
+            .then((res) => {
+                if (!res.ok) throw new Error('bad response');
+                return res.json();
+            })
+            .then((json: GoodreadsData) => {
+                if (!cancelled) setData(json);
+            })
+            .catch(() => {
+                if (!cancelled) setFailed(true);
+            });
+        return () => {
+            cancelled = true;
+        };
+    }, []);
+
+    if (failed) return null;
+
+    const recent = data?.recentlyRead ?? [];
+
+    return (
+        <NetPanel tab={t.ui.bookshelfTab} className="ji-bookshelf-wrap">
+            <div className="ji-bookshelf">
+                <span className="ji-eyebrow">{t.ui.recentlyReadLabel}</span>
+                {!data ? (
+                    <p className="ji-book-status">{t.ui.readingLoadingLabel}</p>
+                ) : recent.length === 0 ? (
+                    <p className="ji-book-status">{t.ui.readingEmptyLabel}</p>
+                ) : (
+                    recent.map((book) => <BookRow key={book.link} book={book} />)
+                )}
+            </div>
+        </NetPanel>
     );
 }
 
@@ -249,28 +321,31 @@ function JackIn() {
                 style={glitching ? (Object.fromEntries(glitchFilters.map((f, i) => [`--gf${i}`, f])) as React.CSSProperties) : undefined}
             >
                 <section id="intro">
-                    <NetPanel tab="PERSONA.SYS" className="ji-intro-wrap">
-                        <div className="ji-intro-body">
-                            <div className="ji-photo-frame">
-                                <img src={profile.photo} alt={profile.name} />
-                            </div>
-                            <div className="ji-intro-text">
-                                <span className="ji-eyebrow">{t.ui.eyebrowIdentity}</span>
-                                <h1 className="ji-name" data-text={profile.name}>{profile.name}</h1>
-                                <p className="ji-role">{t.ui.role} <span className="ji-sep">//</span> {t.ui.location}</p>
-                                <p className="ji-blurb">{t.ui.blurb}</p>
-                                <div className="ji-socials">
-                                    <a href={profile.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /><span>GITHUB</span></a>
-                                    <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /><span>LINKEDIN</span></a>
-                                    <a href={profile.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon fontSize="inherit" /><span>INSTAGRAM</span></a>
-                                    <a href={profile.socials.judo} target="_blank" rel="noopener noreferrer" aria-label={t.ui.judoLabel}><SportsKabaddiIcon fontSize="inherit" /><span>{t.ui.judoLabel}</span></a>
+                    <div className="ji-intro-row">
+                        <NetPanel tab="PERSONA.SYS" className="ji-intro-wrap">
+                            <div className="ji-intro-body">
+                                <div className="ji-photo-frame">
+                                    <img src={profile.photo} alt={profile.name} />
                                 </div>
-                                <a className="ji-resume" href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
-                                    {t.ui.downloadResume}
-                                </a>
+                                <div className="ji-intro-text">
+                                    <span className="ji-eyebrow">{t.ui.eyebrowIdentity}</span>
+                                    <h1 className="ji-name" data-text={profile.name}>{profile.name}</h1>
+                                    <p className="ji-role">{t.ui.role} <span className="ji-sep">//</span> {t.ui.location}</p>
+                                    <p className="ji-blurb">{t.ui.blurb}</p>
+                                    <div className="ji-socials">
+                                        <a href={profile.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /><span>GITHUB</span></a>
+                                        <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /><span>LINKEDIN</span></a>
+                                        <a href={profile.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><InstagramIcon fontSize="inherit" /><span>INSTAGRAM</span></a>
+                                        <a href={profile.socials.judo} target="_blank" rel="noopener noreferrer" aria-label={t.ui.judoLabel}><SportsKabaddiIcon fontSize="inherit" /><span>{t.ui.judoLabel}</span></a>
+                                    </div>
+                                    <a className="ji-resume" href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
+                                        {t.ui.downloadResume}
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </NetPanel>
+                        </NetPanel>
+                        <Bookshelf t={t} />
+                    </div>
                 </section>
 
                 <section id="projects">
