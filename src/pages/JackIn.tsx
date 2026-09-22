@@ -97,29 +97,9 @@ function BookRow({ book }: { book: GoodreadsBook }) {
     );
 }
 
-/** Fetches the recently-read shelf via /api/goodreads (server-side RSS proxy). */
-function Bookshelf({ t }: { t: Translation }) {
-    const [data, setData] = useState<GoodreadsData | null>(null);
-    const [failed, setFailed] = useState(false);
-
-    useEffect(() => {
-        let cancelled = false;
-        fetch('/api/goodreads')
-            .then((res) => {
-                if (!res.ok) throw new Error('bad response');
-                return res.json();
-            })
-            .then((json: GoodreadsData) => {
-                if (!cancelled) setData(json);
-            })
-            .catch(() => {
-                if (!cancelled) setFailed(true);
-            });
-        return () => {
-            cancelled = true;
-        };
-    }, []);
-
+/** Renders the recently-read shelf. Data is fetched by the parent so the request starts
+    during the boot animation instead of after it finishes. */
+function Bookshelf({ t, data, failed }: { t: Translation; data: GoodreadsData | null; failed: boolean }) {
     if (failed) return null;
 
     const recent = data?.recentlyRead ?? [];
@@ -200,6 +180,8 @@ function JackIn() {
     const [lineIdx, setLineIdx] = useState(0);
     const [activeId, setActiveId] = useState<number>(projects[0].id);
     const [locale, setLocaleState] = useState<Locale>(readStoredLocale);
+    const [goodreadsData, setGoodreadsData] = useState<GoodreadsData | null>(null);
+    const [goodreadsFailed, setGoodreadsFailed] = useState(false);
     const activeProject = projects.find((p) => p.id === activeId) ?? projects[0];
     const t = translations[locale];
 
@@ -207,6 +189,24 @@ function JackIn() {
         setLocaleState(l);
         window.localStorage.setItem(LOCALE_STORAGE_KEY, l);
     };
+
+    useEffect(() => {
+        let cancelled = false;
+        fetch('/api/goodreads')
+            .then((res) => {
+                if (!res.ok) throw new Error('bad response');
+                return res.json();
+            })
+            .then((json: GoodreadsData) => {
+                if (!cancelled) setGoodreadsData(json);
+            })
+            .catch(() => {
+                if (!cancelled) setGoodreadsFailed(true);
+            });
+        return () => {
+            cancelled = true;
+        };
+    }, []);
 
     useEffect(() => {
         const start = Date.now();
@@ -345,7 +345,7 @@ function JackIn() {
                                 </div>
                             </div>
                         </NetPanel>
-                        <Bookshelf t={t} />
+                        <Bookshelf t={t} data={goodreadsData} failed={goodreadsFailed} />
                     </div>
                 </section>
 
